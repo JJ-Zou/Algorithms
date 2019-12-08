@@ -3,6 +3,10 @@ package com.ZJJ.Collection.Stack.StackVariable;
 import java.util.Arrays;
 import java.util.Iterator;
 
+/**
+ * 使用可变长数组实现的后入先出栈
+ * @param <T>
+ */
 public class StackVariable<T> implements Iterable<T> {
 
     private T[] values;

@@ -4,8 +4,6 @@ import com.ZJJ.Collection.Stack.StackFixed.StackFixed;
 import com.ZJJ.Collection.Stack.StackVariable.StackVariable;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Stack;
 
 public class StackTest {
     @Test
@@ -14,6 +12,9 @@ public class StackTest {
         System.out.println(stringStack.capacity());
         for(int i=0;i<16;i++){
             stringStack.push("String "+i);
+        }
+        for (String string:stringStack){
+            System.out.println(string);
         }
         System.out.println(stringStack.pop());
         System.out.println(stringStack);

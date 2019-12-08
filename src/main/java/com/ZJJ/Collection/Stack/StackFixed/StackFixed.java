@@ -3,6 +3,10 @@ package com.ZJJ.Collection.Stack.StackFixed;
 import java.util.Arrays;
 import java.util.Iterator;
 
+/**
+ * 使用固定长数组实现的后入先出栈
+ * @param <T>
+ */
 public class StackFixed<T> implements Iterable<T> {
 
     private T[] values;
