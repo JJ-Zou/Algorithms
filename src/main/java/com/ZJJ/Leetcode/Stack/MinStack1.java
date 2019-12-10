@@ -3,7 +3,8 @@ package com.ZJJ.Leetcode.Stack;
 import java.util.Stack;
 
 /**
- * 入栈时，当前栈中最小元素未发生变化时，最小值栈不变
+ * leetcode #155.最小栈
+ * 入栈时，当前栈中最小元素比当前值小时时，最小值栈不变
  * 出栈时，当前栈栈顶元素与最小值栈栈顶元素相等时，两栈均出，否则，仅当前栈出栈
  */
 public class MinStack1 {
