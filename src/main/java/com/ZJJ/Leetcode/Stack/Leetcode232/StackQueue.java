@@ -1,14 +1,15 @@
-package com.ZJJ.Leetcode.Stack;
+package com.ZJJ.Leetcode.Stack.Leetcode232;
 
 import java.util.Stack;
 
 /**
  * leetcode #232.用栈实现队列
  * 保证每次push时，push的元素都在栈底
+ * push和pop操作都在stack中进行
  */
 public class StackQueue {
-    Stack<Integer> stack;
-    Stack<Integer> tempStack;
+    private Stack<Integer> stack;
+    private Stack<Integer> tempStack;
     public StackQueue () {
         stack = new Stack<>();
         tempStack = new Stack<>();

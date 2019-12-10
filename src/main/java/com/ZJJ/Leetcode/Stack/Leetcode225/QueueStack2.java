@@ -1,4 +1,4 @@
-package com.ZJJ.Leetcode.Stack;
+package com.ZJJ.Leetcode.Stack.Leetcode225;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,9 +8,9 @@ import java.util.Queue;
  * 用两个队列实现,在push(int x)操作中处理
  */
 public class QueueStack2 {
-    Queue<Integer> queueIn;
-    Queue<Integer> queueOut;
-    Integer topValue;
+    private Queue<Integer> queueIn;
+    private Queue<Integer> queueOut;
+    private Integer topValue;
     public QueueStack2() {
         queueIn = new LinkedList<>();
         queueOut = new LinkedList<>();
