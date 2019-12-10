@@ -1,6 +1,6 @@
-package com.ZJJ.Leetcode.Stack;
+package com.ZJJ.Leetcode;
 
-import com.ZJJ.Leetcode.Stack.Leetcode20.ValidParentheses;
+import com.ZJJ.Leetcode.Leetcode20.ValidParentheses;
 import org.junit.Test;
 
 public class TestValidParentheses {

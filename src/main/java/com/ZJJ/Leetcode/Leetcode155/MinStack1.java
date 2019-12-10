@@ -1,36 +1,26 @@
-package com.ZJJ.Leetcode.Stack.Leetcode155;
+package com.ZJJ.Leetcode.Leetcode155;
 
 import java.util.Stack;
 
 /**
  * leetcode #155.最小栈
- * 设计一个支持push,pop,top操作，并且能在常数时间内检索到最小元素的栈。
- * push(x)--入栈
- * pop()--出栈
- * top()--获取栈顶元素
- * getMin()--检索栈中最小元素
+ * 入栈时，当前栈中最小元素比当前值小时时，最小值栈不变
+ * 出栈时，当前栈栈顶元素与最小值栈栈顶元素相等时，两栈均出，否则，仅当前栈出栈
  */
-public class MinStack {
+public class MinStack1 {
     private Stack<Integer> stackValue;
     private Stack<Integer> stackMin;
     private int size;
 
-    public MinStack() {
+    public MinStack1(){
         stackValue = new Stack<>();
         stackMin = new Stack<>();
     }
 
-    /**
-     * 当栈为空时入栈元素为最小元素
-     * 当栈不为空时，当前栈最小元素为min(stackMin栈顶元素,入栈元素)
-     * @param value
-     */
     public void push(int value){
         stackValue.push(value);
-        if(size == 0 || value < stackMin.peek()){
+        if(size == 0 || value <= stackMin.peek()){  //需要加上=
             stackMin.push(value);
-        } else {
-            stackMin.push(stackMin.peek());
         }
         size++;
     }
@@ -39,7 +29,9 @@ public class MinStack {
         if(size == 0){
             throw new RuntimeException("栈为空！");
         }
-        stackMin.pop();
+        if(stackValue.peek().equals(stackMin.peek())){  //由于Integer为包装类型，必须用equals比较
+            stackMin.pop();
+        }
         stackValue.pop();
         size--;
     }
@@ -60,7 +52,7 @@ public class MinStack {
 
     @Override
     public String toString() {
-        return "MinStack{" +
+        return "MinStack1{" +
                 "stackValue=" + stackValue +
                 ", stackMin=" + stackMin +
                 '}';

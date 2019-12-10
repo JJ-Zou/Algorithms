@@ -1,7 +1,7 @@
-package com.ZJJ.Leetcode.Stack;
+package com.ZJJ.Leetcode;
 
-import com.ZJJ.Leetcode.Stack.Leetcode155.MinStack;
-import com.ZJJ.Leetcode.Stack.Leetcode155.MinStack1;
+import com.ZJJ.Leetcode.Leetcode155.MinStack1;
+import com.ZJJ.Leetcode.Leetcode155.MinStack;
 import org.junit.Test;
 
 public class TestMinStack {
