@@ -2,6 +2,9 @@ package com.ZJJ.Leetcode.Leetcode21;
 
 import com.ZJJ.Node.Node;
 
+/**
+ * 归并，非递归
+ */
 public class MergeTwoListNode {
     public Node<Integer> mergeTwoLists(Node<Integer> l1, Node<Integer> l2) {
         Node<Integer> mergeList = new Node(-1);
