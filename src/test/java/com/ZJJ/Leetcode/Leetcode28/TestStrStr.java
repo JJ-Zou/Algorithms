@@ -1,6 +1,5 @@
-package com.ZJJ.Leetcode28;
+package com.ZJJ.Leetcode.Leetcode28;
 
-import com.ZJJ.Leetcode.Leetcode28.StrStr;
 import org.junit.Test;
 
 
