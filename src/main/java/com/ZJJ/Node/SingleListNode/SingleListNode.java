@@ -8,10 +8,12 @@ import com.ZJJ.Node.Node;
  */
 public class SingleListNode<T> {
 
-    private Node head;
+    private Node<T> head;
     private int size;
 
-    public SingleListNode(Node head) {
+    public SingleListNode(){
+    }
+    public SingleListNode(Node<T> head) {
         this.head = head;
         size = 1;
     }
@@ -19,27 +21,57 @@ public class SingleListNode<T> {
     public int size(){
         return size;
     }
+
+    /**
+     * 头插
+     * @param value
+     */
+    public void addFirst(T value){
+        addNode(0,value);
+    }
+
+    /**
+     * 尾插
+     * @param value
+     */
+    public void addLast(T value) {
+        addNode(size,value);
+    }
     /**
      * 在链表index索引位置增加一个结点
      * @param value
      * @param index
      */
-    public void addNode(T value,int index) {
-        Node insert = new Node(value);
+    public void addNode(int index,T value) {
+        Node<T> insert = new Node(value);
         if(index <= 0){
             insert.setNext(head);
             head = insert;
         } else if (index >= size) {
-            Node cur = findNode(size-1);
+            if(size == 0){
+                addFirst(value);
+                return;
+            }
+            Node<T> cur = findNode(size-1);
             cur.setNext(insert);
         } else {
-            Node pre = findNode(index-1);
+            Node<T> pre = findNode(index-1);
             insert.setNext(pre.getNext());
             pre.setNext(insert);
         }
         size++;
     }
 
+    /**
+     * 删除首节点
+     * @return
+     */
+    public T deleteFirst() {
+        return deleteNode(0);
+    }
+    public T deleteLast() {
+        return deleteNode(size-1);
+    }
     /**
      * 删除链表index索引位置的结点
      * @param index
@@ -55,9 +87,10 @@ public class SingleListNode<T> {
             size--;
             return val;
         } else {
-            Node pre = findNode(index-1);
+            Node<T> pre = findNode(index-1);
             T value = (T) pre.getNext().getValue();
             pre.setNext(pre.getNext().getNext());
+            size--;
             return value;
         }
     }
@@ -68,11 +101,11 @@ public class SingleListNode<T> {
      * @param index
      * @return
      */
-    public void updateNode(T value,int index) {
+    public void updateNode(int index,T value) {
         if(index < 0 || index > size-1){
             throw new RuntimeException("索引不合法！");
         }
-        Node cur = findNode(index);
+        Node<T> cur = findNode(index);
         cur.setValue(value);
     }
 
@@ -81,14 +114,14 @@ public class SingleListNode<T> {
      * @param index
      * @return
      */
-    public Node findNode(int index) {
+    public Node<T> findNode(int index) {
         if(size == 0){
             return null;
         }
         if(index < 0 || index > size-1){
             throw new RuntimeException("索引不合法！");
         }
-        Node cur = head;
+        Node<T> cur = head;
         for(int i=0;i<index;i++){
             cur = cur.getNext();
         }

@@ -2,7 +2,7 @@ package com.ZJJ.Node;
 
 public class Node<T> {
     private T value;
-    private Node next;
+    private Node<T> next;
 
     public Node(){
 
@@ -11,9 +11,8 @@ public class Node<T> {
         this.value = value;
     }
 
-    public Node(T value,Node next) {
+    public Node(T value,Node<T> next) {
         this.value = value;
-        this.next = next;
     }
 
     public T getValue() {
@@ -24,16 +23,36 @@ public class Node<T> {
         this.value = value;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
-        this.next = next;
+    public void setNext(Node<T> next) {
+        if(this.value == null){
+            this.value = next.getValue();
+        }else {
+            this.next = next;
+        }
     }
 
     @Override
     public String toString() {
-        return value == null ? null : value +"->" + next ;
+        StringBuilder sb = new StringBuilder();
+        Node<T> cur = next;
+        if(value != null){
+            sb.append(value).append("->");
+        }
+        while(cur != null) {
+            T temp = cur.getValue();
+            sb.append(temp).append("->");
+            cur = cur.getNext();
+        }
+        sb.append(cur);
+        return sb.toString();
+
+        /**
+         * 递归会导致栈溢出
+         */
+//        return value == null ? null : value +"->" + next ;
     }
 }
