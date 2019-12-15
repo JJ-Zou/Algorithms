@@ -1,6 +1,10 @@
 package com.ZJJ.UndirectedGraph;
 
+import com.ZJJ.Graph.UndirectedGraph.BreadFirstPaths;
+import com.ZJJ.Graph.UndirectedGraph.DepthFirstPaths;
+import com.ZJJ.Graph.UndirectedGraph.DepthFirstSearch;
 import com.ZJJ.Graph.UndirectedGraph.Graph;
+import com.ZJJ.Node.SingleListNode.SingleListNode;
 import org.junit.Test;
 
 
@@ -21,5 +25,18 @@ public class TestGraph {
         graph.addEdge(7,8);
         graph.addEdge(9,11);
         graph.addEdge(5,3);
+        DepthFirstPaths DFP = new DepthFirstPaths(graph,0);
+        for(int i=1;i<13;i++){
+            System.out.println("0 to "+i+": "+DFP.pathTo(i));
+        }
+        System.out.println("\n\n");
+        BreadFirstPaths BFP = new BreadFirstPaths(graph,0);
+        for(int i=1;i<13;i++){
+            System.out.println("0 to "+i+": "+BFP.pathTo(i));
+        }
+    }
+
+    @Test
+    public void testDFS() throws Exception {
     }
 }
