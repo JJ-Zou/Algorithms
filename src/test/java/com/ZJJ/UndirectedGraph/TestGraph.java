@@ -4,6 +4,7 @@ import com.ZJJ.Graph.UndirectedGraph.BreadFirstPaths;
 import com.ZJJ.Graph.UndirectedGraph.CycleGraph.Cycle;
 import com.ZJJ.Graph.UndirectedGraph.DepthFirstPaths;
 import com.ZJJ.Graph.UndirectedGraph.LGraph.Graph;
+import com.ZJJ.Graph.UndirectedGraph.TwoColorGraph.TwoColor;
 import org.junit.Test;
 
 
@@ -49,5 +50,13 @@ public class TestGraph {
                 .getClassLoader().getResourceAsStream("graph3.txt"));
         Cycle cycle = new Cycle(graph);
         System.out.println(cycle.hasCycle());
+    }
+
+    @Test
+    public void test() {
+        Graph graph = new Graph(Graph.class
+                .getClassLoader().getResourceAsStream("graph3.txt"));
+        TwoColor twoColor = new TwoColor(graph);
+        System.out.println(twoColor.isBipartite());
     }
 }

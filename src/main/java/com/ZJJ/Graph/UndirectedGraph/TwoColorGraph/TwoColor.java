@@ -12,6 +12,7 @@ public class TwoColor {
 
     public TwoColor(Graph G) {
         marked = new boolean[G.V()];
+        color = new boolean[G.V()];
         for (int s = 0; s < G.V(); s++) {
             if (!marked[s]) {
                 dfs(G, s);
