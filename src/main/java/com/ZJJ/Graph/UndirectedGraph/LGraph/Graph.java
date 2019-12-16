@@ -1,5 +1,4 @@
 package com.ZJJ.Graph.UndirectedGraph.LGraph;
-import java.io.File;
 import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.Scanner;
  * 邻接表
  */
 public class Graph {
-    private final int V;
+    private int V;
     private int E;
     private List<Integer>[] adj;    //邻接表
     /**
@@ -25,7 +24,21 @@ public class Graph {
             adj[v] = new LinkedList<>();
         }
     }
-
+    public Graph(InputStream inputStream) {
+        Scanner scanner = new Scanner(inputStream);
+        V = scanner.nextInt();
+        adj = new LinkedList[V];
+        for(int v=0;v<V;v++){
+            adj[v] = new LinkedList<>();
+        }
+        E = scanner.nextInt();
+        for(int i=0;i<E;i++) {
+            int edgeFront = scanner.nextInt();
+            int edgeBack = scanner.nextInt();
+            adj[edgeFront].add(edgeBack);
+            adj[edgeBack].add(edgeFront);
+        }
+    }
     /**
      * @return 顶点数
      */

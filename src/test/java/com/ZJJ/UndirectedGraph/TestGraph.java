@@ -35,6 +35,9 @@ public class TestGraph {
     }
 
     @Test
-    public void testMatrix() throws Exception {
+    public void testLG() throws Exception {
+        Graph graph = new Graph(Graph.class
+                .getClassLoader().getResourceAsStream("graph1.txt"));
+        System.out.println(graph);
     }
 }

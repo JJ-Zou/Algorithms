@@ -2,6 +2,8 @@ package com.ZJJ.UndirectedGraph.MGraph;
 
 import com.ZJJ.Graph.UndirectedGraph.MGraph.Graph;
 
+import java.io.InputStream;
+import java.lang.management.GarbageCollectorMXBean;
 
 public class Test {
     @org.junit.Test

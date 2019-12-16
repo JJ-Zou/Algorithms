@@ -11,24 +11,35 @@ import java.util.Scanner;
 public class Graph {
     private int V;
     private int E;
-    private int[][] adj;      //邻接矩阵
+    private int[][] adj;
+
+    public int getV() {
+        return V;
+    }
+
+    public int getE() {
+        return E;
+    }
+   //邻接矩阵
+    public Graph(int V) {
+        this.V = V;
+        this.E = 0;
+        adj = new int[V][V];
+    }
     /**
      * 从文件中读出邻接矩阵
      * @param inputStream
      */
     public Graph(InputStream inputStream) {
-        try(Scanner scanner = new Scanner(inputStream)) {
-            this.V = scanner.nextInt();
-            adj = new int[V][V];
-            this.E = scanner.nextInt();
-            for(int i=0;i<E;i++){
-                int edgeFront = scanner.nextInt();
-                int edgeBack = scanner.nextInt();
-                adj[edgeFront][edgeBack] = 1;
-                adj[edgeBack][edgeFront] = 1;
-            }
-        }catch (Exception e) {
-            e.printStackTrace();
+        Scanner scanner = new Scanner(inputStream);
+        this.V = scanner.nextInt();
+        adj = new int[V][V];
+        this.E = scanner.nextInt();
+        for (int i = 0; i < E; i++) {
+            int edgeFront = scanner.nextInt();
+            int edgeBack = scanner.nextInt();
+            adj[edgeFront][edgeBack] = 1;
+            adj[edgeBack][edgeFront] = 1;
         }
     }
     /**
@@ -37,6 +48,17 @@ public class Graph {
      */
     public int[][] getAdj() {
         return adj;
+    }
+
+    /**
+     * 增加一条边
+     * @param v
+     * @param w
+     */
+    public void addEdge(int v,int w){
+        adj[v][w] = 1;
+        adj[w][v] = 1;
+        E++;
     }
     /**
      * 两结点是否存在边
