@@ -1,7 +1,10 @@
-package com.ZJJ.Graph.UndirectedGraph;
+package com.ZJJ.Graph.UndirectedGraph.CycleGraph;
 
 import com.ZJJ.Graph.UndirectedGraph.LGraph.Graph;
 
+/**
+ * 是有环图吗
+ */
 public class Cycle {
     private boolean[] marked;
     private boolean hasCycle;

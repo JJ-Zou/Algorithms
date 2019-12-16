@@ -11,6 +11,14 @@ public class DepthFirstPaths {
     private boolean[] marked;
     private int[] edgeTo;       //从起点到一个顶点的已知路径上的最后一个顶点
 
+    public DepthFirstPaths(Graph G) {
+        this.s = 0;
+        marked = new boolean[G.V()];
+        edgeTo = new int[G.V()];
+//        dfs(G,s);
+        dfsNonRecursive(G, s);
+    }
+
     /**
      * @param G 无向图
      * @param s 起点（任意点）
@@ -74,6 +82,19 @@ public class DepthFirstPaths {
     }
 
     public SingleListNode<Integer> pathTo(int v) {
+        if (!hasPathsTo(v)) {
+            return null;
+        }
+        SingleListNode<Integer> path = new SingleListNode<>();
+        for (int x = v; x != s; x = edgeTo[x]) {
+            path.addFirst(x);
+        }
+        path.addFirst(s);
+        return path;
+    }
+
+    public SingleListNode<Integer> path() {
+        int v = marked.length - 1;
         if (!hasPathsTo(v)) {
             return null;
         }
