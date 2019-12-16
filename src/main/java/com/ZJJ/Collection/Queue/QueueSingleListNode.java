@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 /**
  * 用带尾结点的单链表定义先入先出队列
+ *
  * @param <T>
  */
 public class QueueSingleListNode<T> implements Iterable<T> {
@@ -21,17 +22,17 @@ public class QueueSingleListNode<T> implements Iterable<T> {
         return tail;
     }
 
-    public T getHeadValue(){
-        return head == null ? null: (T) head.getValue();
+    public T getHeadValue() {
+        return head == null ? null : (T) head.getValue();
     }
 
-    public T getTailValue(){
-        return tail == null ? null: (T) tail.getValue();
+    public T getTailValue() {
+        return tail == null ? null : (T) tail.getValue();
     }
 
-    public void enqueue(T value){
+    public void enqueue(T value) {
         Node node = new Node(value);
-        if(size == 0){
+        if (size == 0) {
             head = node;
             tail = node;
         } else {
@@ -41,24 +42,24 @@ public class QueueSingleListNode<T> implements Iterable<T> {
         size++;
     }
 
-    public T dequeue(){
-        if(size == 0){
+    public T dequeue() {
+        if (size == 0) {
             throw new RuntimeException("队列已为空！");
         }
         T val = (T) head.getValue();
         head = head.getNext();
         size--;
-        if(size == 0){
+        if (size == 0) {
             tail = null;
         }
         return val;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
@@ -71,6 +72,7 @@ public class QueueSingleListNode<T> implements Iterable<T> {
     public Iterator<T> iterator() {
         return new Iterator<T>() {
             private Node cur = head;
+
             @Override
             public boolean hasNext() {
                 return cur != null;

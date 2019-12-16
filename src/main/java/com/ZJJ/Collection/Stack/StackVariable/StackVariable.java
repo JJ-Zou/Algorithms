@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 /**
  * 使用可变长数组实现的后入先出栈
+ *
  * @param <T>
  */
 public class StackVariable<T> implements Iterable<T> {
@@ -15,7 +16,7 @@ public class StackVariable<T> implements Iterable<T> {
 
     private int capacity;
 
-    public StackVariable(){
+    public StackVariable() {
         this(16);
     }
 
@@ -25,44 +26,44 @@ public class StackVariable<T> implements Iterable<T> {
         this.capacity = capacity;
     }
 
-    private void resize(int newCapacity){
+    private void resize(int newCapacity) {
         T[] temp = (T[]) new Object[newCapacity];
-        System.arraycopy(values,0,temp,0,size);
+        System.arraycopy(values, 0, temp, 0, size);
         values = temp;
         capacity = newCapacity;
     }
 
-    public void push(T value){
-        if(size == capacity){
-            resize(2*capacity);
+    public void push(T value) {
+        if (size == capacity) {
+            resize(2 * capacity);
         }
         values[size++] = value;
     }
 
-    public T pop(){
-        if(isEmpty()) {
+    public T pop() {
+        if (isEmpty()) {
             throw new RuntimeException("栈已空，无法删除元素！");
         }
-        if(size > 0 && size == capacity/4){
-            resize(capacity/2);
+        if (size > 0 && size == capacity / 4) {
+            resize(capacity / 2);
         }
         T value = values[--size];
         values[size] = null;
         return value;
     }
 
-    public T peek(){
-        if(isEmpty()) {
+    public T peek() {
+        if (isEmpty()) {
             throw new RuntimeException("栈为空！");
         }
-        return values[size-1];
+        return values[size - 1];
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
@@ -82,10 +83,11 @@ public class StackVariable<T> implements Iterable<T> {
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            private int i=0;
+            private int i = 0;
+
             @Override
             public boolean hasNext() {
-                return i<size;
+                return i < size;
             }
 
             @Override

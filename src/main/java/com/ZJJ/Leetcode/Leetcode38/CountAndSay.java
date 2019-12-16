@@ -10,17 +10,17 @@ package com.ZJJ.Leetcode.Leetcode38;
  */
 public class CountAndSay {
     public String countAndSay(int n) {
-        if(n == 1){
+        if (n == 1) {
             return "1";
         }
-        String pre = countAndSay(n-1);
+        String pre = countAndSay(n - 1);
         StringBuilder stringRes = new StringBuilder();
         int count = 1;
-        for(int i=0;i<pre.length();i++){
-            if(i == pre.length()-1 || pre.charAt(i) != pre.charAt(i+1)){
+        for (int i = 0; i < pre.length(); i++) {
+            if (i == pre.length() - 1 || pre.charAt(i) != pre.charAt(i + 1)) {
                 stringRes.append(count).append(pre.charAt(i));
                 count = 1;
-            }else {
+            } else {
                 count++;
             }
         }

@@ -11,39 +11,39 @@ import java.util.Stack;
  */
 public class SameTreeDFS {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if(p == null && q == null) {
+        if (p == null && q == null) {
             return true;
         }
-        if(p == null || q == null) {
+        if (p == null || q == null) {
             return false;
         }
         Stack<TreeNode> stackP = new Stack<>();
         Stack<TreeNode> stackQ = new Stack<>();
         stackP.push(p);
         stackQ.push(q);
-        while(!stackP.isEmpty() && !stackQ.isEmpty()) {
-            if(stackP.peek().val != stackQ.peek().val){
+        while (!stackP.isEmpty() && !stackQ.isEmpty()) {
+            if (stackP.peek().val != stackQ.peek().val) {
                 return false;
             }
             TreeNode peekP = stackP.pop();
             TreeNode peekQ = stackQ.pop();
-            if(peekP.right != null && peekQ.right != null){
+            if (peekP.right != null && peekQ.right != null) {
                 stackP.push(peekP.right);
                 stackQ.push(peekQ.right);
-            }else if(peekP.right != null || peekQ.right != null){
+            } else if (peekP.right != null || peekQ.right != null) {
                 return false;
             }
             /**
              * 这段可以不要，那么所有的判断将在出栈时进行
-            if(!stackP.isEmpty() && !stackQ.isEmpty() &&
-                    (stackP.peek().val != stackQ.peek().val)){
-                return false;
-            }
+             if(!stackP.isEmpty() && !stackQ.isEmpty() &&
+             (stackP.peek().val != stackQ.peek().val)){
+             return false;
+             }
              **/
-            if(peekP.left != null && peekQ.left != null){
+            if (peekP.left != null && peekQ.left != null) {
                 stackP.push(peekP.left);
                 stackQ.push(peekQ.left);
-            }else if(peekP.left != null || peekQ.left != null){
+            } else if (peekP.left != null || peekQ.left != null) {
                 return false;
             }
         }

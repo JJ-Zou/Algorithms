@@ -1,17 +1,19 @@
 package com.ZJJ.Collection.Stack.StackListNode;
 
 import com.ZJJ.Node.Node;
+
 import java.util.Iterator;
 
 /**
  * 使用单链表实现的后入先出栈
+ *
  * @param <T>
  */
 public class StackListNode<T> implements Iterable<T> {
     private Node head;
     private int size;
 
-    public void push(T value){
+    public void push(T value) {
         Node<T> oldHead = head;
         head = new Node();
         head.setValue(value);
@@ -19,8 +21,8 @@ public class StackListNode<T> implements Iterable<T> {
         size++;
     }
 
-    public T pop(){
-        if(isEmpty()) {
+    public T pop() {
+        if (isEmpty()) {
             throw new RuntimeException("栈已空，无法删除元素！");
         }
         T value = (T) head.getValue();
@@ -29,21 +31,21 @@ public class StackListNode<T> implements Iterable<T> {
         return value;
     }
 
-    public T peek(){
+    public T peek() {
         return (T) head.getValue();
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
     @Override
     public String toString() {
-        if(head == null){
+        if (head == null) {
             return null;
         }
         return head.toString();
@@ -53,6 +55,7 @@ public class StackListNode<T> implements Iterable<T> {
     public Iterator<T> iterator() {
         return new Iterator<T>() {
             Node cur = head;
+
             @Override
             public boolean hasNext() {
                 return cur != null;

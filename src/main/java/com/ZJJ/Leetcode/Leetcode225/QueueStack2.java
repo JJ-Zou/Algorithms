@@ -11,15 +11,16 @@ public class QueueStack2 {
     private Queue<Integer> queueIn;
     private Queue<Integer> queueOut;
     private Integer topValue;
+
     public QueueStack2() {
         queueIn = new LinkedList<>();
         queueOut = new LinkedList<>();
     }
 
-    public void push(int x){
+    public void push(int x) {
         queueOut.add(x);
         topValue = x;
-        while(!queueIn.isEmpty()){
+        while (!queueIn.isEmpty()) {
             queueOut.add(queueIn.poll());
         }
         Queue temp = queueIn;
@@ -27,9 +28,9 @@ public class QueueStack2 {
         queueOut = temp;
     }
 
-    public int pop(){
+    public int pop() {
         int temp = queueIn.poll();
-        if(!queueIn.isEmpty()){
+        if (!queueIn.isEmpty()) {
             topValue = queueIn.peek();
         } else {
             topValue = null;
@@ -37,11 +38,11 @@ public class QueueStack2 {
         return temp;
     }
 
-    public int top(){
+    public int top() {
         return topValue;
     }
 
-    public boolean empty(){
+    public boolean empty() {
         return topValue == null;
     }
 }

@@ -7,22 +7,22 @@ import java.util.Queue;
 
 public class SymmetricTreeBFS {
     public boolean isSymmetric(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return true;
         }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root.left);
         queue.add(root.right);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             TreeNode tL = queue.poll();
             TreeNode tR = queue.poll();
-            if(tL == null && tR == null) {
+            if (tL == null && tR == null) {
                 continue;
             }
-            if(tL == null || tR == null) {
+            if (tL == null || tR == null) {
                 return false;
             }
-            if(tL.val != tR.val) {
+            if (tL.val != tR.val) {
                 return false;
             }
             queue.add(tL.left);

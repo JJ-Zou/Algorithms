@@ -23,11 +23,12 @@ public class MinStack {
     /**
      * 当栈为空时入栈元素为最小元素
      * 当栈不为空时，当前栈最小元素为min(stackMin栈顶元素,入栈元素)
+     *
      * @param value
      */
-    public void push(int value){
+    public void push(int value) {
         stackValue.push(value);
-        if(size == 0 || value < stackMin.peek()){
+        if (size == 0 || value < stackMin.peek()) {
             stackMin.push(value);
         } else {
             stackMin.push(stackMin.peek());
@@ -35,8 +36,8 @@ public class MinStack {
         size++;
     }
 
-    public void pop(){
-        if(size == 0){
+    public void pop() {
+        if (size == 0) {
             throw new RuntimeException("栈为空！");
         }
         stackMin.pop();
@@ -44,15 +45,15 @@ public class MinStack {
         size--;
     }
 
-    public int top(){
-        if(size == 0){
+    public int top() {
+        if (size == 0) {
             throw new RuntimeException("栈为空！");
         }
         return stackValue.peek();
     }
 
-    public int getMin(){
-        if(size == 0){
+    public int getMin() {
+        if (size == 0) {
             throw new RuntimeException("栈为空！");
         }
         return stackMin.peek();

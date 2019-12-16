@@ -13,7 +13,7 @@ public class TestStackNode {
         stringStackListNode.push("3");
         stringStackListNode.push("4");
         stringStackListNode.push("5");
-        for (String string:stringStackListNode){
+        for (String string : stringStackListNode) {
             System.out.println(string);
         }
 //        System.out.println(stringStackListNode);

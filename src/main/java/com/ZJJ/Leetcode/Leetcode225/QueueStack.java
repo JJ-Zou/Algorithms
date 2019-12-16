@@ -14,24 +14,24 @@ public class QueueStack {
         queue = new LinkedList<>();
     }
 
-    public void push(int x){
+    public void push(int x) {
         queue.add(x);
         int count = queue.size();
-        while(count > 1){
+        while (count > 1) {
             queue.add(queue.poll());
             count--;
         }
     }
 
-    public int pop(){
+    public int pop() {
         return queue.poll();
     }
 
-    public int top(){
+    public int top() {
         return queue.peek();
     }
 
-    public boolean empty(){
+    public boolean empty() {
         return queue.isEmpty();
     }
 }

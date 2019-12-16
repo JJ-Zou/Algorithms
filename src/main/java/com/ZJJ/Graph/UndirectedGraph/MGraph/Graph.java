@@ -13,21 +13,16 @@ public class Graph {
     private int E;
     private int[][] adj;
 
-    public int getV() {
-        return V;
-    }
-
-    public int getE() {
-        return E;
-    }
-   //邻接矩阵
+    //邻接矩阵
     public Graph(int V) {
         this.V = V;
         this.E = 0;
         adj = new int[V][V];
     }
+
     /**
      * 从文件中读出邻接矩阵
+     *
      * @param inputStream
      */
     public Graph(InputStream inputStream) {
@@ -42,8 +37,18 @@ public class Graph {
             adj[edgeBack][edgeFront] = 1;
         }
     }
+
+    public int getV() {
+        return V;
+    }
+
+    public int getE() {
+        return E;
+    }
+
     /**
      * 得到邻接矩阵
+     *
      * @return
      */
     public int[][] getAdj() {
@@ -52,41 +57,47 @@ public class Graph {
 
     /**
      * 增加一条边
+     *
      * @param v
      * @param w
      */
-    public void addEdge(int v,int w){
+    public void addEdge(int v, int w) {
         adj[v][w] = 1;
         adj[w][v] = 1;
         E++;
     }
+
     /**
      * 两结点是否存在边
+     *
      * @param v
      * @param w
      * @return
      */
-    public boolean hasEdge(int v,int w){
+    public boolean hasEdge(int v, int w) {
         return adj[v][w] == 1;
     }
 
     /**
      * 计算结点的度数
+     *
      * @param v
      * @return
      */
     public int degree(int v) {
-        return ((List)adj(v)).size();
+        return ((List) adj(v)).size();
     }
+
     /**
      * 和v相邻的所有顶点(邻接矩阵)
+     *
      * @param v
      * @return
      */
     public Iterable<Integer> adj(int v) {
         List<Integer> list = new LinkedList<>();
-        for(int i=0;i<V;i++) {
-            if(adj[v][i] == 1) {
+        for (int i = 0; i < V; i++) {
+            if (adj[v][i] == 1) {
                 list.add(i);
             }
         }
@@ -98,13 +109,13 @@ public class Graph {
         StringBuilder sb = new StringBuilder();
         sb.append(V).append("个顶点,").append(E).append("条边\n");
         sb.append("   ");
-        for(int i=0;i<V;i++){
-            sb.append(i+1).append(" ");
+        for (int i = 0; i < V; i++) {
+            sb.append(i + 1).append(" ");
         }
         sb.append("\n   -------------\n");
-        for(int i=0;i<V;i++) {
-            sb.append(i+1).append(" |");
-            for(int j=0;j<V;j++) {
+        for (int i = 0; i < V; i++) {
+            sb.append(i + 1).append(" |");
+            for (int j = 0; j < V; j++) {
                 sb.append(adj[i][j]).append(" ");
             }
             sb.append("\n");

@@ -12,39 +12,39 @@ public class MinStack1 {
     private Stack<Integer> stackMin;
     private int size;
 
-    public MinStack1(){
+    public MinStack1() {
         stackValue = new Stack<>();
         stackMin = new Stack<>();
     }
 
-    public void push(int value){
+    public void push(int value) {
         stackValue.push(value);
-        if(size == 0 || value <= stackMin.peek()){  //需要加上=
+        if (size == 0 || value <= stackMin.peek()) {  //需要加上=
             stackMin.push(value);
         }
         size++;
     }
 
-    public void pop(){
-        if(size == 0){
+    public void pop() {
+        if (size == 0) {
             throw new RuntimeException("栈为空！");
         }
-        if(stackValue.peek().equals(stackMin.peek())){  //由于Integer为包装类型，必须用equals比较
+        if (stackValue.peek().equals(stackMin.peek())) {  //由于Integer为包装类型，必须用equals比较
             stackMin.pop();
         }
         stackValue.pop();
         size--;
     }
 
-    public int top(){
-        if(size == 0){
+    public int top() {
+        if (size == 0) {
             throw new RuntimeException("栈为空！");
         }
         return stackValue.peek();
     }
 
-    public int getMin(){
-        if(size == 0){
+    public int getMin() {
+        if (size == 0) {
             throw new RuntimeException("栈为空！");
         }
         return stackMin.peek();

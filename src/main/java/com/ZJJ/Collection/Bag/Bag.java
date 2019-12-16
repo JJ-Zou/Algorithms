@@ -3,7 +3,6 @@ package com.ZJJ.Collection.Bag;
 import com.ZJJ.Node.Node;
 
 import java.util.Iterator;
-import java.util.ListIterator;
 
 public class Bag<T> implements Iterable<T> {
     private Node first;
@@ -18,19 +17,21 @@ public class Bag<T> implements Iterable<T> {
     }
 
     public void add(T value) {
-        if(first == null){
+        if (first == null) {
             first = new Node(value);
             rear = first;
-        }else {
+        } else {
             Node oldrear = rear;
             rear = new Node(value);
             oldrear.setNext(rear);
         }
     }
+
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
             private Node cur = first;
+
             @Override
             public boolean hasNext() {
                 return cur != null;
