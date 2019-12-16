@@ -11,6 +11,13 @@ public class BreadFirstPaths {
     private boolean[] marked;
     private int[] edgeTo;       //从起点到一个顶点的已知路径上的最后一个顶点
 
+    public BreadFirstPaths(Graph G) {
+        this.s = 0;
+        marked = new boolean[G.V()];
+        edgeTo = new int[G.V()];
+        bfs(G, s);
+    }
+
     /**
      * @param G 无向图
      * @param s 起点（任意点）
@@ -56,6 +63,18 @@ public class BreadFirstPaths {
         }
         SingleListNode<Integer> path = new SingleListNode<>();
         for (int x = v; x != s; x = edgeTo[x]) {
+            path.addFirst(x);
+        }
+        path.addFirst(s);
+        return path;
+    }
+
+    public SingleListNode<Integer> path() {
+        if (!hasPathsTo(marked.length)) {
+            return null;
+        }
+        SingleListNode<Integer> path = new SingleListNode<>();
+        for (int x = marked.length; x != s; x = edgeTo[x]) {
             path.addFirst(x);
         }
         path.addFirst(s);
