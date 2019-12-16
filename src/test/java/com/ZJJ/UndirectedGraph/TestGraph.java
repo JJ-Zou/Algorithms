@@ -1,7 +1,7 @@
 package com.ZJJ.UndirectedGraph;
 
 import com.ZJJ.Graph.UndirectedGraph.BreadFirstPaths;
-import com.ZJJ.Graph.UndirectedGraph.Cycle;
+import com.ZJJ.Graph.UndirectedGraph.CycleGraph.Cycle;
 import com.ZJJ.Graph.UndirectedGraph.DepthFirstPaths;
 import com.ZJJ.Graph.UndirectedGraph.LGraph.Graph;
 import org.junit.Test;
@@ -46,7 +46,7 @@ public class TestGraph {
     @Test
     public void testCycle() {
         Graph graph = new Graph(Graph.class
-                .getClassLoader().getResourceAsStream("graph2.txt"));
+                .getClassLoader().getResourceAsStream("graph3.txt"));
         Cycle cycle = new Cycle(graph);
         System.out.println(cycle.hasCycle());
     }
