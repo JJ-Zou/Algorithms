@@ -2,6 +2,7 @@ package com.ZJJ.UndirectedGraph;
 
 import com.ZJJ.Graph.UndirectedGraph.DepthFirstPaths;
 import com.ZJJ.Graph.UndirectedGraph.LGraph.Graph;
+import com.ZJJ.Graph.UndirectedGraph.LGraph.GraphDFS;
 import org.junit.Test;
 
 public class TestDFS {
@@ -17,5 +18,13 @@ public class TestDFS {
         DepthFirstPaths dfs = new DepthFirstPaths(new Graph(Graph.class.getClassLoader()
                 .getResourceAsStream("graph3.txt")));
         System.out.println(dfs.path());
+    }
+
+    @Test
+    public void test2() {
+        GraphDFS dfs = new GraphDFS(new Graph(Graph.class.getClassLoader()
+                .getResourceAsStream("graph3.txt")));
+        System.out.println(dfs.pre());
+        System.out.println(dfs.post());
     }
 }
