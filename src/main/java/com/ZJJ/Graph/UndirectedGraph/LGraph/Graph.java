@@ -1,8 +1,7 @@
 package com.ZJJ.Graph.UndirectedGraph.LGraph;
 import java.io.InputStream;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /**
  * 表示无向图的数据结构
@@ -11,7 +10,8 @@ import java.util.Scanner;
 public class Graph {
     private int V;
     private int E;
-    private List<Integer>[] adj;    //邻接表
+//    private List<Integer>[] adj;    //邻接表
+    private TreeSet<Integer>[] adj;     //用红黑树代替链表实现邻接表
     /**
      * 创建一个含有V个顶点但不含边的图
      * @param V 顶点
@@ -19,17 +19,17 @@ public class Graph {
     public Graph(int V) {
         this.V = V;
         this.E = 0;
-        adj = new LinkedList[V];
+        adj = new TreeSet[V];
         for (int v=0;v<V;v++){
-            adj[v] = new LinkedList<>();
+            adj[v] = new TreeSet<>();
         }
     }
     public Graph(InputStream inputStream) {
         Scanner scanner = new Scanner(inputStream);
         V = scanner.nextInt();
-        adj = new LinkedList[V];
+        adj = new TreeSet[V];
         for(int v=0;v<V;v++){
-            adj[v] = new LinkedList<>();
+            adj[v] = new TreeSet<>();
         }
         E = scanner.nextInt();
         for(int i=0;i<E;i++) {
@@ -77,7 +77,7 @@ public class Graph {
 //            degree++;
 //        }
 //        return degree;
-        return adj(v).size();
+        return ((TreeSet)adj(v)).size();
     }
 
 
@@ -124,7 +124,7 @@ public class Graph {
      * @param v 顶点
      * @return 顶点数
      */
-    public List<Integer> adj(int v) {
+    public Iterable<Integer> adj(int v) {
         return adj[v];
     }
 
