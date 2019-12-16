@@ -76,14 +76,14 @@ public class Graph {
      * @return
      */
     public int degree(int v) {
-        return adj(v).size();
+        return ((List)adj(v)).size();
     }
     /**
      * 和v相邻的所有顶点(邻接矩阵)
      * @param v
      * @return
      */
-    public List<Integer> adj(int v) {
+    public Iterable<Integer> adj(int v) {
         List<Integer> list = new LinkedList<>();
         for(int i=0;i<V;i++) {
             if(adj[v][i] == 1) {
