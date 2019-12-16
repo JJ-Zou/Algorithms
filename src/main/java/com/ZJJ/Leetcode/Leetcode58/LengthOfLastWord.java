@@ -6,16 +6,16 @@ package com.ZJJ.Leetcode.Leetcode58;
  */
 public class LengthOfLastWord {
     public int lengthOfLastWord(String s) {
-        if(s == null){
+        if (s == null) {
             return 0;
         }
-        int lastIndex = s.length()-1;
+        int lastIndex = s.length() - 1;
         int count = 0;
         int index = lastIndex;
-        while(index >=0 && s.charAt(index) == ' '){
+        while (index >= 0 && s.charAt(index) == ' ') {
             index--;
         }
-        while(index >=0 && s.charAt(index) != ' '){
+        while (index >= 0 && s.charAt(index) != ' ') {
             count++;
             index--;
         }

@@ -21,7 +21,7 @@ public class TestNode {
         listNode.addFirst(0);
         listNode.addFirst(0);
         System.out.println(listNode.toString());
-        listNode.updateNode(1,1);
+        listNode.updateNode(1, 1);
         System.out.println(listNode);
         System.out.println(listNode.size());
     }

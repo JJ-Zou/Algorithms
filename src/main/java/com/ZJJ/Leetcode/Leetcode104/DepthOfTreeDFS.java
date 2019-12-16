@@ -14,7 +14,7 @@ import java.util.Queue;
  */
 public class DepthOfTreeDFS {
     public int maxDepth(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
         Queue<TreeNode> queue = new LinkedList<>();
@@ -22,18 +22,18 @@ public class DepthOfTreeDFS {
         int leaf = 0;
         int depth = 0;
         queue.add(root);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             TreeNode t = queue.poll();
             size--;
-            if(t.left != null){
+            if (t.left != null) {
                 queue.add(t.left);
                 leaf++;
             }
-            if(t.right != null){
+            if (t.right != null) {
                 queue.add(t.right);
                 leaf++;
             }
-            if(size == 0){
+            if (size == 0) {
                 depth++;
                 size = leaf;
                 leaf = 0;

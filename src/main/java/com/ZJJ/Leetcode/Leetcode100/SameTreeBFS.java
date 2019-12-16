@@ -12,32 +12,32 @@ import java.util.Queue;
  */
 public class SameTreeBFS {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if(p == null && q == null) {
+        if (p == null && q == null) {
             return true;
         }
-        if(p == null || q == null) {
+        if (p == null || q == null) {
             return false;
         }
         Queue<TreeNode> queueP = new LinkedList<>();
         Queue<TreeNode> queueQ = new LinkedList<>();
         queueP.add(p);
         queueQ.add(q);
-        while(!queueP.isEmpty() && !queueQ.isEmpty()) {
-            if(queueP.peek().val != queueQ.peek().val){
+        while (!queueP.isEmpty() && !queueQ.isEmpty()) {
+            if (queueP.peek().val != queueQ.peek().val) {
                 return false;
             }
             TreeNode peekP = queueP.poll();
             TreeNode peekQ = queueQ.poll();
-            if(peekP.left != null && peekQ.left != null){
+            if (peekP.left != null && peekQ.left != null) {
                 queueP.add(peekP.left);
                 queueQ.add(peekQ.left);
-            }else if(peekP.left != null || peekQ.left != null){
+            } else if (peekP.left != null || peekQ.left != null) {
                 return false;
             }
-            if(peekP.right != null && peekQ.right != null){
+            if (peekP.right != null && peekQ.right != null) {
                 queueP.add(peekP.right);
                 queueQ.add(peekQ.right);
-            }else if(peekP.right != null || peekQ.right != null){
+            } else if (peekP.right != null || peekQ.right != null) {
                 return false;
             }
         }

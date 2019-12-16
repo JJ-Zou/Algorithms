@@ -17,6 +17,6 @@ public class TestSameTree {
         root.left.right = new TreeNode(3);
 
         SameTree sameTree = new SameTree();
-        System.out.println(sameTree.isSameTree(root,root1));
+        System.out.println(sameTree.isSameTree(root, root1));
     }
 }

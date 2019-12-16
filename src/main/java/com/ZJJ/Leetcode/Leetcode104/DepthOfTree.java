@@ -7,9 +7,9 @@ import com.ZJJ.TreeNode.TreeNode;
  */
 public class DepthOfTree {
     public int maxDepth(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
-        return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     }
 }

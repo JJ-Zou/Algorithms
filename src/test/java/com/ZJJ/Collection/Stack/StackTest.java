@@ -10,10 +10,10 @@ public class StackTest {
     public void StackString() throws Exception {
         StackFixed<String> stringStack = new StackFixed<>();
         System.out.println(stringStack.capacity());
-        for(int i=0;i<16;i++){
-            stringStack.push("String "+i);
+        for (int i = 0; i < 16; i++) {
+            stringStack.push("String " + i);
         }
-        for (String string:stringStack){
+        for (String string : stringStack) {
             System.out.println(string);
         }
         System.out.println(stringStack.pop());
@@ -25,7 +25,7 @@ public class StackTest {
     public void StackInteger() throws Exception {
         StackFixed<Integer[]> stringStack = new StackFixed<>(42);
         System.out.println(stringStack.capacity());
-        for(int i=0;i<16;i++){
+        for (int i = 0; i < 16; i++) {
             stringStack.push(new Integer[]{i});
         }
         System.out.println(stringStack.peek());
@@ -35,12 +35,12 @@ public class StackTest {
     public void StackVar() throws Exception {
         StackVariable<String> stringStack = new StackVariable<>();
         System.out.println(stringStack.capacity());
-        for(int i=0;i<17;i++){
-            stringStack.push("V:"+i);
+        for (int i = 0; i < 17; i++) {
+            stringStack.push("V:" + i);
         }
         System.out.println(stringStack);
         System.out.println(stringStack.capacity());
-        for(int i=0;i<17;i++){
+        for (int i = 0; i < 17; i++) {
             stringStack.pop();
             System.out.println(stringStack);
             System.out.println(stringStack.capacity());

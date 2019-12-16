@@ -9,7 +9,7 @@ public class TestQueue {
         singleListNode.enqueue(1);
         singleListNode.enqueue(2);
         singleListNode.enqueue(3);
-        for (Integer integer:singleListNode){
+        for (Integer integer : singleListNode) {
             System.out.println(integer);
         }
         System.out.println(singleListNode);

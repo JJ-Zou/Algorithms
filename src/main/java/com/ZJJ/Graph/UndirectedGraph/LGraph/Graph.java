@@ -1,4 +1,5 @@
 package com.ZJJ.Graph.UndirectedGraph.LGraph;
+
 import java.io.InputStream;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -10,35 +11,44 @@ import java.util.TreeSet;
 public class Graph {
     private int V;
     private int E;
-//    private List<Integer>[] adj;    //邻接表
+    //    private List<Integer>[] adj;    //邻接表
     private TreeSet<Integer>[] adj;     //用红黑树代替链表实现邻接表
+
     /**
      * 创建一个含有V个顶点但不含边的图
+     *
      * @param V 顶点
      */
     public Graph(int V) {
         this.V = V;
         this.E = 0;
         adj = new TreeSet[V];
-        for (int v=0;v<V;v++){
+        for (int v = 0; v < V; v++) {
             adj[v] = new TreeSet<>();
         }
     }
+
+    /**
+     * 从文件中读取图到邻接表中
+     *
+     * @param inputStream
+     */
     public Graph(InputStream inputStream) {
         Scanner scanner = new Scanner(inputStream);
         V = scanner.nextInt();
         adj = new TreeSet[V];
-        for(int v=0;v<V;v++){
+        for (int v = 0; v < V; v++) {
             adj[v] = new TreeSet<>();
         }
         E = scanner.nextInt();
-        for(int i=0;i<E;i++) {
+        for (int i = 0; i < E; i++) {
             int edgeFront = scanner.nextInt();
             int edgeBack = scanner.nextInt();
             adj[edgeFront].add(edgeBack);
             adj[edgeBack].add(edgeFront);
         }
     }
+
     /**
      * @return 顶点数
      */
@@ -55,19 +65,20 @@ public class Graph {
 
     /**
      * 向图中添加一条边 v-w
+     *
      * @param v 顶点
      * @param w 顶点
      */
-    public void addEdge(int v,int w) {
+    public void addEdge(int v, int w) {
         adj[v].add(w);
         adj[w].add(v);
         E++;
     }
 
 
-
     /**
      * 计算v的度数
+     *
      * @param v 顶点
      * @return 度数，依附于它的边的总数
      */
@@ -77,18 +88,19 @@ public class Graph {
 //            degree++;
 //        }
 //        return degree;
-        return ((TreeSet)adj(v)).size();
+        return ((TreeSet) adj(v)).size();
     }
 
 
     /**
      * 计算所有顶点的最大度数
+     *
      * @return
      */
     public int maxDegree() {
         int max = 0;
-        for(int v=0;v<V;v++) {
-            if(degree(v) > max){
+        for (int v = 0; v < V; v++) {
+            if (degree(v) > max) {
                 max = degree(v);
             }
         }
@@ -97,30 +109,34 @@ public class Graph {
 
     /**
      * 计算所有顶点的平均度数
+     *
      * @return
      */
     public double avgDegree() {
-        return 2*E()/V();
+        return 2 * E() / V();
     }
 
 
     /**
      * 计算自环的个数
+     *
      * @return
      */
     public int numberOfSelfLoops() {
         int count = 0;
-        for (int v=0;v<V;v++) {
-            for (int w:adj(v)) {
+        for (int v = 0; v < V; v++) {
+            for (int w : adj(v)) {
                 if (v == w) {
                     count++;
                 }
             }
         }
-        return count/2;
+        return count / 2;
     }
+
     /**
      * 和v相邻的所有顶点(邻接表)
+     *
      * @param v 顶点
      * @return 顶点数
      */
@@ -130,11 +146,11 @@ public class Graph {
 
     @Override
     public String toString() {
-        StringBuilder sb =new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         sb.append(V).append("个顶点,").append(E).append("条边\n");
-        for (int v=0;v<V;v++){
+        for (int v = 0; v < V; v++) {
             sb.append(v).append(": ");
-            for(int w:adj(v)){
+            for (int w : adj(v)) {
                 sb.append(w).append(" ");
             }
             sb.append("\n");

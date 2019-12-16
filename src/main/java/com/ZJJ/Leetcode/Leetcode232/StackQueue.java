@@ -10,28 +10,31 @@ import java.util.Stack;
 public class StackQueue {
     private Stack<Integer> stack;
     private Stack<Integer> tempStack;
-    public StackQueue () {
+
+    public StackQueue() {
         stack = new Stack<>();
         tempStack = new Stack<>();
     }
-    public void push(int x){
-        while (!stack.isEmpty()){
+
+    public void push(int x) {
+        while (!stack.isEmpty()) {
             tempStack.push(stack.pop());
         }
         stack.push(x);
-        while (!tempStack.isEmpty()){
+        while (!tempStack.isEmpty()) {
             stack.push(tempStack.pop());
         }
     }
 
-    public int pop(){
+    public int pop() {
         return stack.pop();
     }
 
-    public int peek(){
+    public int peek() {
         return stack.peek();
     }
-    public boolean empty(){
+
+    public boolean empty() {
         return stack.isEmpty();
     }
 }

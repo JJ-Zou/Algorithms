@@ -12,19 +12,19 @@ package com.ZJJ.Leetcode.Leetcode53;
 public class MaximumSubarray {
     public int maxSubArray(int[] nums) {
         int len = nums.length;
-        if(len == 0){
+        if (len == 0) {
             return 0;
         }
         int maxSum = nums[0];
         int[] dp = new int[len];
         dp[0] = maxSum;
-        for(int i=1;i<len;i++){
-            if(dp[i-1]<0 && nums[i] > dp[i-1]) {
+        for (int i = 1; i < len; i++) {
+            if (dp[i - 1] < 0 && nums[i] > dp[i - 1]) {
                 dp[i] = nums[i];
-            }else {
-                dp[i] = dp[i-1]+nums[i];
+            } else {
+                dp[i] = dp[i - 1] + nums[i];
             }
-            maxSum = dp[i]>maxSum ? dp[i] : maxSum;
+            maxSum = dp[i] > maxSum ? dp[i] : maxSum;
         }
         return maxSum;
     }

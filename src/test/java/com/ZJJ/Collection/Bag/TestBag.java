@@ -10,8 +10,8 @@ public class TestBag {
         bag.add(2);
         bag.add(3);
         System.out.println(bag.getFirst());
-        for(int i:bag){
-            System.out.print(i+" ");
+        for (int i : bag) {
+            System.out.print(i + " ");
         }
     }
 }

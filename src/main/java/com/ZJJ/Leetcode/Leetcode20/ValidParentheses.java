@@ -9,23 +9,23 @@ import java.util.Stack;
  */
 public class ValidParentheses {
 
-    public boolean isValid(String s){
-        Stack<Character>  charStack = new Stack<>();
-        for(int i=0;i<s.length();i++){
-            if(s.length()%2 != 0 || charStack.size() > s.length()/2){
+    public boolean isValid(String s) {
+        Stack<Character> charStack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.length() % 2 != 0 || charStack.size() > s.length() / 2) {
                 return false;
             }
-            if(s.charAt(i) == '{' || s.charAt(i) == '(' || s.charAt(i) == '['){
+            if (s.charAt(i) == '{' || s.charAt(i) == '(' || s.charAt(i) == '[') {
                 charStack.push(s.charAt(i));
             } else if (!charStack.isEmpty() &&
                     ((s.charAt(i) == '}' && charStack.peek() == '{') ||
                             (s.charAt(i) == ')' && charStack.peek() == '(') ||
-                            (s.charAt(i) == ']' && charStack.peek() == '['))){
+                            (s.charAt(i) == ']' && charStack.peek() == '['))) {
                 charStack.pop();
             } else {
                 return false;
             }
         }
-        return charStack.isEmpty()?true:false;
+        return charStack.isEmpty();
     }
 }

@@ -11,33 +11,36 @@ public class StackQueue1 {
     private Stack<Integer> stack;
     private Stack<Integer> tempStack;
     private Integer peekValue;
+
     public StackQueue1() {
         stack = new Stack<>();
         tempStack = new Stack<>();
     }
-    public void push(int x){
-        if(stack.isEmpty()){
-            peekValue=x;
+
+    public void push(int x) {
+        if (stack.isEmpty()) {
+            peekValue = x;
         }
         stack.push(x);
     }
 
-    public int pop(){
-        while(stack.size()>1){
+    public int pop() {
+        while (stack.size() > 1) {
             peekValue = stack.pop();
             tempStack.push(peekValue);
         }
-        int popValue=stack.pop();
-        while(!tempStack.isEmpty()){
+        int popValue = stack.pop();
+        while (!tempStack.isEmpty()) {
             stack.push(tempStack.pop());
         }
         return popValue;
     }
 
-    public int peek(){
+    public int peek() {
         return peekValue;
     }
-    public boolean empty(){
+
+    public boolean empty() {
         return stack.isEmpty();
     }
 }
