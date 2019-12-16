@@ -1,5 +1,7 @@
 package com.ZJJ.Graph.UndirectedGraph;
 
+import com.ZJJ.Graph.UndirectedGraph.LGraph.Graph;
+
 public class DepthFirstSearch {
     private boolean[] marked;
     private int count;
@@ -9,7 +11,7 @@ public class DepthFirstSearch {
      * @param G 无向图
      * @param s 起点（任意点）
      */
-    public DepthFirstSearch(Graph G,int s) {
+    public DepthFirstSearch(Graph G, int s) {
         marked = new boolean[G.V()];
         dfs(G,s);
     }

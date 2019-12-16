@@ -1,5 +1,6 @@
 package com.ZJJ.Graph.UndirectedGraph;
 
+import com.ZJJ.Graph.UndirectedGraph.LGraph.Graph;
 import com.ZJJ.Node.SingleListNode.SingleListNode;
 
 import java.util.LinkedList;

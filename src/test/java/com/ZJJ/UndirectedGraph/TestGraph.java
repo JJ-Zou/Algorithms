@@ -2,9 +2,7 @@ package com.ZJJ.UndirectedGraph;
 
 import com.ZJJ.Graph.UndirectedGraph.BreadFirstPaths;
 import com.ZJJ.Graph.UndirectedGraph.DepthFirstPaths;
-import com.ZJJ.Graph.UndirectedGraph.DepthFirstSearch;
-import com.ZJJ.Graph.UndirectedGraph.Graph;
-import com.ZJJ.Node.SingleListNode.SingleListNode;
+import com.ZJJ.Graph.UndirectedGraph.LGraph.Graph;
 import org.junit.Test;
 
 
@@ -37,6 +35,6 @@ public class TestGraph {
     }
 
     @Test
-    public void testDFS() throws Exception {
+    public void testMatrix() throws Exception {
     }
 }

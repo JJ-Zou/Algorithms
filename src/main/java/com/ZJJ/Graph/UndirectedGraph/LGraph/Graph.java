@@ -1,15 +1,18 @@
-package com.ZJJ.Graph.UndirectedGraph;
+package com.ZJJ.Graph.UndirectedGraph.LGraph;
+import java.io.File;
+import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * 表示无向图的数据结构
- *
+ * 邻接表
  */
 public class Graph {
     private final int V;
     private int E;
-    private List<Integer>[] adj;
+    private List<Integer>[] adj;    //邻接表
     /**
      * 创建一个含有V个顶点但不含边的图
      * @param V 顶点
@@ -48,18 +51,22 @@ public class Graph {
         E++;
     }
 
+
+
     /**
      * 计算v的度数
      * @param v 顶点
      * @return 度数，依附于它的边的总数
      */
     public int degree(int v) {
-        int degree = 0;
-        for(int w:adj(v)) {
-            degree++;
-        }
-        return degree;
+//        int degree = 0;
+//        for(int w:adj(v)) {
+//            degree++;
+//        }
+//        return degree;
+        return adj(v).size();
     }
+
 
     /**
      * 计算所有顶点的最大度数
@@ -100,18 +107,18 @@ public class Graph {
         return count/2;
     }
     /**
-     * 和v相邻的所有顶点
+     * 和v相邻的所有顶点(邻接表)
      * @param v 顶点
      * @return 顶点数
      */
-    public Iterable<Integer> adj(int v) {
+    public List<Integer> adj(int v) {
         return adj[v];
     }
 
     @Override
     public String toString() {
         StringBuilder sb =new StringBuilder();
-        sb.append(V).append("个顶点").append(E).append("条边\n");
+        sb.append(V).append("个顶点,").append(E).append("条边\n");
         for (int v=0;v<V;v++){
             sb.append(v).append(": ");
             for(int w:adj(v)){
