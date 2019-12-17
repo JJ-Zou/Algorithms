@@ -1,6 +1,5 @@
 package com.ZJJ.Graph.UndirectedGraph.MGraph;
 
-import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -23,10 +22,11 @@ public class Graph {
     /**
      * 从文件中读出邻接矩阵
      *
-     * @param inputStream
+     * @param filename
      */
-    public Graph(InputStream inputStream) {
-        Scanner scanner = new Scanner(inputStream);
+    public Graph(String filename) {
+        Scanner scanner = new Scanner(com.ZJJ.Graph.UndirectedGraph.MGraph.Graph.class
+                .getClassLoader().getResourceAsStream(filename));
         this.V = scanner.nextInt();
         adj = new int[V][V];
         this.E = scanner.nextInt();

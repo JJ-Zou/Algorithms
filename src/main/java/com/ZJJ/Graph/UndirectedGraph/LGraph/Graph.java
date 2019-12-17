@@ -31,10 +31,11 @@ public class Graph {
     /**
      * 从文件中读取图到邻接表中
      *
-     * @param inputStream
+     * @param filename
      */
-    public Graph(InputStream inputStream) {
-        Scanner scanner = new Scanner(inputStream);
+    public Graph(String filename) {
+        Scanner scanner = new Scanner(Graph.class
+                .getClassLoader().getResourceAsStream(filename));
         V = scanner.nextInt();
         adj = new TreeSet[V];
         for (int v = 0; v < V; v++) {
