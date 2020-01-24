@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter2_Sort/Comparable/ComparableSort.java" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter2_Sort/Comparable/ComparableSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Algorithms4TH/Chapter2_Sort/Test/test.java" afterPath="$PROJECT_DIR$/src/test/java/com/ZJJ/Algorithms4TH/Chapter2_Sort/Test/test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -743,7 +741,7 @@
       <workItem from="1579275282927" duration="1124000" />
       <workItem from="1579311591933" duration="206000" />
       <workItem from="1579328570518" duration="57264000" />
-      <workItem from="1579694067939" duration="24659000" />
+      <workItem from="1579694067939" duration="25286000" />
     </task>
     <task id="LOCAL-00001" summary="ListNode">
       <created>1575787165300</created>
@@ -990,7 +988,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579446478179</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="算法第四版 排序">
+      <created>1579785506729</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1579785506729</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1026,7 +1031,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220285000" />
+    <option name="totallyTimeSpent" value="220912000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1172,7 +1177,8 @@
     <MESSAGE value="定义字符图" />
     <MESSAGE value="leetcode" />
     <MESSAGE value="算法第四版" />
-    <option name="LAST_COMMIT_MESSAGE" value="算法第四版" />
+    <MESSAGE value="算法第四版 排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="算法第四版 排序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
