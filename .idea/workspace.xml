@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode42接雨水">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode239/SlidingWindow.java" afterDir="false" />
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode239滑动窗口的最大值">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -322,7 +321,7 @@
       <workItem from="1583985521599" duration="539000" />
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
-      <workItem from="1584025838152" duration="2363000" />
+      <workItem from="1584025838152" duration="3214000" />
     </task>
     <task id="LOCAL-00001" summary="ListNode">
       <created>1575787165300</created>
@@ -604,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584026610830</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="leetcode239滑动窗口的最大值">
+      <created>1584034456814</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1584034456814</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -699,13 +705,14 @@
     <MESSAGE value="算法第四版 排序 优先队列" />
     <MESSAGE value="update" />
     <MESSAGE value="leetcode42接雨水" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetcode42接雨水" />
+    <MESSAGE value="leetcode239滑动窗口的最大值" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode239滑动窗口的最大值" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584026642627">
+    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584034456022">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584026642627" />
+    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584034456022" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
