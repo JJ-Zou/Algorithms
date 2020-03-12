@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode42/RainWater.java" afterDir="false" />
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode42接雨水">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +108,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
@@ -322,7 +321,7 @@
       <workItem from="1583985521599" duration="539000" />
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
-      <workItem from="1584025838152" duration="254000" />
+      <workItem from="1584025838152" duration="764000" />
     </task>
     <task id="LOCAL-00001" summary="ListNode">
       <created>1575787165300</created>
@@ -590,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583985494638</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="leetcode42接雨水">
+      <created>1584026226728</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1584026226728</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -684,13 +690,14 @@
     <MESSAGE value="算法第四版 排序" />
     <MESSAGE value="算法第四版 排序 优先队列" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="leetcode42接雨水" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode42接雨水" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1583985493389">
+    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584026225825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1583985493389" />
+    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584026225825" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -715,10 +722,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="391" y="63" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1581058601353" />
-    <state x="144" y="0" key="SettingsEditor" timestamp="1583985450578">
+    <state x="144" y="0" key="SettingsEditor" timestamp="1584026602165">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1583985450578" />
+    <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584026602165" />
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584026229037">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584026229037" />
     <state x="337" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583986950507">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
