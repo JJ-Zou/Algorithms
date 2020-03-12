@@ -3,8 +3,6 @@ package com.ZJJ.Algorithms4TH.Chapter2_Sort.Test;
 import com.ZJJ.Algorithms4TH.Chapter2_Sort.Comparable.ComparableSort;
 import com.ZJJ.Algorithms4TH.Chapter2_Sort.Comparable.PriorityQueue;
 import org.junit.Test;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Random;
 
 public class test {

@@ -1,7 +1,5 @@
 package com.ZJJ.Algorithms4TH.Chapter2_Sort.Comparable;
 
-import java.util.Arrays;
-
 public class ComparableSort {
 
     /**
@@ -14,7 +12,7 @@ public class ComparableSort {
         int len = a.length;
         int left = 0;
         int right = len - 1;
-        boolean flag = false;
+        boolean flag;
         while (left < right) {
             flag = true;
             for (int i = left; i < right; i++) {
