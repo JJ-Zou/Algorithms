@@ -54,7 +54,7 @@ public class Manacher {
                 maxRight = cur + upset - 1;
                 curMid = cur++;
             } else if (max[curMid - (cur - curMid)] < maxRight - cur + 1) {
-                max[cur] = max[maxRight - cur];
+                max[cur] = max[curMid - (cur - curMid)];
                 cur++;
             } else {
                 max[cur] = maxRight - cur + 1;
