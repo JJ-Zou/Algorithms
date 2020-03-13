@@ -51,15 +51,14 @@ public class Manacher {
                     maxIndex = cur;
                 }
                 max[cur] = upset;
-                maxRight = cur + upset - 1;
-                curMid = cur++;
-            } else if (max[curMid - (cur - curMid)] < maxRight - cur + 1) {
-                max[cur] = max[curMid - (cur - curMid)];
-                cur++;
+                if(maxRight != cur + upset - 1) {
+                    curMid = cur;
+                    maxRight = cur + upset - 1;
+                }
             } else {
-                max[cur] = maxRight - cur + 1;
-                cur++;
+                max[cur] = Math.min(maxRight - cur + 1, max[curMid - (cur - curMid)]);
             }
+            cur++;
         }
         StringBuilder sb = new StringBuilder();
         for (int i = maxIndex - maxR + 2; i <= maxIndex + maxR - 1; i += 2) {
