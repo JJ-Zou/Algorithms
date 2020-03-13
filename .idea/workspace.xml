@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="BFPRT算法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode17_14/BFPRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode17_14/BFPRT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode214/ShortestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode214/ShortestPalindrome.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,14 +323,8 @@
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
       <workItem from="1584025838152" duration="5187000" />
-      <workItem from="1584075763640" duration="10667000" />
-    </task>
-    <task id="LOCAL-00003" summary="为单链表增加了更多功能">
-      <created>1575813897774</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1575813897774</updated>
+      <workItem from="1584075763640" duration="11395000" />
+      <workItem from="1584109298867" duration="756000" />
     </task>
     <task id="LOCAL-00004" summary="用链表实现队列">
       <created>1575814227710</created>
@@ -668,7 +662,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584099117654</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="BFPRT算法">
+      <created>1584099972739</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1584099972739</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -776,10 +777,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="430" y="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680@0.0.1280.680" timestamp="1584098145880" />
-    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584099116824">
+    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584109940986">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584099116824" />
+    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584109940986" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -804,14 +805,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="391" y="63" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1581058601353" />
-    <state x="144" y="0" key="SettingsEditor" timestamp="1584026602165">
+    <state x="144" y="0" key="SettingsEditor" timestamp="1584109924082">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584026602165" />
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584085264018">
+    <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584109924082" />
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584109307495">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584085264018" />
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584109307495" />
     <state x="337" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583986950507">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

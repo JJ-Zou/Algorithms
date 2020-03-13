@@ -18,19 +18,19 @@ public class ShortestPalindrome {
         len = 2 * len + 1;
         int[] max = new int[len];
         int cur = 0;
-        int upset = 1;
+        int offset = 1;
         int maxRight = -1;
         int curMid = 0;
         while (maxRight < len - 1) {
             if (cur > maxRight || maxRight - cur + 1 == max[curMid - (cur - curMid)]) {
-                upset = (cur > maxRight) ? 1 : maxRight - cur + 1;
-                while (cur - upset >= 0 && cur + upset <= len - 1 && ch[cur - upset] == ch[cur + upset]) {
-                    upset++;
+                offset = (cur > maxRight) ? 1 : maxRight - cur + 1;
+                while (cur - offset >= 0 && cur + offset <= len - 1 && ch[cur - offset] == ch[cur + offset]) {
+                    offset++;
                 }
-                max[cur] = upset;
-                if (maxRight != cur + upset - 1) {
+                max[cur] = offset;
+                if (maxRight != cur + offset - 1) {
                     curMid = cur;
-                    maxRight = cur + upset - 1;
+                    maxRight = cur + offset - 1;
                 }
             } else {
                 max[cur] = Math.min(maxRight - cur + 1, max[curMid - (cur - curMid)]);
