@@ -22,13 +22,8 @@ public class BFPRT {
         }
         int less = left - 1;
         int more = right + 1;
-        int cur = left + 1;
+        int cur = left;
         int pivot = middle(arr, left, right);
-        for (int i = left; i <= right; i++) {
-            if (arr[i] == pivot) {
-                swap(arr, left, i);
-            }
-        }
         while (cur < more) {
             if (arr[cur] < pivot) {
                 swap(arr, cur++, ++less);

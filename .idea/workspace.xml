@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode214逆序马拉车">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode17_14/BFPRT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode214/ShortestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode214/ShortestPalindrome.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,14 +322,7 @@
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
       <workItem from="1584025838152" duration="5187000" />
-      <workItem from="1584075763640" duration="9332000" />
-    </task>
-    <task id="LOCAL-00001" summary="ListNode">
-      <created>1575787165300</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1575787165300</updated>
+      <workItem from="1584075763640" duration="9782000" />
     </task>
     <task id="LOCAL-00002" summary="update">
       <created>1575798527297</created>
@@ -662,7 +653,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584085253864</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="BFPRT算法">
+      <created>1584098700950</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1584098700950</updated>
+    </task>
+    <task id="LOCAL-00050" summary="leetcode214逆序马拉车">
+      <created>1584098711240</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1584098711241</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -734,7 +739,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="提取递归节点表示的单链表" />
     <MESSAGE value="leetcode155最小栈" />
     <MESSAGE value="-" />
     <MESSAGE value="链表改进，递归的toString()在链表存在10000个元素左右时，堆栈溢出，改为迭代实现。" />
@@ -758,6 +762,7 @@
     <MESSAGE value="leetcode169超过一半的数" />
     <MESSAGE value="KMP" />
     <MESSAGE value="leetcode5马拉车" />
+    <MESSAGE value="BFPRT算法" />
     <MESSAGE value="leetcode214逆序马拉车" />
     <option name="LAST_COMMIT_MESSAGE" value="leetcode214逆序马拉车" />
   </component>
@@ -770,10 +775,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="430" y="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680@0.0.1280.680" timestamp="1584098145880" />
-    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584098699747">
+    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584098710288">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584098699747" />
+    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584098710288" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
