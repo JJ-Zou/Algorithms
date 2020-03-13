@@ -3,9 +3,12 @@ package com.ZJJ.Leetcode.Leetcode17_14;
 import java.util.Arrays;
 
 /**
- * bfprt算法， 原理很简单， 实现起来比较复杂
+ * bfprt算法， 原理很简单， 实现起来比较复杂, 但是最差情况时间复杂度为 O(N)
  * 在快速排序切分前，获取数组中某一个处于相对中间的数字进行切分
  * 直到切分到使       less + 1 <= k <= more 为止
+ * 算法在数组长度为10000000，求前8888888小数，迭代次数计算每次遍历和交换
+ *      arr.length = 10000000, k =8888888, 迭代次数 = 53527350
+ *      迭代次数/数组长度 = 5
  */
 public class BFPRT {
     public int[] smallestK(int[] arr, int k) {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode214逆序马拉车">
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="BFPRT算法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode17_14/BFPRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode17_14/BFPRT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,14 +323,7 @@
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
       <workItem from="1584025838152" duration="5187000" />
-      <workItem from="1584075763640" duration="9782000" />
-    </task>
-    <task id="LOCAL-00002" summary="update">
-      <created>1575798527297</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1575798527297</updated>
+      <workItem from="1584075763640" duration="10667000" />
     </task>
     <task id="LOCAL-00003" summary="为单链表增加了更多功能">
       <created>1575813897774</created>
@@ -667,7 +661,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584098711241</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="BFPRT算法">
+      <created>1584099117654</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1584099117654</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -762,9 +763,9 @@
     <MESSAGE value="leetcode169超过一半的数" />
     <MESSAGE value="KMP" />
     <MESSAGE value="leetcode5马拉车" />
-    <MESSAGE value="BFPRT算法" />
     <MESSAGE value="leetcode214逆序马拉车" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetcode214逆序马拉车" />
+    <MESSAGE value="BFPRT算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="BFPRT算法" />
   </component>
   <component name="WindowStateProjectService">
     <state x="330" y="269" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584098144786">
@@ -775,10 +776,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="430" y="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680@0.0.1280.680" timestamp="1584098145880" />
-    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584098710288">
+    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584099116824">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584098710288" />
+    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584099116824" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
