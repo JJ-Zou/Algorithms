@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode239滑动窗口的最大值">
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode169超过一半的数">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Kmp/KMP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode5/Manacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -321,7 +323,8 @@
       <workItem from="1583985521599" duration="539000" />
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
-      <workItem from="1584025838152" duration="3214000" />
+      <workItem from="1584025838152" duration="5187000" />
+      <workItem from="1584075763640" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="ListNode">
       <created>1575787165300</created>
@@ -610,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584034456814</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="leetcode169超过一半的数">
+      <created>1584035167458</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1584035167458</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -706,13 +716,14 @@
     <MESSAGE value="update" />
     <MESSAGE value="leetcode42接雨水" />
     <MESSAGE value="leetcode239滑动窗口的最大值" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetcode239滑动窗口的最大值" />
+    <MESSAGE value="leetcode169超过一半的数" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode169超过一半的数" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584034456022">
+    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584035166636">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584034456022" />
+    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584035166636" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -753,6 +764,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="28" y="45" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1583986978651" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1584077660666">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1584077660666" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1584040476449">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1584040476449" />
   </component>
   <component name="masterDetails">
     <states>
