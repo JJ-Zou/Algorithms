@@ -42,7 +42,7 @@ public class Manacher {
         int maxR = -1;
         while (maxRight < len - 1) {
             if (cur > maxRight || max[curMid - (cur - curMid)] == maxRight - cur + 1) {
-                upset = (cur > maxRight) ? 1 : max[maxRight - cur];
+                upset = (cur > maxRight) ? 1 : maxRight - cur + 1;
                 while (cur - upset >= 0 && cur + upset <= len - 1 && ch[cur - upset] == ch[cur + upset]) {
                     upset++;
                 }

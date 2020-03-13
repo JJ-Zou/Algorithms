@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode169超过一半的数">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Kmp/KMP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode5/Manacher.java" afterDir="false" />
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="KMP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode5/Manacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode5/Manacher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +323,7 @@
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
       <workItem from="1584025838152" duration="5187000" />
-      <workItem from="1584075763640" duration="2335000" />
+      <workItem from="1584075763640" duration="3534000" />
     </task>
     <task id="LOCAL-00001" summary="ListNode">
       <created>1575787165300</created>
@@ -620,7 +619,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584035167458</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="leetcode5马拉车">
+      <created>1584078169975</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1584078169975</updated>
+    </task>
+    <task id="LOCAL-00044" summary="KMP">
+      <created>1584078196134</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1584078196134</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -692,8 +705,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ListNode" />
-    <MESSAGE value="为单链表增加了更多功能" />
     <MESSAGE value="用链表实现队列" />
     <MESSAGE value="提取递归节点表示的单链表" />
     <MESSAGE value="leetcode155最小栈" />
@@ -717,13 +728,15 @@
     <MESSAGE value="leetcode42接雨水" />
     <MESSAGE value="leetcode239滑动窗口的最大值" />
     <MESSAGE value="leetcode169超过一半的数" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetcode169超过一半的数" />
+    <MESSAGE value="leetcode5马拉车" />
+    <MESSAGE value="KMP" />
+    <option name="LAST_COMMIT_MESSAGE" value="KMP" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584078181864">
+    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584078195232">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584078181864" />
+    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584078195232" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -752,10 +765,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584026602165" />
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584026700588">
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584078207103">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584026700588" />
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584078207103" />
     <state x="337" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583986950507">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
