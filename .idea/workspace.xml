@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode5马拉车">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode214/ShortestPalindrome.java" afterDir="false" />
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode214逆序马拉车">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode17_14/BFPRT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode5/Manacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode5/Manacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode214/ShortestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode214/ShortestPalindrome.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +324,7 @@
       <workItem from="1583986936781" duration="45000" />
       <workItem from="1584005194678" duration="1000000" />
       <workItem from="1584025838152" duration="5187000" />
-      <workItem from="1584075763640" duration="7510000" />
+      <workItem from="1584075763640" duration="9332000" />
     </task>
     <task id="LOCAL-00001" summary="ListNode">
       <created>1575787165300</created>
@@ -648,7 +648,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584079981838</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="leetcode5马拉车">
+      <created>1584085235756</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1584085235756</updated>
+    </task>
+    <task id="LOCAL-00048" summary="leetcode214逆序马拉车">
+      <created>1584085253864</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1584085253864</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -720,7 +734,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="用链表实现队列" />
     <MESSAGE value="提取递归节点表示的单链表" />
     <MESSAGE value="leetcode155最小栈" />
     <MESSAGE value="-" />
@@ -745,13 +758,22 @@
     <MESSAGE value="leetcode169超过一半的数" />
     <MESSAGE value="KMP" />
     <MESSAGE value="leetcode5马拉车" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetcode5马拉车" />
+    <MESSAGE value="leetcode214逆序马拉车" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode214逆序马拉车" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584085234710">
+    <state x="330" y="269" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584098144786">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584085234710" />
+    <state x="330" y="269" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1584098144786" />
+    <state x="430" y="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1584098145880">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="430" y="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680@0.0.1280.680" timestamp="1584098145880" />
+    <state x="248" y="0" key="CommitChangelistDialog2" timestamp="1584085253031">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="248" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584085253031" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1583985432230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -780,10 +802,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584026602165" />
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584078207103">
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584085264018">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584078207103" />
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584085264018" />
     <state x="337" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583986950507">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
