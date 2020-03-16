@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode5马拉车">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode695/MaxIsland.java" afterDir="false" />
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode695">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode84/LargestRectangleArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -325,14 +325,8 @@
       <workItem from="1584025838152" duration="5187000" />
       <workItem from="1584075763640" duration="11395000" />
       <workItem from="1584109298867" duration="2795000" />
-      <workItem from="1584249386848" duration="2628000" />
-    </task>
-    <task id="LOCAL-00006" summary="leetcode155最小栈">
-      <created>1575855570467</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1575855570467</updated>
+      <workItem from="1584249386848" duration="2684000" />
+      <workItem from="1584345352029" duration="926000" />
     </task>
     <task id="LOCAL-00007" summary="leetcode">
       <created>1575941179641</created>
@@ -670,7 +664,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584110113030</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="leetcode695">
+      <created>1584257758232</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1584257758232</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -752,7 +753,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="leetcode155最小栈" />
     <MESSAGE value="-" />
     <MESSAGE value="链表改进，递归的toString()在链表存在10000个元素左右时，堆栈溢出，改为迭代实现。" />
     <MESSAGE value="二叉树数据结构TreeNode" />
@@ -777,7 +777,8 @@
     <MESSAGE value="BFPRT算法" />
     <MESSAGE value="leetcode214逆序马拉车" />
     <MESSAGE value="leetcode5马拉车" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetcode5马拉车" />
+    <MESSAGE value="leetcode695" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode695" />
   </component>
   <component name="WindowStateProjectService">
     <state x="330" y="269" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584098144786">
@@ -788,10 +789,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="430" y="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680@0.0.1280.680" timestamp="1584098145880" />
-    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584110112087">
+    <state x="131" y="0" key="CommitChangelistDialog2" timestamp="1584257757389">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584110112087" />
+    <state x="131" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584257757389" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1584110320733">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -824,10 +825,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584110362239" />
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584110335492">
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1584257760464">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584110335492" />
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584257760464" />
     <state x="337" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583986950507">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
