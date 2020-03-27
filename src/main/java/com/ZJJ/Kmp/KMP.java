@@ -28,15 +28,15 @@ public class KMP {
         }
         int[] next = new int[str.length()];
         next[0] = -1;
-        next[1] = 0;
-        int cur = 2;
-        while (cur < str.length()) {
-            if (str.charAt(cur - 1) == next[cur - 1]) {
-                next[cur++] = next[cur - 1] + 1;
-            } else if (next[cur - 1] > 0) {
-                next[cur - 1] = next[next[cur - 1]];
-            } else {
-                next[cur++] = 0;
+        int k = -1;
+        int cur = 0;
+        while (cur < str.length() - 1) {
+            if(k == -1 || str.charAt(cur) == str.charAt(k)) {
+                k++;
+                cur++;
+                next[cur] = k;
+            }else {
+                k = next[k];
             }
         }
         return next;
