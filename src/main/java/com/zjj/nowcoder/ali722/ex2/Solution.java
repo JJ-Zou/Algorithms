@@ -28,6 +28,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(subArray(5, 2, new int[]{1, 2, 1, 2, 2, 1, 5}));
+        System.out.println(subArray(5, 2, new int[]{1, 2, 3, 4, 4}));
     }
 }
