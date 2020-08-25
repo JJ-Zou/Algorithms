@@ -3,137 +3,176 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="leetcode695">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode207/CourseSchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zjj/treeNode/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zjj/traversal/PostOrderTraversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+    <list default="true" id="99326820-7e21-4e7e-adbf-c918b8181604" name="Default" comment="refactor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode208/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode748/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode788/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/zjj/test1/ex1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_8_5_21_23_[Default]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter1_Basic/Union_Find/QuickFind/QuickFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickFind/QuickFind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnion/QuickUnion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnion/QuickUnion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnionCompression/QuickUnionCompression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnionCompression/QuickUnionCompression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnionRankCompression/QuickUnionRankCompression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnionRankCompression/QuickUnionRankCompression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter1_Basic/Union_Find/RankQuickUnion/RankQuickUnion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/RankQuickUnion/RankQuickUnion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter1_Basic/Union_Find/WeightQuickUnion/WeightQuickUnion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/WeightQuickUnion/WeightQuickUnion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter2_Sort/Comparable/ComparableSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter2_Sort/Comparable/ComparableSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter2_Sort/Comparable/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter2_Sort/Comparable/PriorityQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Algorithms4TH/Chapter5_String/StringSort/StringSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Algorithms4TH/Chapter5_String/StringSort/StringSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Collection/Bag/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Collection/Bag/Bag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Collection/Queue/QueueSingleListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Collection/Queue/QueueSingleListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Collection/Stack/StackFixed/StackFixed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Collection/Stack/StackFixed/StackFixed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Collection/Stack/StackListNode/StackListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Collection/Stack/StackListNode/StackListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Collection/Stack/StackVariable/StackVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Collection/Stack/StackVariable/StackVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/DataStructure/Learning/SparseArray/SparseArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/DataStructure/Learning/SparseArray/SparseArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/EdgeWeightedDigraph/DirectedEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/EdgeWeightedDigraph/DirectedEdge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/EdgeWeightedDigraph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/EdgeWeightedDigraph/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/EdgeWeightedDigraph/EdgeWeightedDigraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/EdgeWeightedDigraph/EdgeWeightedDigraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/BreadFirstPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/BreadFirstPaths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/ComponentConnected/CC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/ComponentConnected/CC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/CycleGraph/Cycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/CycleGraph/Cycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/DepthFirstPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/DepthFirstPaths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/DepthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/DepthFirstSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/LGraph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/LGraph/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/LGraph/GraphDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/LGraph/GraphDFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/MGraph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/MGraph/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/SymbolGraph/SymbolGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/SymbolGraph/SymbolGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Graph/UndirectedGraph/TwoColorGraph/TwoColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Graph/UndirectedGraph/TwoColorGraph/TwoColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Kmp/KMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Kmp/KMP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/LeetCode355/Twitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/LeetCode355/Twitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode1/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode1/TwoSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode100/SameTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode100/SameTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode100/SameTreeBFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode100/SameTreeBFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode100/SameTreeDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode100/SameTreeDFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode101/SymmetricTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode101/SymmetricTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode101/SymmetricTreeBFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode101/SymmetricTreeBFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode104/DepthOfTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode104/DepthOfTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode104/DepthOfTreeDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode104/DepthOfTreeDFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode107/LevelOrderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode107/LevelOrderTraversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode1071/GcdOfStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode1071/GcdOfStrings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode108/ToBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode108/ToBST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode110/ISBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode110/ISBST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode111/MinDepth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode111/MinDepth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode1111/MaxDepthAfterSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode1111/MaxDepthAfterSplit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode13/RomanToInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode13/RomanToInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode155/MinStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode155/MinStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode155/MinStack1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode155/MinStack1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode169/MajorityElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode169/MajorityElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode16_13/CutSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode16_13/CutSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode17_14/BFPRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode17_14/BFPRT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode20/ValidParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode20/ValidParentheses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode201/RangeAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode201/RangeAnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode21/MergeListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode21/MergeListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode21/MergeTwoListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode21/MergeTwoListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode214/ShortestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode214/ShortestPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode225/QueueStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode225/QueueStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode225/QueueStack1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode225/QueueStack1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode225/QueueStack2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode225/QueueStack2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode232/StackQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode232/StackQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode232/StackQueue1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode232/StackQueue1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode232/StackQueue2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode232/StackQueue2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode239/SlidingWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode239/SlidingWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode26/RemoveDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode26/RemoveDuplicates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode27/RemoveElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode27/RemoveElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode28/StrStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode28/StrStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode289/GameOfLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode289/GameOfLife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode35/SearchInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode35/SearchInsert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode38/CountAndSay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode38/CountAndSay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode42/RainWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode42/RainWater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode460/LFUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode460/LFUCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode467/SubstringInWraproundString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode467/SubstringInWraproundString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode5/Manacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode5/Manacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode520/DetectCapital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode520/DetectCapital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode53/MaximumSubarray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode53/MaximumSubarray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode532/K_diffPairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode532/K_diffPairs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode58/LengthOfLastWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode58/LengthOfLastWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode66/PlusOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode66/PlusOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode67/AddBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode67/AddBinary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode69/SqrtX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode69/SqrtX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode695/MaxIsland.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode695/MaxIsland.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode7/ReverseInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode7/ReverseInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode70/ClimbingStairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode70/ClimbingStairs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode72/MinDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode72/MinDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode78/SubSets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode78/SubSets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode817/Components.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode817/Components.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode84/LargestRectangleArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode84/LargestRectangleArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode85/MaxRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode85/MaxRectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode9/PalindromeNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode9/PalindromeNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode92/ReverseListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode92/ReverseListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode925/LongPressedName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode925/LongPressedName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode961/FindReated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode961/FindReated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/Leetcode_13/Moving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode_13/Moving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Leetcode/listNode/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/leetcode/listNode/ListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Node/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Node/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/Node/SingleListNode/SingleListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/Node/SingleListNode/SingleListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/TreeNode/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/traversal/Traversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/beautyOfProgramming/control_cpu_curve/LineCpu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/beautyOfProgramming/control_cpu_curve/LineCpu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/beautyOfProgramming/control_cpu_curve/SinCpu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/beautyOfProgramming/control_cpu_curve/SinCpu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/nowcoder/ali722/ex1/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/nowcoder/ali722/ex1/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/nowcoder/ali722/ex2/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/nowcoder/ali722/ex2/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/rbtree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/rbtree/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ZJJ/tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zjj/tree/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Algorithms4TH/Chapter1/Test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Algorithms4TH/Chapter1/Test/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Algorithms4TH/Chapter2_Sort/Test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Algorithms4TH/Chapter2_Sort/Test/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Algorithms4TH/Chapter5_String/Test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Algorithms4TH/Chapter5_String/Test/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Collection/Bag/TestBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Collection/Bag/TestBag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Collection/Queue/TestQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Collection/Queue/TestQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Collection/Stack/StackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Collection/Stack/StackTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Collection/Stack/TestStackNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Collection/Stack/TestStackNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Leetcode/Leetcode100/TestSameTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/leetcode/Leetcode100/TestSameTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Leetcode/Leetcode28/TestStrStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/leetcode/Leetcode28/TestStrStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Leetcode/Leetcode519/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/leetcode/Leetcode519/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Leetcode/Leetcode69/TestSqrtX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/leetcode/Leetcode69/TestSqrtX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Leetcode/Leetcode9/PalindromeNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/leetcode/Leetcode9/PalindromeNumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Leetcode/TestMinStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/leetcode/TestMinStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Leetcode/TestValidParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/leetcode/TestValidParentheses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/Node/SingleListNode/TestNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/Node/SingleListNode/TestNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/UndirectedGraph/MGraph/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/UndirectedGraph/MGraph/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/UndirectedGraph/TestDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/UndirectedGraph/TestDFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ZJJ/UndirectedGraph/TestGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zjj/UndirectedGraph/TestGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickFind/QuickFind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnion/QuickUnion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnionCompression/QuickUnionCompression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/QuickUnionRankCompression/QuickUnionRankCompression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/RankQuickUnion/RankQuickUnion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter1_Basic/Union_Find/WeightQuickUnion/WeightQuickUnion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter2_Sort/Comparable/ComparableSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter2_Sort/Comparable/PriorityQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter5_String/StringSort/StringSort$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Algorithms4TH/Chapter5_String/StringSort/StringSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Bag/Bag$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Bag/Bag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Queue/QueueSingleListNode$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Queue/QueueSingleListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Stack/StackFixed/StackFixed$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Stack/StackFixed/StackFixed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Stack/StackListNode/StackListNode$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Stack/StackListNode/StackListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Stack/StackVariable/StackVariable$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Collection/Stack/StackVariable/StackVariable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/DataStructure/Learning/SparseArray/SparseArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/EdgeWeightedDigraph/DirectedEdge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/EdgeWeightedDigraph/Edge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/EdgeWeightedDigraph/EdgeWeightedDigraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/BreadFirstPaths.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/ComponentConnected/CC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/CycleGraph/Cycle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/DepthFirstPaths.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/DepthFirstSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/LGraph/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/LGraph/GraphDFS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/MGraph/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/SymbolGraph/SymbolGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Graph/UndirectedGraph/TwoColorGraph/TwoColor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Kmp/KMP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Node/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/Node/SingleListNode/SingleListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/beautyOfProgramming/control_cpu_curve/LineCpu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/beautyOfProgramming/control_cpu_curve/SinCpu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/LeetCode355/Twitter$Tweet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/LeetCode355/Twitter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode1/TwoSum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode100/SameTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode100/SameTreeBFS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode100/SameTreeDFS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode101/SymmetricTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode101/SymmetricTreeBFS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode104/DepthOfTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode104/DepthOfTreeDFS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode107/LevelOrderTraversal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode1071/GcdOfStrings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode108/ToBST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode110/ISBST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode111/MinDepth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode1111/MaxDepthAfterSplit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode13/RomanToInteger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode1519/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode155/MinStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode155/MinStack1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode169/MajorityElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode16_13/CutSquare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode17_14/BFPRT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode20/ValidParentheses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode201/RangeAnd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode207/CourseSchedule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode21/MergeListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode21/MergeTwoListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode214/ShortestPalindrome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode225/QueueStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode225/QueueStack1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode225/QueueStack2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode232/StackQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode232/StackQueue1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode232/StackQueue2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode239/SlidingWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode26/RemoveDuplicates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode27/RemoveElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode28/StrStr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode289/GameOfLife.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode35/SearchInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode38/CountAndSay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode42/RainWater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode460/LFUCache$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode460/LFUCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode467/SubstringInWraproundString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode5/Manacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode520/DetectCapital.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode53/MaximumSubarray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode532/K_diffPairs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode58/LengthOfLastWord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode66/PlusOne.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode67/AddBinary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode69/SqrtX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode695/MaxIsland.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode7/ReverseInteger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode70/ClimbingStairs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode72/MinDistance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode78/SubSets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode817/Components.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode84/LargestRectangleArea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode85/MaxRectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode9/PalindromeNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode92/ReverseListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode925/LongPressedName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode961/FindReated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/Leetcode_13/Moving.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/leetcode/listNode/ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/nowcoder/ali722/ex1/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/nowcoder/ali722/ex2/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/rbtree/Tree$Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/rbtree/Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/traversal/Traversal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/tree/BinaryTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zjj/treeNode/TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graph1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graph2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graph3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graph4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/symbolGraph1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Algorithms4TH/Chapter1/Test/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Algorithms4TH/Chapter2_Sort/Test/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Algorithms4TH/Chapter5_String/Test/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Collection/Bag/TestBag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Collection/Queue/TestQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Collection/Stack/StackTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Collection/Stack/TestStackNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/Node/SingleListNode/TestNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/UndirectedGraph/MGraph/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/UndirectedGraph/TestDFS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/UndirectedGraph/TestGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/leetcode/Leetcode100/TestSameTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/leetcode/Leetcode28/TestStrStr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/leetcode/Leetcode519/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/leetcode/Leetcode69/TestSqrtX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/leetcode/Leetcode9/PalindromeNumberTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/leetcode/TestMinStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/leetcode/TestValidParentheses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zjj/traversal/PostOrderTraversal.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +213,9 @@
       </map>
     </option>
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="0ab1c367-25d8-4fbe-ab0d-b14dbbef4b8e" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -231,7 +273,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +307,7 @@
       <recent name="com.ZJJ.Graph.EdgeWeightedDigraph" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PostOrderTraversal.travel">
+  <component name="RunManager" selected="Application.Solution (2)">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -273,13 +315,41 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="CourseSchedule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zjj.leetcode.Leetcode207.CourseSchedule" />
+    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zjj.leetcode.Leetcode748.Solution" />
       <module name="Algorithms" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zjj.leetcode.Leetcode207.*" />
+          <option name="PATTERN" value="com.zjj.leetcode.Leetcode748.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zjj.leetcode.Leetcode788.Solution" />
+      <module name="Algorithms" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zjj.leetcode.Leetcode788.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zjj.leetcode.Leetcode1519.Solution" />
+      <module name="Algorithms" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zjj.leetcode.Leetcode1519.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -289,6 +359,20 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ex1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zjj.test1.ex1" />
+      <module name="Algorithms" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zjj.test1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -330,57 +414,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test.Sort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zjj.Algorithms4TH.Chapter2_Sort.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zjj.Algorithms4TH.Chapter2_Sort.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.zjj.Algorithms4TH.Chapter2_Sort.Test.test" />
-      <option name="METHOD_NAME" value="Sort" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test.pQ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zjj.Algorithms4TH.Chapter2_Sort.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zjj.Algorithms4TH.Chapter2_Sort.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.zjj.Algorithms4TH.Chapter2_Sort.Test.test" />
-      <option name="METHOD_NAME" value="pQ" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test.stringSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zjj.Algorithms4TH.Chapter5_String.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zjj.Algorithms4TH.Chapter5_String.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.zjj.Algorithms4TH.Chapter5_String.Test.test" />
-      <option name="METHOD_NAME" value="stringSort" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -400,19 +433,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CourseSchedule" />
-      <item itemvalue="JUnit.test.Sort" />
-      <item itemvalue="JUnit.test.pQ" />
-      <item itemvalue="JUnit.test.stringSort" />
+      <item itemvalue="Application.Solution" />
       <item itemvalue="JUnit.PostOrderTraversal.travel" />
+      <item itemvalue="Application.Solution (1)" />
+      <item itemvalue="Application.ex1" />
+      <item itemvalue="Application.Solution (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (2)" />
+        <item itemvalue="Application.ex1" />
+        <item itemvalue="Application.Solution (1)" />
+        <item itemvalue="Application.Solution" />
         <item itemvalue="JUnit.PostOrderTraversal.travel" />
-        <item itemvalue="Application.CourseSchedule" />
-        <item itemvalue="JUnit.test.stringSort" />
-        <item itemvalue="JUnit.test.pQ" />
-        <item itemvalue="JUnit.test.Sort" />
       </list>
     </recent_temporary>
   </component>
@@ -461,14 +494,13 @@
       <workItem from="1584249386848" duration="2684000" />
       <workItem from="1584345352029" duration="926000" />
       <workItem from="1596528907606" duration="2145000" />
-      <workItem from="1596603439545" duration="2391000" />
-    </task>
-    <task id="LOCAL-00007" summary="leetcode">
-      <created>1575941179641</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1575941179641</updated>
+      <workItem from="1596603439545" duration="2822000" />
+      <workItem from="1596606606418" duration="7769000" />
+      <workItem from="1596796753787" duration="2177000" />
+      <workItem from="1596947729781" duration="337000" />
+      <workItem from="1597641957479" duration="6000" />
+      <workItem from="1598184391593" duration="2420000" />
+      <workItem from="1598254038993" duration="9179000" />
     </task>
     <task id="LOCAL-00008" summary="leetcode">
       <created>1575951979157</created>
@@ -806,7 +838,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584257758232</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="refactor">
+      <created>1596605907689</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1596605907690</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -839,6 +878,13 @@
             <State>
               <option name="FILTERS">
                 <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
                   <entry key="user">
                     <value>
                       <list>
@@ -856,7 +902,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="-" />
     <MESSAGE value="链表改进，递归的toString()在链表存在10000个元素左右时，堆栈溢出，改为迭代实现。" />
     <MESSAGE value="二叉树数据结构TreeNode" />
     <MESSAGE value="无向图的数据结构Graph，无向图的DFS和BFS及其非递归实现" />
@@ -881,40 +926,85 @@
     <MESSAGE value="leetcode214逆序马拉车" />
     <MESSAGE value="leetcode5马拉车" />
     <MESSAGE value="leetcode695" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetcode695" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1598186094976">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598186094976" />
+    <state x="245" y="0" key="CommitChangelistDialog2" timestamp="1596605903984">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="245" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596605903984" />
     <state x="90" y="146" key="FileChooserDialogImpl" timestamp="1596605825250">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="90" y="146" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596605825250" />
-    <state width="1493" height="200" key="GridCell.Tab.0.bottom" timestamp="1596605745519">
+    <state width="1493" height="200" key="GridCell.Tab.0.bottom" timestamp="1598340855876">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596605745519" />
-    <state width="1493" height="200" key="GridCell.Tab.0.center" timestamp="1596605745519">
+    <state width="1493" height="200" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598340855876" />
+    <state width="1493" height="200" key="GridCell.Tab.0.center" timestamp="1598340855876">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596605745519" />
-    <state width="1493" height="200" key="GridCell.Tab.0.left" timestamp="1596605745519">
+    <state width="1493" height="200" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598340855876" />
+    <state width="1493" height="200" key="GridCell.Tab.0.left" timestamp="1598340855875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596605745519" />
-    <state width="1493" height="200" key="GridCell.Tab.0.right" timestamp="1596605745519">
+    <state width="1493" height="200" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598340855875" />
+    <state width="1493" height="200" key="GridCell.Tab.0.right" timestamp="1598340855876">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596605745519" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1596605832607">
+    <state width="1493" height="200" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598340855876" />
+    <state width="1493" height="271" key="GridCell.Tab.1.bottom" timestamp="1598272930512">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1596605832607" />
+    <state width="1493" height="271" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598272930512" />
+    <state width="1493" height="271" key="GridCell.Tab.1.center" timestamp="1598272930512">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="271" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598272930512" />
+    <state width="1493" height="271" key="GridCell.Tab.1.left" timestamp="1598272930512">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="271" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598272930512" />
+    <state width="1493" height="271" key="GridCell.Tab.1.right" timestamp="1598272930512">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="271" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598272930512" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1598186011045">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598186011045" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1596606234542">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596606234542" />
     <state x="574" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596604447460">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1596604447460" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1596537346641">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598256121976">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596537346641" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598256121976" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zjj/leetcode/Leetcode788/Solution.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="map" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
