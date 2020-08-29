@@ -36,7 +36,6 @@ public class ex2 {
         System.out.println(arr1.equals(arr2));
         System.out.println(Arrays.equals(arr1, arr2));
     }
-
     @Test
     public void testListEq() {
         Integer[] arr1 = new Integer[]{1, 2};
@@ -48,8 +47,4 @@ public class ex2 {
 
     }
 
-    @Test
-    public void testString2Int() {
-        System.out.println(Integer.parseInt("101", 2));
-    }
 }
