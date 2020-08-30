@@ -47,4 +47,8 @@ public class ex2 {
 
     }
 
+    @Test
+    public void testStringBuilder() {
+        StringBuilder stringBuilder = new StringBuilder();
+    }
 }
