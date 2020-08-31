@@ -2,8 +2,7 @@ package com.zjj.test1;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ex2 {
     @Test
