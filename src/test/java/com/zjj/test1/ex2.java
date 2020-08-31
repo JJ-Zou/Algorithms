@@ -58,13 +58,21 @@ public class ex2 {
         control.put('b',1);
         control.put('c',1);
         Iterator<Character> iterator = control.keySet().iterator();
-        while(iterator.hasNext()) {
-            if(iterator.next() == 'a') {
+        while (iterator.hasNext()) {
+            if (iterator.next() == 'a') {
                 iterator.remove();
             } else {
-                control.put('b',2);
+                control.put('b', 2);
             }
         }
         System.out.println(control);
+    }
+
+    @Test
+    public void sortArray() {
+        int[][] arr = new int[][]{{1, 1}, {3, 4}, {2, 3}};
+        List list = Arrays.asList(arr);
+        Collections.sort(list);
+        System.out.println(list);
     }
 }
