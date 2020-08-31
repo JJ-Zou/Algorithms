@@ -85,4 +85,21 @@ public class ex2 {
         s += "a";
         return s;
     }
+
+    @Test
+    public void removeTest() {
+        Map<Character, Integer> control = new HashMap<>();
+        control.put('a',1);
+        control.put('b',1);
+        control.put('c',1);
+        Iterator<Character> iterator = control.keySet().iterator();
+        while(iterator.hasNext()) {
+            if(iterator.next() == 'a') {
+                iterator.remove();
+            } else {
+                control.put('b',2);
+            }
+        }
+        System.out.println(control);
+    }
 }
