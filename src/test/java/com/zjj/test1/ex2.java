@@ -71,8 +71,12 @@ public class ex2 {
     @Test
     public void sortArray() {
         int[][] arr = new int[][]{{1, 1}, {3, 4}, {2, 3}};
-        List list = Arrays.asList(arr);
-        Collections.sort(list);
-        System.out.println(list);
+        Arrays.sort(arr, Comparator.comparingInt(o -> o[0]));
+        System.out.println(Arrays.deepToString(arr));
+    }
+
+    @Test
+    public void testToArray() {
+
     }
 }
