@@ -6,7 +6,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] arr = new int[]{1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1};
+        int[] arr = new int[]{8191};
         System.out.println(Arrays.toString(solution.sortByBits(arr)));
     }
 
@@ -21,7 +21,7 @@ public class Solution {
         }
         int[] res = new int[arr.length];
         int cur = 0;
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0; i <= 13; i++) {
             if (map.containsKey(i)) {
                 Queue<Integer> queue = map.get(i);
                 while (!queue.isEmpty()) {
