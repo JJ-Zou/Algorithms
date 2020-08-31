@@ -25,7 +25,7 @@ public class Solution {
                 && cb[(r + 2) % 3][(c + 2) % 3] == cb[r][c])
                 || (r + c == 2 && cb[(r + 1) % 3][(c + 2) % 3] == cb[r][c]
                 && cb[(r + 2) % 3][(c + 1) % 3] == cb[r][c])) {
-            return cb[r][c] == 1 ? "B" : "A";
+            return cb[r][c] == 1 ? "A" : "B";
         }
         return len == 9 ? "Draw" : "Pending";
     }
