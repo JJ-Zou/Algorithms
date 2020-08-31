@@ -76,7 +76,20 @@ public class ex2 {
     }
 
     @Test
-    public void testToArray() {
+    public void testTreeSet() {
+        Set<Integer> set = new TreeSet<>();
+        set.add(3);
+        set.add(3);
+        set.add(1);
+        System.out.println(set);
+    }
 
+    @Test
+    public void testPq() {
+        Queue<Integer> queue = new PriorityQueue<>();
+        queue.add(3);
+        queue.add(3);
+        queue.add(1);
+        System.out.println(queue);
     }
 }
