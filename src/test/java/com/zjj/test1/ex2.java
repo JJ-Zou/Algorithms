@@ -92,4 +92,9 @@ public class ex2 {
         queue.add(1);
         System.out.println(queue);
     }
+
+    @Test
+    public void testStringFormat() {
+        System.out.println("2019-01-1   5".compareTo("2019-12-31"));
+    }
 }
