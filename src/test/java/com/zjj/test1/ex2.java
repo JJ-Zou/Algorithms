@@ -97,6 +97,7 @@ public class ex2 {
     @Test
     public void testStringFormat() {
         System.out.println("2019-01-1   5".compareTo("2019-12-31"));
+        System.out.println(String.format("%04d-%02d-%02d", 2012, 1, 1));
     }
 
     @Test
