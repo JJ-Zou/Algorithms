@@ -35,6 +35,7 @@ public class ex2 {
         System.out.println(arr1.equals(arr2));
         System.out.println(Arrays.equals(arr1, arr2));
     }
+
     @Test
     public void testListEq() {
         Integer[] arr1 = new Integer[]{1, 2};
@@ -54,9 +55,9 @@ public class ex2 {
     @Test
     public void removeTest() {
         Map<Character, Integer> control = new HashMap<>();
-        control.put('a',1);
-        control.put('b',1);
-        control.put('c',1);
+        control.put('a', 1);
+        control.put('b', 1);
+        control.put('c', 1);
         Iterator<Character> iterator = control.keySet().iterator();
         while (iterator.hasNext()) {
             if (iterator.next() == 'a') {
@@ -96,5 +97,20 @@ public class ex2 {
     @Test
     public void testStringFormat() {
         System.out.println("2019-01-1   5".compareTo("2019-12-31"));
+    }
+
+    @Test
+    public void testHashArray() {
+        Set<int[]> set = new HashSet<>();
+        int[] cur = new int[]{0, 0};
+        set.add(cur);
+        cur[0]++;
+        set.add(new int[]{cur[0], cur[1]});
+        cur[0]--;
+        set.add(new int[]{cur[0], cur[1]});
+        System.out.println(set);
+        for (int[] ints : set) {
+            System.out.println(Arrays.toString(ints));
+        }
     }
 }
