@@ -114,4 +114,24 @@ public class ex2 {
             System.out.println(Arrays.toString(ints));
         }
     }
+
+    @Test
+    public void testTwoDimensionArray() {
+        int[] a1 = new int[]{1};
+        int[] a2 = new int[]{1, 2};
+        int[] a3 = new int[]{1, 2, 3};
+        int[] a4 = new int[]{1, 2, 3, 4};
+        List<int[]> list = new ArrayList<>();
+        list.add(a1);
+        list.add(a2);
+        list.add(a3);
+        list.add(a4);
+        int[][] array = list.toArray(new int[4][]);
+        System.out.println(Arrays.deepToString(array));
+        int[][] arr = new int[3][];
+        arr[0] = new int[] {1,2,3};
+        arr[1] = new int[] {2,3};
+        arr[2] = new int[] {3};
+        System.out.println(arr);
+    }
 }
