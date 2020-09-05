@@ -129,14 +129,19 @@ public class ex2 {
         int[][] array = list.toArray(new int[4][]);
         System.out.println(Arrays.deepToString(array));
         int[][] arr = new int[3][];
-        arr[0] = new int[] {1,2,3};
-        arr[1] = new int[] {2,3};
-        arr[2] = new int[] {3};
+        arr[0] = new int[]{1, 2, 3};
+        arr[1] = new int[]{2, 3};
+        arr[2] = new int[]{3};
         System.out.println(arr);
     }
 
     @Test
     public void bit2String() {
         System.out.println(Integer.toString(1341, 2));
+    }
+
+    @Test
+    public void testList(List<Integer> list) {
+        list.remove(list.size() - 1);
     }
 }
