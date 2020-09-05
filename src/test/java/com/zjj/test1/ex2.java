@@ -134,4 +134,9 @@ public class ex2 {
         arr[2] = new int[] {3};
         System.out.println(arr);
     }
+
+    @Test
+    public void bit2String() {
+        System.out.println(Integer.toString(1341, 2));
+    }
 }
