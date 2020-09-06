@@ -141,7 +141,12 @@ public class ex2 {
     }
 
     @Test
-    public void testList(List<Integer> list) {
-        list.remove(list.size() - 1);
+    public void testList() {
+    }
+
+    @Test
+    public void testMinus() {
+        System.out.println(Integer.MIN_VALUE - Integer.MAX_VALUE);
+        System.out.println(Integer.MAX_VALUE - Integer.MIN_VALUE);
     }
 }
