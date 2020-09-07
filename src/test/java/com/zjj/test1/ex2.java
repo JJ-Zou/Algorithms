@@ -50,6 +50,7 @@ public class ex2 {
     @Test
     public void testStringBuilder() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
     }
 
     @Test
@@ -149,4 +150,11 @@ public class ex2 {
         System.out.println(Integer.MIN_VALUE - Integer.MAX_VALUE);
         System.out.println(Integer.MAX_VALUE - Integer.MIN_VALUE);
     }
+
+    @Test
+    public void testMap() {
+        Map<Integer, String> map = new HashMap<>();
+        int hashArr[] = {1, 4};
+    }
+
 }
