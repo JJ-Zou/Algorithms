@@ -1,11 +1,11 @@
-package com.zjj.Leetcode.Leetcode39;
+package com.zjj.Leetcode.Leetcode40;
 
 import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        List<List<Integer>> lists = solution.combinationSum(new int[]{2, 3, 6, 7}, 7);
+        List<List<Integer>> lists = solution.combinationSum(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
         System.out.println(lists);
     }
 
@@ -28,9 +28,12 @@ public class Solution {
             if (target - candidates[i] < 0) {
                 return;
             }
+            if(i > fromIndex && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
             deque.addLast(candidates[i]);
             System.out.println("递归前：" + deque + ", target = " + (target - candidates[i]));
-            back(candidates, i, candidates.length, target - candidates[i], deque);
+            back(candidates, i + 1, candidates.length, target - candidates[i], deque);
             System.out.println("递归后：" + deque + ", target = " + target);
             deque.pollLast();
         }
