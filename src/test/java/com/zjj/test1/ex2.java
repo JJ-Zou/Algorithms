@@ -122,6 +122,8 @@ public class ex2 {
         int[] a2 = new int[]{1, 2};
         int[] a3 = new int[]{1, 2, 3};
         int[] a4 = new int[]{1, 2, 3, 4};
+        Arrays.sort(a2, 0, 1);
+        System.out.println(Arrays.toString(a2));
         List<int[]> list = new ArrayList<>();
         list.add(a1);
         list.add(a2);
