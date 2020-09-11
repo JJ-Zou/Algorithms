@@ -1,6 +1,7 @@
 package com.zjj.Leetcode.Leetcode71;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Solution {
     public static void main(String[] args) {
@@ -9,20 +10,26 @@ public class Solution {
     }
 
     public String simplifyPath(String path) {
-        String[] paths = path.substring(1).split("/");
+        String[] paths = path.split("/");
         Deque<String> deque = new ArrayDeque<>();
-        deque.addLast("/");
         for(String p : paths) {
-            if(".".equals(p)) {
+            if (".".equals(p) || "".equals(p)) {
                 continue;
-            } else if("..".equals(p)) {
-                if(!deque.isEmpty() && !deque.peekLast().equals("/")) {
+            } else if ("..".equals(p)) {
+                if (!deque.isEmpty()) {
                     deque.pollLast();
                 }
             } else {
                 deque.addLast(p);
             }
         }
-        return null;
+        if (deque.isEmpty()) {
+            return "/";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (String p : deque) {
+            sb.append('/').append(p);
+        }
+        return sb.toString();
     }
 }
