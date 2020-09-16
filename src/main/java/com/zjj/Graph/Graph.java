@@ -5,44 +5,11 @@ import lombok.SneakyThrows;
 import java.util.*;
 
 public class Graph {
-    public static void main(String[] args) {
-        Graph graph = new Graph("graph/graph0", true, false);
-        System.out.println(Arrays.toString(graph.getDegree()));
-    }
-
     private int numberOfVertex;
     private int numberOfEdge;
     private double[][] matrix;
     private Set<Edge> edges;
     private Map<Integer, Set<Integer>> map;
-
-    static class Edge {
-        int from;
-        int to;
-        double weight;
-
-        public Edge(int from, int to, double weight) {
-            this.from = from;
-            this.to = to;
-            this.weight = weight;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Edge edge = (Edge) o;
-            return from == edge.from &&
-                    to == edge.to &&
-                    Double.compare(edge.weight, weight) == 0;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(from, to, weight);
-        }
-    }
-
     public Graph(String pathname) {
         this(pathname, false, true);
     }
@@ -82,6 +49,11 @@ public class Graph {
         scanner.close();
     }
 
+    public static void main(String[] args) {
+        Graph graph = new Graph("graph/graph0", true, false);
+        System.out.println(Arrays.toString(graph.getDegree()));
+    }
+
     public int getNumberOfVertex() {
         return numberOfVertex;
     }
@@ -114,5 +86,32 @@ public class Graph {
 
     public double weight(int from, int to) {
         return matrix[from][to];
+    }
+
+    static class Edge {
+        int from;
+        int to;
+        double weight;
+
+        public Edge(int from, int to, double weight) {
+            this.from = from;
+            this.to = to;
+            this.weight = weight;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Edge edge = (Edge) o;
+            return from == edge.from &&
+                    to == edge.to &&
+                    Double.compare(edge.weight, weight) == 0;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(from, to, weight);
+        }
     }
 }

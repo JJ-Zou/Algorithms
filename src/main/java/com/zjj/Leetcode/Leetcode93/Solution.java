@@ -7,12 +7,12 @@ import java.util.List;
 
 public class Solution {
 
+    private List<String> res;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.restoreIpAddresses("101023"));
     }
-
-    private List<String> res;
 
     public List<String> restoreIpAddresses(String s) {
         res = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Solution {
             res.add(String.join(".", deque));
             return;
         }
-        if(len - start > 12 - 3 * segment || len - start < 4 - segment) {
+        if (len - start > 12 - 3 * segment || len - start < 4 - segment) {
             return;
         }
         for (int i = 0; i < 3; i++) {

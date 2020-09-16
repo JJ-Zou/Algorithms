@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+    Map<Character, Integer> map = new HashMap<>();
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.isAlienSorted(new String[]{"kuvp", "q"},
                 "ngxlkthsjuoqcpavbfdermiywz"));
     }
-
-    Map<Character, Integer> map = new HashMap<>();
 
     public boolean isAlienSorted(String[] words, String order) {
         int orderLen = order.length();

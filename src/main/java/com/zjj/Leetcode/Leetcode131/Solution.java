@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Solution {
 
+    private List<List<String>> res;
+    private boolean[][] dp;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.partition("abbab"));
     }
-
-    private List<List<String>> res;
-    private boolean[][] dp;
 
     public List<List<String>> partition(String s) {
         res = new ArrayList<>();

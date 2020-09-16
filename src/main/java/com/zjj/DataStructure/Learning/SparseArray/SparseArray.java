@@ -1,6 +1,7 @@
 package com.zjj.DataStructure.Learning.SparseArray;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -81,7 +82,7 @@ public class SparseArray {
         try (OutputStream outputStream
                      = new FileOutputStream(file);
              OutputStreamWriter writer
-                     = new OutputStreamWriter(outputStream, "UTF-8")) {
+                     = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)) {
             String string = Arrays.deepToString(sparseArray);
             char[] chars = string.toCharArray();
             writer.write(chars);

@@ -3,6 +3,12 @@ package com.zjj.Leetcode.Leetcode78;
 import java.util.*;
 
 public class SubSets {
+    private List<List<Integer>> res;
+
+    public static void main(String[] args) {
+        System.out.println(new SubSets().subsets(new int[]{1, 2, 3}));
+    }
+
     public List<List<Integer>> subsets1(int[] nums) {
         List<List<Integer>> list = new LinkedList<>();
         for (int i = 0; i < (1 << nums.length); i++) {
@@ -16,12 +22,6 @@ public class SubSets {
         }
         return list;
     }
-
-    public static void main(String[] args) {
-        System.out.println(new SubSets().subsets(new int[]{1, 2, 3}));
-    }
-
-    private List<List<Integer>> res;
 
     public List<List<Integer>> subsets(int[] nums) {
         res = new ArrayList<>();

@@ -15,7 +15,7 @@ public class Solution {
         int count = 1;
         while (read < n) {
             if (read > 0 && nums[read] == nums[read - 1]) {
-                if(count >= 2) {
+                if (count >= 2) {
                     read++;
                 } else {
                     nums[write] = nums[read];

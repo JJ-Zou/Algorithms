@@ -4,7 +4,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[][] moves = new int[][] {{0,0},{2,0},{1,1},{2,1},{2,2}};
+        int[][] moves = new int[][]{{0, 0}, {2, 0}, {1, 1}, {2, 1}, {2, 2}};
         System.out.println(solution.tictactoe(moves));
     }
 

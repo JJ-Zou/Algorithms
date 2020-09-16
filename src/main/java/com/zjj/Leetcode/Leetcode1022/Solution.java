@@ -16,6 +16,7 @@ public class Solution {
         root.right.right = new TreeNode(1);
         System.out.println(solution.sumRootToLeaf(root));
     }
+
     public int sumRootToLeaf(TreeNode root) {
         back(root, new StringBuilder());
         return (int) (sum % 1000000007);

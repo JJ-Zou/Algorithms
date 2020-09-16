@@ -8,10 +8,10 @@ import java.util.*;
  * S <- empty
  * Q <- V[G]
  * while Q != empty
- *  do u <- EXTRACT-MIN(Q)
- *  S <- S ∪ {u}
- *  for each vertex v ∈ Adj[u]
- *      do RELAX(u, v, w)
+ * do u <- EXTRACT-MIN(Q)
+ * S <- S ∪ {u}
+ * for each vertex v ∈ Adj[u]
+ * do RELAX(u, v, w)
  * <p>
  * RELAX(u, v, w)
  * if d[v] > d[u] + w(u, v)
@@ -23,10 +23,6 @@ public class Dijkstra {
     private Set<Integer> experienced;
     private PriorityQueue<Integer> queue;
     private int[] pathTo;
-
-    public double[] getD() {
-        return d;
-    }
 
     public Dijkstra(Graph graph, Object source) {
         if (source instanceof String) {
@@ -41,6 +37,10 @@ public class Dijkstra {
         experienced = new HashSet<>();
         queue = new PriorityQueue<>(Comparator.comparingDouble(o -> d[o]));
         queue.add(s);
+    }
+
+    public double[] getD() {
+        return d;
     }
 
     public void dijkstra(Graph graph) {

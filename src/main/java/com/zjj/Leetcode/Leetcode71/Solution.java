@@ -12,7 +12,7 @@ public class Solution {
     public String simplifyPath(String path) {
         String[] paths = path.split("/");
         Deque<String> deque = new ArrayDeque<>();
-        for(String p : paths) {
+        for (String p : paths) {
             if (".".equals(p) || "".equals(p)) {
                 continue;
             } else if ("..".equals(p)) {

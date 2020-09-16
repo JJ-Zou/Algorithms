@@ -24,6 +24,8 @@ class Node {
 
 public class Solution {
 
+    Map<Node, Node> map = new HashMap<>();
+
     public static void main(String[] args) {
         Solution solution = new Solution();
     }
@@ -50,16 +52,15 @@ public class Solution {
         return clone;
     }
 
-    Map<Node, Node> map = new HashMap<>();
     public Node cloneGraph1(Node node) {
-        if(node == null) {
+        if (node == null) {
             return null;
         }
-        if(map.containsKey(node)) {
+        if (map.containsKey(node)) {
             return map.get(node);
         }
         map.put(node, new Node(node.val, new ArrayList<>()));
-        for(Node p : node.neighbors) {
+        for (Node p : node.neighbors) {
             map.get(node).neighbors.add(cloneGraph(p));
         }
         return map.get(node);

@@ -13,8 +13,8 @@ public class Solution {
         Arrays.sort(staple);
         Arrays.sort(drinks);
         int len = staple.length;
-        for(int i = 0; i < len && staple[i] < x; i++) {
-            if(staple[i] > x) {
+        for (int i = 0; i < len && staple[i] < x; i++) {
+            if (staple[i] > x) {
                 break;
             }
             int target = x - staple[i];
@@ -22,17 +22,18 @@ public class Solution {
         }
         return count;
     }
+
     public int searchRight(int[] drinks, int target) {
         int len = drinks.length;
         int left = 0;
         int right = len - 1;
-        while(left <= right) {
+        while (left <= right) {
             int mid = (left + right) >>> 1;
-            if(drinks[mid] <= target && (mid == right || drinks[mid + 1] > target)) {
+            if (drinks[mid] <= target && (mid == right || drinks[mid + 1] > target)) {
                 return mid;
-            } else if(drinks[mid] <= target) {
+            } else if (drinks[mid] <= target) {
                 left = mid + 1;
-            } else if(drinks[mid] > target) {
+            } else if (drinks[mid] > target) {
                 right = mid - 1;
             }
         }

@@ -3,13 +3,13 @@ package com.zjj.Leetcode.Leetcode40;
 import java.util.*;
 
 public class Solution {
+    private List<List<Integer>> res;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         List<List<Integer>> lists = solution.combinationSum(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
         System.out.println(lists);
     }
-
-    private List<List<Integer>> res;
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         res = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Solution {
             if (target - candidates[i] < 0) {
                 return;
             }
-            if(i > fromIndex && candidates[i] == candidates[i - 1]) {
+            if (i > fromIndex && candidates[i] == candidates[i - 1]) {
                 continue;
             }
             deque.addLast(candidates[i]);

@@ -10,16 +10,6 @@ public class Solution {
                 new ArrayList<>(Arrays.asList("hot", "dot", "dog", "lot", "log", "cog"))));
     }
 
-    class Pair {
-        String key;
-        int value;
-
-        public Pair(String key, int value) {
-            this.key = key;
-            this.value = value;
-        }
-    }
-
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         boolean flag = false;
         for (String word : wordList) {
@@ -69,5 +59,15 @@ public class Solution {
             }
         }
         return count == 1;
+    }
+
+    class Pair {
+        String key;
+        int value;
+
+        public Pair(String key, int value) {
+            this.key = key;
+            this.value = value;
+        }
     }
 }

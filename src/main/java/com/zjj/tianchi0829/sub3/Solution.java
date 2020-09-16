@@ -16,12 +16,12 @@ public class Solution {
         } else {
             dp[1] = y;
         }
-        if(len == 2) {
+        if (len == 2) {
             return dp[1];
         }
         int cur = 0;
-        for(int i = cur; i < cur + k; i++) {
-            for(int j = 0; j < k; j++) {
+        for (int i = cur; i < cur + k; i++) {
+            for (int j = 0; j < k; j++) {
             }
         }
         return dp[len - 1];

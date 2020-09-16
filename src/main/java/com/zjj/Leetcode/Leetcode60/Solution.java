@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+    private String res;
+    private boolean[] visit;
+    private int k;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.getPermutation2(3,
@@ -11,7 +15,7 @@ public class Solution {
     }
 
     public String getPermutation2(int n, int k) {
-        if(n == 1) {
+        if (n == 1) {
             return "1";
         }
         List<Integer> list = new ArrayList<>();
@@ -27,11 +31,11 @@ public class Solution {
         int cur = n - 2;
         int order = 0;
         while (!list.isEmpty()) {
-            order =  k / fact[(cur < 1 ? 1 : cur)];
+            order = k / fact[(cur < 1 ? 1 : cur)];
             sb.append(list.get(order));
             list.remove(order);
             k %= fact[cur];
-            if(cur == 0) {
+            if (cur == 0) {
                 sb.append(list.get(0));
                 return sb.toString();
             }
@@ -39,10 +43,6 @@ public class Solution {
         }
         return sb.toString();
     }
-
-    private String res;
-    private boolean[] visit;
-    private int k;
 
     public String getPermutation(int n, int k) {
         visit = new boolean[n];

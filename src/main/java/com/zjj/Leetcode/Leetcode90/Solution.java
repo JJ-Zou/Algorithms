@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Solution {
 
+    private List<List<Integer>> res;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.subsetsWithDup(new int[]{1, 2, 2}));
     }
-
-    private List<List<Integer>> res;
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
@@ -21,7 +21,7 @@ public class Solution {
     private void backtrack(Deque<Integer> deque, int[] nums, int index) {
         res.add(new ArrayList<>(deque));
         for (int i = index; i < nums.length; i++) {
-            if(i > index && nums[i] == nums[i - 1]) {
+            if (i > index && nums[i] == nums[i - 1]) {
                 continue;
             }
             deque.addLast(nums[i]);

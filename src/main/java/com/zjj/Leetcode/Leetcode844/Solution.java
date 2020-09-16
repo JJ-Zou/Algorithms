@@ -8,9 +8,6 @@ public class Solution {
         System.out.println(operate("y#fo##f").length());
     }
 
-    public boolean backspaceCompare(String S, String T) {
-        return S.equals(T) || operate(S).equals(operate(T));
-    }
     private static String operate(String str) {
         char[] ch = str.toCharArray();
         int len = ch.length;
@@ -31,5 +28,9 @@ public class Solution {
             read++;
         }
         return new String(Arrays.copyOf(ch, write + 1));
+    }
+
+    public boolean backspaceCompare(String S, String T) {
+        return S.equals(T) || operate(S).equals(operate(T));
     }
 }

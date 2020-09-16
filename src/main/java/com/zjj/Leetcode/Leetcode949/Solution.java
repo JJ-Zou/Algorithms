@@ -5,12 +5,12 @@ import java.util.Queue;
 
 public class Solution {
 
+    boolean[] flag = new boolean[4];
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.largestTimeFromDigits(new int[]{1, 2, 3, 4}));
     }
-
-    boolean[] flag = new boolean[4];
 
     public String largestTimeFromDigits(int[] A) {
         Queue<String> queue = new PriorityQueue<>((o1, o2) -> {

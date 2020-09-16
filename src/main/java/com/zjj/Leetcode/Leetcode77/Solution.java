@@ -6,15 +6,15 @@ import java.util.Deque;
 import java.util.List;
 
 public class Solution {
+    private List<List<Integer>> res;
+    private int n;
+    private int k;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.combine(3,
                 2));
     }
-
-    private List<List<Integer>> res;
-    private int n;
-    private int k;
 
     public List<List<Integer>> combine(int n, int k) {
         res = new ArrayList<>();

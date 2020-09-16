@@ -1,15 +1,15 @@
 package com.zjj.Leetcode.Leetcode79;
 
 public class Solution {
+    private boolean res;
+    private boolean[][] visit;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.exist(
                 new char[][]{{'b', 'a', 'b', 'b', 'b', 'b', 'c', 'c'}, {'a', 'c', 'a', 'c', 'b', 'a', 'b', 'c'}, {'b', 'c', 'c', 'c', 'a', 'a', 'b', 'b'}, {'b', 'a', 'c', 'c', 'a', 'a', 'c', 'c'}, {'a', 'a', 'a', 'b', 'c', 'a', 'c', 'c'}, {'a', 'a', 'c', 'c', 'b', 'b', 'c', 'a'}, {'a', 'b', 'a', 'a', 'c', 'c', 'a', 'c'}, {'a', 'c', 'b', 'b', 'c', 'c', 'a', 'a'}, {'c', 'b', 'b', 'c', 'c', 'b', 'a', 'a'}, {'c', 'c', 'a', 'b', 'c', 'c', 'b', 'a'}, {'b', 'c', 'b', 'c', 'c', 'c', 'b', 'a'}, {'b', 'a', 'c', 'a', 'c', 'a', 'a', 'a'}, {'c', 'c', 'c', 'c', 'c', 'c', 'a', 'b'}}
                 , "accbcaabbccabc"));
     }
-
-    private boolean res;
-    private boolean[][] visit;
 
     public boolean exist(char[][] board, String word) {
         int m = board.length;

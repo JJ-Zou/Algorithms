@@ -1,7 +1,5 @@
 package com.zjj.tianchi0829.sub2;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class Solution {
@@ -9,6 +7,7 @@ public class Solution {
         Solution solution = new Solution();
         System.out.println(solution.makeEquilateralTriangle(new int[]{2, 3, 3, 5, 7, 7}));
     }
+
     public int makeEquilateralTriangle(int[] lengths) {
         // write your code here.
         TreeMap<Integer, Integer> map = new TreeMap<>();
