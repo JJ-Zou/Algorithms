@@ -6,7 +6,7 @@ import java.util.Map;
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.fractionToDecimal(-1, Integer.MIN_VALUE));
+        System.out.println(solution.fractionToDecimal(1, Integer.MAX_VALUE));
     }
 
     public String fractionToDecimal(int numerator, int denominator) {
