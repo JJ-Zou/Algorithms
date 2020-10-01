@@ -6,14 +6,19 @@ public class ex0928 {
 //        int sum = 0;
 //        for (i = 3; i < 7; sum += i++) ;
 //        System.out.println(sum);
-        System.out.println(new ex0928().getDigits(99123435078L));
-        System.out.println(new ex0928().getAmount(1));
-        System.out.println(new ex0928().getAmount(2));
-        System.out.println(new ex0928().getAmount(3));
-        System.out.println(new ex0928().getAmount(4));
-        System.out.println(new ex0928().getAmount(5));
-        System.out.println(new ex0928().getAmount(6));
-        System.out.println(new ex0928().getAmount(7));
+//        System.out.println(new ex0928().getDigits(99123435078L));
+//        System.out.println(new ex0928().getAmount(1));
+//        System.out.println(new ex0928().getAmount(2));
+//        System.out.println(new ex0928().getAmount(3));
+//        System.out.println(new ex0928().getAmount(4));
+//        System.out.println(new ex0928().getAmount(5));
+//        System.out.println(new ex0928().getAmount(6));
+//        System.out.println(new ex0928().getAmount(7));
+        System.out.println(-1 / 5);
+        System.out.println(-2 / 5);
+        System.out.println(-3 / 5);
+        System.out.println(-4 / 5);
+        System.out.println(-8 / 5);
     }
     long getAmount(int m) {
         if(m < 3) {
