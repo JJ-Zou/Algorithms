@@ -14,6 +14,7 @@ public class SinCpu {
         long[] busy = new long[N];
         long[] sleep = new long[N];
         int cpu = 4;
+        cpu = Runtime.getRuntime().availableProcessors();
         ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(cpu,
                 cpu,
                 0,
