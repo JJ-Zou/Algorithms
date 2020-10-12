@@ -160,4 +160,8 @@ public class ex2 {
         int hashArr[] = {1, 4};
     }
 
+    @Test
+    public void name() {
+        System.out.println(Integer.parseInt("-1"));
+    }
 }
