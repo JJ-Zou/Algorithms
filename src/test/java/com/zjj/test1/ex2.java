@@ -164,4 +164,11 @@ public class ex2 {
     public void name() {
         System.out.println(Integer.parseInt("-1"));
     }
+
+    @Test
+    public void threadHash() {
+        for (int i = 0; i < 10; i++) {
+            new Thread(() -> System.out.println(Objects.hashCode("hello"))).start();
+        }
+    }
 }
