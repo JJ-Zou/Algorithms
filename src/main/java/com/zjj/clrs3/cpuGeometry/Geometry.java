@@ -35,10 +35,7 @@ public class Geometry {
         if (d3 == 0 && (onSegment(p1, p2, p3))) {
             return true;
         }
-        if (d4 == 0 && (onSegment(p1, p2, p4))) {
-            return true;
-        }
-        return false;
+        return d4 == 0 && (onSegment(p1, p2, p4));
     }
 
     /**

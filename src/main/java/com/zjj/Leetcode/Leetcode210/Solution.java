@@ -3,6 +3,12 @@ package com.zjj.Leetcode.Leetcode210;
 import java.util.*;
 
 public class Solution {
+    private List<List<Integer>> adj;
+    private int[] visit;
+    private boolean flag;
+    private int[] res;
+    private int index;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(Arrays.toString(solution.findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}})));
@@ -39,12 +45,6 @@ public class Solution {
         }
         return index == numCourses ? res : new int[]{};
     }
-
-    private List<List<Integer>> adj;
-    private int[] visit;
-    private boolean flag;
-    private int[] res;
-    private int index;
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         adj = new ArrayList<>();

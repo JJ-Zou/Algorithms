@@ -3,35 +3,6 @@ package com.zjj.Leetcode.Leetcode211;
 import java.util.LinkedHashMap;
 
 public class WordDictionary extends LinkedHashMap<Integer, Integer> {
-    static class TrieNode {
-        private final TrieNode[] subNode;
-        private boolean isEnd;
-
-        public TrieNode() {
-            subNode = new TrieNode[26];
-        }
-
-        public boolean getEnd() {
-            return isEnd;
-        }
-
-        public void setEnd() {
-            isEnd = true;
-        }
-
-        public boolean contains(char c) {
-            return subNode[c - 'a'] != null;
-        }
-
-        public void put(char c, TrieNode node) {
-            subNode[c - 'a'] = node;
-        }
-
-        public TrieNode get(char c) {
-            return subNode[c - 'a'];
-        }
-    }
-
     private final TrieNode root;
 
     /**
@@ -84,5 +55,34 @@ public class WordDictionary extends LinkedHashMap<Integer, Integer> {
             p = p.get(ch[i]);
         }
         return p.getEnd();
+    }
+
+    static class TrieNode {
+        private final TrieNode[] subNode;
+        private boolean isEnd;
+
+        public TrieNode() {
+            subNode = new TrieNode[26];
+        }
+
+        public boolean getEnd() {
+            return isEnd;
+        }
+
+        public void setEnd() {
+            isEnd = true;
+        }
+
+        public boolean contains(char c) {
+            return subNode[c - 'a'] != null;
+        }
+
+        public void put(char c, TrieNode node) {
+            subNode[c - 'a'] = node;
+        }
+
+        public TrieNode get(char c) {
+            return subNode[c - 'a'];
+        }
     }
 }

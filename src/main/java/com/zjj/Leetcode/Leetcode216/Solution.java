@@ -6,12 +6,12 @@ import java.util.Deque;
 import java.util.List;
 
 public class Solution {
+    private List<List<Integer>> res;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.combinationSum3(2, 43));
     }
-
-    private List<List<Integer>> res;
 
     public List<List<Integer>> combinationSum3(int k, int n) {
         res = new ArrayList<>();

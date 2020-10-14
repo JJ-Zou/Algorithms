@@ -20,22 +20,24 @@ public class ex0928 {
         System.out.println(-4 / 5);
         System.out.println(-8 / 5);
     }
+
     long getAmount(int m) {
-        if(m < 3) {
+        if (m < 3) {
             return 1;
         }
-        if(m == 3) {
+        if (m == 3) {
             return 2;
         }
         int[] dp = new int[m];
         dp[0] = 1;
         dp[1] = 1;
         dp[2] = 2;
-        for(int i = 3; i < m; i++) {
+        for (int i = 3; i < m; i++) {
             dp[i] = dp[i - 1] + dp[i - 3];
         }
         return dp[m - 1];
     }
+
     long getDigits(long value) {
         String str = String.valueOf(value);
         int len = str.length();

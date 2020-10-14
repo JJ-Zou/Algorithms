@@ -3,12 +3,12 @@ package com.zjj.Leetcode.Leetcode230;
 import com.zjj.treeNode.TreeNode;
 
 public class Solution {
+    private int count = 0;
+    private int res = 0;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
     }
-
-    private int count = 0;
-    private int res = 0;
 
     public int kthSmallest(TreeNode root, int k) {
         dfs(root, k);

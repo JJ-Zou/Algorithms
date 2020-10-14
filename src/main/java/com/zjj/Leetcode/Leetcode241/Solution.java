@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Solution {
+    private Map<Integer, List<Integer>> cache;
+    private int hash;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.diffWaysToCompute("2*3-4*5"));
     }
-
-    private Map<Integer, List<Integer>> cache;
-    private int hash;
 
     public List<Integer> diffWaysToCompute(String input) {
         List<Integer> num = new ArrayList<>();

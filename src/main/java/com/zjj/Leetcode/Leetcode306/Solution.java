@@ -11,15 +11,15 @@ public class Solution {
     }
 
     private boolean backtrack(String num, int cur, int len, String sum, String pre, int k) {
-        if(cur == len) {
+        if (cur == len) {
             return k > 2;
         }
-        for(int i = cur; i < len; i++) {
+        for (int i = cur; i < len; i++) {
             String n = num.substring(cur, i + 1);
-            if((n.length() > 1 && n.charAt(0) == '0') || (k > 1 && !n.equals(sum))) {
+            if ((n.length() > 1 && n.charAt(0) == '0') || (k > 1 && !n.equals(sum))) {
                 continue;
             }
-            if(backtrack(num, i + 1, len, add(pre, n), n, k + 1)) {
+            if (backtrack(num, i + 1, len, add(pre, n), n, k + 1)) {
                 return true;
             }
         }
@@ -27,7 +27,7 @@ public class Solution {
     }
 
     private String add(String a, String b) {
-        if(a.length() > b.length()) {
+        if (a.length() > b.length()) {
             return add(b, a);
         }
         int lenA = a.length();
@@ -36,17 +36,17 @@ public class Solution {
         int p1 = lenA - 1;
         int p2 = lenB - 1;
         int advance = 0;
-        while(p1 >= 0) {
+        while (p1 >= 0) {
             int sum = a.charAt(p1--) - '0' + b.charAt(p2--) - '0' + advance;
             sb.append(sum % 10);
             advance = sum / 10;
         }
-        while(p2 >= 0) {
+        while (p2 >= 0) {
             int sum = b.charAt(p2--) - '0' + advance;
             sb.append(sum % 10);
             advance = sum / 10;
         }
-        if(advance != 0) {
+        if (advance != 0) {
             sb.append(advance);
         }
         sb.reverse();

@@ -10,19 +10,19 @@ public class Solution {
     }
 
     public String fractionToDecimal(int numerator, int denominator) {
-        if(numerator == 0) {
+        if (numerator == 0) {
             return "0";
         }
-        if(numerator % denominator == 0) {
-            return String.valueOf((long)numerator / (long)denominator);
+        if (numerator % denominator == 0) {
+            return String.valueOf((long) numerator / (long) denominator);
         }
         StringBuilder sb = new StringBuilder();
-        if((((numerator ^ denominator) >>> 31) & 1) == 1) {
+        if ((((numerator ^ denominator) >>> 31) & 1) == 1) {
             sb.append("-");
         }
         long n = Math.abs((long) numerator);
         long d = Math.abs((long) denominator);
-        if(n > d) {
+        if (n > d) {
             sb.append(n / d);
             n %= d;
         } else {
@@ -33,10 +33,10 @@ public class Solution {
         StringBuilder loop = new StringBuilder();
         Map<Long, Integer> map = new HashMap<>();
         int count = 0;
-        while(remainder != 0 && !map.containsKey(remainder)) {
+        while (remainder != 0 && !map.containsKey(remainder)) {
             map.put(remainder, count++);
             remainder *= 10L;
-            while(remainder < d) {
+            while (remainder < d) {
                 map.put(remainder, count++);
                 remainder *= 10L;
                 loop.append(0);
@@ -44,7 +44,7 @@ public class Solution {
             loop.append(remainder / d);
             remainder %= d;
         }
-        if(remainder != 0) {
+        if (remainder != 0) {
             sb.append(loop.substring(0, map.get(remainder))).append("(")
                     .append(loop.substring(map.get(remainder))).append(")");
         } else {

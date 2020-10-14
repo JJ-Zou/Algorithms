@@ -10,6 +10,7 @@ public class Graph {
     private double[][] matrix;
     private Set<Edge> edges;
     private Map<Integer, Set<Integer>> map;
+
     public Graph(String pathname) {
         this(pathname, false, true);
     }
