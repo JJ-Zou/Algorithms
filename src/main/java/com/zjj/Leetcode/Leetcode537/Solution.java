@@ -15,6 +15,7 @@ public class Solution {
         y = numA[0] * numB[1] + numA[1] * numB[0];
         return x + "+" + y + "i";
     }
+
     private int[] getNum(String s) {
         String[] str = s.split("\\+");
         int[] res = new int[2];
