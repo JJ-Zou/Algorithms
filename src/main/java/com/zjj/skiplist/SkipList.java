@@ -3,20 +3,68 @@ package com.zjj.skiplist;
 import lombok.SneakyThrows;
 
 import java.util.Comparator;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SkipList<K, V> {
     @SneakyThrows
     public static void main(String[] args) {
-        SkipList<Integer, Integer> skipList = new SkipList<>();
-        for (int i = 0; i < 1000000; i++) {
-            skipList.put(i, i);
+
+        SkipList<String, Integer> skipList = new SkipList<>();
+        int index = 0;
+        while (true) {
+            int value = ThreadLocalRandom.current().nextInt();
+            String key = UUID.randomUUID().toString();
+            skipList.put(key, value);
+            int v = skipList.get(key);
+            if(v != value) {
+                throw new RuntimeException();
+            }
+            int removeValue = skipList.remove(key);
+            if(removeValue != value) {
+                throw new RuntimeException();
+            }
+            System.out.println(index++);
+        }
+    }
+
+    private static void testSkip(SkipList<String, Integer> skipList) {
+        for (int i = 0; i < 100000; i++) {
+            skipList.put(i + "", i);
         }
         System.out.println("-------------------");
-        for (int i = 0; i < 1000000; i++) {
-            if (i != skipList.get(i)) {
+        for (int i = 0; i < 100000; i++) {
+            if (i != skipList.get(i + "")) {
                 throw new RuntimeException();
+            }
+        }
+        System.out.println("-------------------");
+        for (int i = 0; i < 100000; i++) {
+            skipList.remove(i + "");
+            if (skipList.get(i + "") != null) {
+                throw new RuntimeException();
+            }
+        }
+        for (int i = 0; i < 100000; i++) {
+            skipList.put(i + "", i);
+        }
+        System.out.println("-------------------");
+        for (int i = 0; i < 100000; i++) {
+            if (i != skipList.get(i + "")) {
+                throw new RuntimeException();
+            }
+        }
+        System.out.println("-------------------");
+        for (int i = 0; i < 100000; i++) {
+            skipList.remove(i + "");
+            if (skipList.get(i + "") != null) {
+                throw new RuntimeException();
+            }
+        }
+        for (int i = 0; i < 100000; i++) {
+            if (skipList.get(i + "") != null) {
+                System.out.println(skipList.get(i + ""));
             }
         }
     }
@@ -48,6 +96,22 @@ public class SkipList<K, V> {
             this.value = value;
             this.next = next;
         }
+
+        public Node(Node<K, V> next) {
+            this.key = null;
+            this.value = this;
+            this.next = next;
+        }
+
+        void helpDelete(Node<K, V> b, Node<K, V> f) {
+            if (f == next && this == b.next) {
+                if (f == null || f.value != f) {
+                    this.next = new Node<>(f);
+                } else {
+                    b.next = f.next;
+                }
+            }
+        }
     }
 
     static class Index<K, V> {
@@ -59,6 +123,10 @@ public class SkipList<K, V> {
             this.node = node;
             this.down = down;
             this.right = right;
+        }
+
+        final void unlink(Index<K, V> succ) {
+            this.right = succ.right;
         }
     }
 
@@ -96,24 +164,40 @@ public class SkipList<K, V> {
         return doPut(key, value, false);
     }
 
+    public V remove(K key) {
+        return doRemove(key, null);
+    }
+
     private V doGet(K key) {
         if (key == null) {
             throw new NullPointerException();
         }
         Comparator<? super K> cmp = comparator;
-        for (Node<K, V> b = findPredecessor(key, cmp), n = b.next; ; ) {
-            if (n == null) {
-                break;
+        outer:
+        for (; ; ) {
+            for (Node<K, V> b = findPredecessor(key, cmp), n = b.next; ; ) {
+                Object v;
+                int c;
+                if (n == null) {
+                    break outer;
+                }
+                Node<K, V> f = n.next;
+                if ((v = n.value) == null) {
+                    n.helpDelete(b, f);
+                    break;
+                }
+                if (b.value == null || v == n) {
+                    break;
+                }
+                if ((c = cpr(cmp, key, n.key)) == 0) {
+                    return (V) v;
+                }
+                if (c < 0) {
+                    break outer;
+                }
+                b = n;
+                n = f;
             }
-            Node<K, V> f = n.next;
-            int c;
-            if ((c = cpr(cmp, key, n.key)) == 0) {
-                return (V) n.value;
-            }
-            if (c < 0) {
-                break;
-            }
-            n = f;
         }
         return null;
     }
@@ -124,26 +208,37 @@ public class SkipList<K, V> {
             throw new NullPointerException();
         }
         Comparator<? super K> cmp = comparator;
-        for (Node<K, V> b = findPredecessor(key, cmp), n = b.next; ; ) {
-            if (n != null) {
-                Node<K, V> f = n.next;
-                int c = cpr(cmp, key, n.key);
-                if (c > 0) {
-                    b = n;
-                    n = f;
-                    continue;
-                }
-                if (c == 0) {
-                    V vv = (V) n.value;
-                    if (!onlyIfAbsent) {
-                        n.value = value;
+        outer:
+        for (; ; ) {
+            for (Node<K, V> b = findPredecessor(key, cmp), n = b.next; ; ) {
+                if (n != null) {
+                    Object v;
+                    int c;
+                    Node<K, V> f = n.next;
+                    if ((v = n.value) == null) {
+                        n.helpDelete(b, f);
+                        break;
                     }
-                    return vv;
+                    if (b.value == null || n == v) {
+                        break;
+                    }
+                    if ((c = cpr(cmp, key, n.key)) > 0) {
+                        b = n;
+                        n = f;
+                        continue;
+                    }
+                    if (c == 0) {
+                        V vv = (V) v;
+                        if (!onlyIfAbsent) {
+                            n.value = value;
+                        }
+                        return vv;
+                    }
                 }
+                z = new Node<>(key, value, n);
+                b.next = z;
+                break outer;
             }
-            z = new Node<>(key, value, n);
-            b.next = z;
-            break;
         }
         int rnd = ThreadLocalRandom.current().nextInt();
         if ((rnd & 0x80000001) == 0) {
@@ -207,6 +302,65 @@ public class SkipList<K, V> {
         return null;
     }
 
+    public V doRemove(K key, V value) {
+        if (key == null) {
+            throw new NullPointerException();
+        }
+        Comparator<? super K> cmp = comparator;
+        outer:
+        for (; ; ) {
+            for (Node<K, V> b = findPredecessor(key, cmp), n = b.next; ; ) {
+                Object v;
+                int c;
+                if (n == null) {
+                    break outer;
+                }
+                Node<K, V> f = n.next;
+                if ((v = n.value) == null) {
+                    n.helpDelete(b, f);
+                    break;
+                }
+                if (b.value == null || v == n) {
+                    break;
+                }
+                if ((c = cpr(cmp, key, n.key)) < 0) {
+                    break outer;
+                }
+                if (c > 0) {
+                    b = n;
+                    n = f;
+                    continue;
+                }
+                if (value != null && !value.equals(v)) {
+                    break outer;
+                }
+                n.value = null;
+                n.next = new Node<>(f);
+                b.next = f;
+                findPredecessor(key, cmp);
+                if (head.right == null) {
+                    tryReduceLevel();
+                }
+                return (V) v;
+            }
+        }
+        return null;
+    }
+
+    private void tryReduceLevel() {
+        HeadIndex<K, V> h = head;
+        HeadIndex<K, V> d;
+        HeadIndex<K, V> e;
+        if (h.level > 3 &&
+                (d = (HeadIndex<K, V>) h.down) != null &&
+                (e = (HeadIndex<K, V>) d.down) != null &&
+                e.right == null &&
+                d.right == null &&
+                h.right == null) {
+            head = d;
+        }
+    }
+
     private Node<K, V> findPredecessor(K key, Comparator<? super K> cmp) {
         if (key == null) {
             throw new NullPointerException();
@@ -216,6 +370,11 @@ public class SkipList<K, V> {
                 if (r != null) {
                     Node<K, V> n = r.node;
                     K k = n.key;
+                    if (n.value == null) {
+                        q.unlink(r);
+                        r = q.right;
+                        continue;
+                    }
                     if (cpr(cmp, key, k) > 0) {
                         q = r;
                         r = r.right;
