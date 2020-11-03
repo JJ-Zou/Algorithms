@@ -18,11 +18,11 @@ public class SkipList<K, V> {
             String key = UUID.randomUUID().toString();
             skipList.put(key, value);
             int v = skipList.get(key);
-            if(v != value) {
+            if (v != value) {
                 throw new RuntimeException();
             }
             int removeValue = skipList.remove(key);
-            if(removeValue != value) {
+            if (removeValue != value) {
                 throw new RuntimeException();
             }
             System.out.println(index++);
@@ -394,4 +394,3 @@ public class SkipList<K, V> {
         return (c != null) ? c.compare(key1, key2) : ((Comparable) key1).compareTo(key2);
     }
 }
-
