@@ -1,6 +1,5 @@
 package com.zjj.leetcode.Leetcode100;
 
-import com.zjj.Leetcode.Leetcode100.SameTree;
 import com.zjj.treeNode.TreeNode;
 import org.junit.Test;
 

@@ -1,6 +1,5 @@
 package com.zjj.leetcode.Leetcode69;
 
-import com.zjj.Leetcode.Leetcode69.SqrtX;
 import org.junit.Test;
 
 public class TestSqrtX {

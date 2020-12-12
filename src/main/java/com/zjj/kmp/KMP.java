@@ -1,4 +1,4 @@
-package com.zjj.Kmp;
+package com.zjj.kmp;
 
 public class KMP {
     private static int kmp(String str1, String str2) {

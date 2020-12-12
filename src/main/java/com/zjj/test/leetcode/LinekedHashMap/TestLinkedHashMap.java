@@ -1,6 +1,6 @@
 package com.zjj.test.leetcode.LinekedHashMap;
 
-import com.zjj.Leetcode.listNode.ListNode;
+import com.zjj.leetcode.listNode.ListNode;
 
 public class TestLinkedHashMap {
 

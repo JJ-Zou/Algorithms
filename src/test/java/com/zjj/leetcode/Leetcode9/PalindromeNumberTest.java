@@ -1,6 +1,5 @@
 package com.zjj.leetcode.Leetcode9;
 
-import com.zjj.Leetcode.Leetcode9.PalindromeNumber;
 import org.junit.Test;
 
 public class PalindromeNumberTest {
