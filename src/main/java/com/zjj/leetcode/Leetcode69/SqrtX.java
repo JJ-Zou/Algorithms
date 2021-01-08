@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode69;
+package com.zjj.leetcode.Leetcode69;
 
 public class SqrtX {
     public int mySqrt(int x) {

@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode284;
+package com.zjj.leetcode.Leetcode284;
 
 import java.util.Iterator;
 

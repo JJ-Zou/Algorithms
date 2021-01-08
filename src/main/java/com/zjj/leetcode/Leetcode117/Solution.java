@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode117;
+package com.zjj.leetcode.Leetcode117;
 
 class Node {
     public int val;

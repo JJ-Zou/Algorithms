@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode155;
+package com.zjj.leetcode.Leetcode155;
 
 import java.util.Stack;
 

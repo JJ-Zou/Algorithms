@@ -1,6 +1,6 @@
-package com.zjj.Leetcode.Leetcode143;
+package com.zjj.leetcode.Leetcode143;
 
-import com.zjj.Leetcode.listNode.ListNode;
+import com.zjj.leetcode.listNode.ListNode;
 
 public class Solution {
 

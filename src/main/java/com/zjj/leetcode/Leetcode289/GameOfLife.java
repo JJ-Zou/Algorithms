@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode289;
+package com.zjj.leetcode.Leetcode289;
 
 public class GameOfLife {
     public void gameOfLife(int[][] board) {

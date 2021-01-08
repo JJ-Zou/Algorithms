@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode307;
+package com.zjj.leetcode.Leetcode307;
 
 public class NumArray {
     private final int[] tree;

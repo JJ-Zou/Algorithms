@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode72;
+package com.zjj.leetcode.Leetcode72;
 
 public class MinDistance {
     public int minDistance(String word1, String word2) {

@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode917;
+package com.zjj.leetcode.Leetcode917;
 
 public class Solution {
     public String reverseOnlyLetters(String S) {

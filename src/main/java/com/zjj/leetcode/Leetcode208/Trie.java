@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode208;
+package com.zjj.leetcode.Leetcode208;
 
 public class Trie {
     private TrieNode root;

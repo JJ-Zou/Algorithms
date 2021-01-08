@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode35;
+package com.zjj.leetcode.Leetcode35;
 
 /**
  * 二分查找

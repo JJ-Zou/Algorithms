@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode38;
+package com.zjj.leetcode.Leetcode38;
 
 /**
  * 1.     1

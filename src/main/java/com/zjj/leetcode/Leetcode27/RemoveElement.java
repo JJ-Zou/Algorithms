@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode27;
+package com.zjj.leetcode.Leetcode27;
 
 /**
  * 名为删除，实为填写与目标值不同的数

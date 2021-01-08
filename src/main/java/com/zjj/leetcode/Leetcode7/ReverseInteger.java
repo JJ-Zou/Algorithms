@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode7;
+package com.zjj.leetcode.Leetcode7;
 
 
 /**

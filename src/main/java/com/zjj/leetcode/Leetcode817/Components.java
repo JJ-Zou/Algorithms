@@ -1,6 +1,6 @@
-package com.zjj.Leetcode.Leetcode817;
+package com.zjj.leetcode.Leetcode817;
 
-import com.zjj.Leetcode.listNode.ListNode;
+import com.zjj.leetcode.listNode.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

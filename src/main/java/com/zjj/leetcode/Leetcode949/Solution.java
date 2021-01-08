@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode949;
+package com.zjj.leetcode.Leetcode949;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

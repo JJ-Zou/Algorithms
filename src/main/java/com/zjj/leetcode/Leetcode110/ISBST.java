@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode110;
+package com.zjj.leetcode.Leetcode110;
 
 
 import com.zjj.treeNode.TreeNode;

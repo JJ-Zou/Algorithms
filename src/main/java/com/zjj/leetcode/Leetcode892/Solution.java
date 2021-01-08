@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode892;
+package com.zjj.leetcode.Leetcode892;
 
 public class Solution {
     public static int surfaceArea(int[][] grid) {

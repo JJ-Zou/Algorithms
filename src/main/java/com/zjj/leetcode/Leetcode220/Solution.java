@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode220;
+package com.zjj.leetcode.Leetcode220;
 
 import java.util.HashMap;
 import java.util.Map;

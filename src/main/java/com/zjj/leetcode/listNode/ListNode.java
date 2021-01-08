@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.listNode;
+package com.zjj.leetcode.listNode;
 
 public class ListNode {
     public int val;

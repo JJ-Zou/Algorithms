@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode42;
+package com.zjj.leetcode.Leetcode42;
 
 /**
  * 双指针

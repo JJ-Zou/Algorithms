@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode26;
+package com.zjj.leetcode.Leetcode26;
 
 /**
  * 快慢指针

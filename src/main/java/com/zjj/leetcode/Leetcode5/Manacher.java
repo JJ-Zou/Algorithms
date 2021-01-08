@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode5;
+package com.zjj.leetcode.Leetcode5;
 
 /**
  * 最长回文子串 马拉车算法

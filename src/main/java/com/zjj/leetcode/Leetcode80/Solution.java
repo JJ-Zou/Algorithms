@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode80;
+package com.zjj.leetcode.Leetcode80;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode1071;
+package com.zjj.leetcode.Leetcode1071;
 
 /**
  * 字符串的最大公因子

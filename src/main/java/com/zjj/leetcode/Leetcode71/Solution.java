@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode71;
+package com.zjj.leetcode.Leetcode71;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

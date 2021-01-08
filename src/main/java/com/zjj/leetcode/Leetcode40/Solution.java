@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode40;
+package com.zjj.leetcode.Leetcode40;
 
 import java.util.*;
 

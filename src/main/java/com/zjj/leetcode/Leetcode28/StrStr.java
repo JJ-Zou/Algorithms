@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode28;
+package com.zjj.leetcode.Leetcode28;
 
 /**
  * KMP算法

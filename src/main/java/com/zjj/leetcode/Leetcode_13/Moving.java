@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode_13;
+package com.zjj.leetcode.Leetcode_13;
 
 public class Moving {
     private int count;

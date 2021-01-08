@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode1111;
+package com.zjj.leetcode.Leetcode1111;
 
 public class MaxDepthAfterSplit {
     public int[] maxDepthAfterSplit(String seq) {

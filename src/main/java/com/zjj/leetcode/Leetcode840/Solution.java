@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode840;
+package com.zjj.leetcode.Leetcode840;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode213;
+package com.zjj.leetcode.Leetcode213;
 
 public class Solution {
     public static void main(String[] args) {

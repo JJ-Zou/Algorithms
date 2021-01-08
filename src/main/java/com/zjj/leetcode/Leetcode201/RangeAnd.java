@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode201;
+package com.zjj.leetcode.Leetcode201;
 
 public class RangeAnd {
     public int rangeBitwiseAnd(int m, int n) {

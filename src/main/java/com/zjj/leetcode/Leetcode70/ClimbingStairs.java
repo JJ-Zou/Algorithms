@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode70;
+package com.zjj.leetcode.Leetcode70;
 
 /**
  * 斐波那契数列

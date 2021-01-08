@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode169;
+package com.zjj.leetcode.Leetcode169;
 
 /**
  * 摩尔投票

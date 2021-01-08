@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode925;
+package com.zjj.leetcode.Leetcode925;
 
 import java.util.Objects;
 

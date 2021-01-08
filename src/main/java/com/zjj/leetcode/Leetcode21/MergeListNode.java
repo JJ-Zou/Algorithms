@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode21;
+package com.zjj.leetcode.Leetcode21;
 
 import com.zjj.Node.Node;
 

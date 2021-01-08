@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode31;
+package com.zjj.leetcode.Leetcode31;
 
 import java.util.Arrays;
 

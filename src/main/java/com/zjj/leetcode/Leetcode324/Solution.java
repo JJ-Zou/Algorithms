@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode324;
+package com.zjj.leetcode.Leetcode324;
 
 import java.util.Random;
 

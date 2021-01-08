@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode859;
+package com.zjj.leetcode.Leetcode859;
 
 import java.util.HashSet;
 import java.util.Set;

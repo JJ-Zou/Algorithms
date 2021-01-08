@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode67;
+package com.zjj.leetcode.Leetcode67;
 
 /**
  * 二进制求和

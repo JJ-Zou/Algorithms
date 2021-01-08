@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode467;
+package com.zjj.leetcode.Leetcode467;
 
 public class SubstringInWraproundString {
     public int findSubstringInWraproundString(String p) {

@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode214;
+package com.zjj.leetcode.Leetcode214;
 
 /**
  * 逆序马拉车

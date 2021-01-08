@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode79;
+package com.zjj.leetcode.Leetcode79;
 
 public class Solution {
     private boolean res;

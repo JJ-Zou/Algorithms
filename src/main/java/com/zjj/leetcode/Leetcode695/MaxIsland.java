@@ -1,4 +1,4 @@
-package com.zjj.Leetcode.Leetcode695;
+package com.zjj.leetcode.Leetcode695;
 
 /**
  * 逐个点DFS，将搜索过的1置为0
