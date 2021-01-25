@@ -1,5 +1,8 @@
 package com.zjj.test.leetcode;
 
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class ex0928 {
     public static void main(String[] args) {
 //        int i = 0;
@@ -19,6 +22,15 @@ public class ex0928 {
         System.out.println(-3 / 5);
         System.out.println(-4 / 5);
         System.out.println(-8 / 5);
+
+        AtomicInteger lock = new AtomicInteger(0);
+        lock.incrementAndGet();
+        Semaphore  semaphore = new Semaphore(0);
+        try {
+            semaphore.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     long getAmount(int m) {
