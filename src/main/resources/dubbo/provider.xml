@@ -13,7 +13,6 @@
         <dubbo:parameter key="qos.accept.foreign.ip" value="false"/>
         <dubbo:parameter key="qos.port" value="22223"/>
     </dubbo:application>
-    <!-- 使用multicast广播注册中心暴露服务地址 -->
     <dubbo:registry address="zookeeper://39.105.65.104:2181"/>
     <dubbo:config-center address="zookeeper://39.105.65.104:2181"/>
     <dubbo:metadata-report address="zookeeper://39.105.65.104:2181"/>
