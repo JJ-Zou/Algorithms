@@ -90,7 +90,7 @@ public abstract class FailbackRegistry extends AbstractRegistry {
         }
     }
 
-    private void addFailedSubscribed(URL url, NotifyListener listener) {
+    protected void addFailedSubscribed(URL url, NotifyListener listener) {
         Holder holder = new Holder(url, listener);
         FailedSubscribedTask old = failedSubscribed.get(holder);
         if (old != null) {

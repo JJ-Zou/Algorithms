@@ -6,6 +6,12 @@ public interface CommonConstants {
 
     Pattern COMMA_SPLIT_PATTERN = Pattern.compile("\\s*[,]+\\s*");
 
+    String DEFAULT_ROOT = "dubbo";
+    String PATH_SEPARATOR = "/";
+    String ANYHOST_KEY = "anyhost";
+    String ANYHOST_VALUE = "0.0.0.0";
+
+
     String INTERFACE_KEY = "interface";
     String METHODS_KEY = "methods";
     String GROUP_KEY = "group";

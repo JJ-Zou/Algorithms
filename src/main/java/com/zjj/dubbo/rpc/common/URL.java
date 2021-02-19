@@ -6,6 +6,8 @@ import com.zjj.dubbo.rpc.common.utils.NetUtils;
 import com.zjj.dubbo.rpc.common.utils.StringUtils;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -235,6 +237,17 @@ public class URL implements Serializable {
         return new URL(protocol, username, password, host, port, path, parameters);
     }
 
+    public static String encode(String value) {
+        if (StringUtils.isEmpty(value)) {
+            return "";
+        }
+        try {
+            return URLEncoder.encode(value, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e.getMessage(), e);
+        }
+    }
+
     public String getAddress() {
         if (address == null) {
             address = getAddress(host, port);
@@ -365,6 +378,10 @@ public class URL implements Serializable {
         return buf.toString();
     }
 
+    public String toServiceStringWithoutResolving() {
+        return buildString(true, false, false, true);
+    }
+
     private void buildParameters(StringBuffer buf, boolean concat, String[] parameters) {
         if (CollectionUtils.isEmptyMap(getParameters())) {
             return;
@@ -437,15 +454,25 @@ public class URL implements Serializable {
         return StringUtils.isEmpty(value) ? defaultValue : value;
     }
 
+
     public String getParameter(String key) {
         return parameters.get(key);
     }
 
+    public String[] getParameter(String key, String[] defaultValue) {
+        String value = getParameter(key);
+        return StringUtils.isEmpty(value) ? defaultValue : COMMA_SPLIT_PATTERN.split(value);
+    }
     public String getIp() {
         if (ip == null) {
             ip = NetUtils.getIpByHost(host);
         }
         return ip;
     }
+
+    public boolean isAnyHost() {
+        return ANYHOST_VALUE.equals(host) || getParameter(ANYHOST_KEY, false);
+    }
+
 
 }
