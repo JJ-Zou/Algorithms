@@ -4,12 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ZJJ</groupId>
+    <groupId>com.zjj</groupId>
     <artifactId>Algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>rpc</module>
         <module>algorithms</module>
+        <module>test</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -26,6 +27,7 @@
         <junit.version>4.12</junit.version>
         <spring.version>5.2.4.RELEASE</spring.version>
         <springboot.version>2.2.5.RELEASE</springboot.version>
+        <hutool.version>5.4.6</hutool.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -123,6 +125,11 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
