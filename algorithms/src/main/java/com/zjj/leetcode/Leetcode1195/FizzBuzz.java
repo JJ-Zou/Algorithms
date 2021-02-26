@@ -4,6 +4,19 @@ import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
 
 public class FizzBuzz {
+    private int n;
+    private Semaphore f;
+    private Semaphore b;
+    private Semaphore fb;
+    private Semaphore num;
+    public FizzBuzz(int n) {
+        this.n = n;
+        f = new Semaphore(0);
+        b = new Semaphore(0);
+        fb = new Semaphore(0);
+        num = new Semaphore(0);
+    }
+
     public static void main(String[] args) {
         FizzBuzz fizzBuzz = new FizzBuzz(100);
         new Thread(() -> {
@@ -34,20 +47,6 @@ public class FizzBuzz {
                 e.printStackTrace();
             }
         }).start();
-    }
-
-    private int n;
-    private Semaphore f;
-    private Semaphore b;
-    private Semaphore fb;
-    private Semaphore num;
-
-    public FizzBuzz(int n) {
-        this.n = n;
-        f = new Semaphore(0);
-        b = new Semaphore(0);
-        fb = new Semaphore(0);
-        num = new Semaphore(0);
     }
 
     // printFizz.run() outputs "fizz".

@@ -7,6 +7,7 @@ public class Solution {
     public static void main(String[] args) {
         System.out.println(new Solution().lastRemaining(1_000_000_000));
     }
+
     public int lastRemaining(int n) {
         if (n == 1) {
             return 1;

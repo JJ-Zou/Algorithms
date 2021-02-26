@@ -47,13 +47,13 @@ public class ServiceBean implements InitializingBean, DisposableBean,
         this.applicationContext = applicationContext;
     }
 
+    public String getBeanName() {
+        return beanName;
+    }
+
     @Override
     public void setBeanName(String beanName) {
         this.beanName = beanName;
-    }
-
-    public String getBeanName() {
-        return beanName;
     }
 
     @Override

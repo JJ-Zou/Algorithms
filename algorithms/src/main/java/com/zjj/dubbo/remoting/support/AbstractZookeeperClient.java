@@ -2,10 +2,10 @@ package com.zjj.dubbo.remoting.support;
 
 import com.zjj.dubbo.common.URL;
 import com.zjj.dubbo.common.utils.ConcurrentHashSet;
-import com.zjj.dubbo.remoting.zookeeper.ZookeeperClient;
 import com.zjj.dubbo.remoting.ChildListener;
 import com.zjj.dubbo.remoting.DataListener;
 import com.zjj.dubbo.remoting.StateListener;
+import com.zjj.dubbo.remoting.zookeeper.ZookeeperClient;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
@@ -18,20 +18,14 @@ import java.util.concurrent.Executor;
 @Slf4j
 public abstract class AbstractZookeeperClient<TargetDataListener, TargetChildListener> implements ZookeeperClient {
 
+    private final URL url;
+    private final Set<StateListener> stateListeners = new CopyOnWriteArraySet<>();
+    private final ConcurrentMap<String, ConcurrentMap<ChildListener, TargetChildListener>> childListeners = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, ConcurrentMap<DataListener, TargetDataListener>> listeners = new ConcurrentHashMap<>();
+    private final Set<String> persistentExistNodePath = new ConcurrentHashSet<>();
     protected int DEFAULT_CONNECTION_TIMEOUT_MS = 5 * 1000;
     protected int DEFAULT_SESSION_TIMEOUT_MS = 60 * 1000;
-
-    private final URL url;
-
-    private final Set<StateListener> stateListeners = new CopyOnWriteArraySet<>();
-
-    private final ConcurrentMap<String, ConcurrentMap<ChildListener, TargetChildListener>> childListeners = new ConcurrentHashMap<>();
-
-    private final ConcurrentMap<String, ConcurrentMap<DataListener, TargetDataListener>> listeners = new ConcurrentHashMap<>();
-
     private volatile boolean closed = false;
-
-    private final Set<String> persistentExistNodePath = new ConcurrentHashSet<>();
 
     public AbstractZookeeperClient(URL url) {
         this.url = url;

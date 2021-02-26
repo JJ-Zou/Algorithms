@@ -13,7 +13,7 @@ public class TestUnicode {
         char[] ch = (char[]) value.get(s);
         System.out.println(ch.length);
         System.out.println(s);
-        value.set(s, new char[] {'d', 'e', 'f'});
+        value.set(s, new char[]{'d', 'e', 'f'});
         System.out.println(s);
     }
 

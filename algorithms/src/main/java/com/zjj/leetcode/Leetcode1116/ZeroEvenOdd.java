@@ -7,6 +7,17 @@ import java.util.function.IntConsumer;
 
 public class ZeroEvenOdd {
 
+    private int n;
+    private Semaphore semaphore1;
+    private Semaphore semaphore2;
+    private Semaphore semaphore3;
+    public ZeroEvenOdd(int n) {
+        this.n = n;
+        this.semaphore1 = new Semaphore(0);
+        this.semaphore2 = new Semaphore(0);
+        this.semaphore3 = new Semaphore(0);
+    }
+
     @SneakyThrows
     public static void main(String[] args) {
         ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(13);
@@ -31,18 +42,6 @@ public class ZeroEvenOdd {
                 e.printStackTrace();
             }
         }).start();
-    }
-
-    private int n;
-    private Semaphore semaphore1;
-    private Semaphore semaphore2;
-    private Semaphore semaphore3;
-
-    public ZeroEvenOdd(int n) {
-        this.n = n;
-        this.semaphore1 = new Semaphore(0);
-        this.semaphore2 = new Semaphore(0);
-        this.semaphore3 = new Semaphore(0);
     }
 
     // printNumber.accept(x) outputs "x", where x is an integer.

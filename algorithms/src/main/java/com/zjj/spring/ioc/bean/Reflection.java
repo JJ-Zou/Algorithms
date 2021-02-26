@@ -8,6 +8,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.stream.Stream;
 
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+@interface Autowired {
+
+}
+
 public class Reflection {
 
     public static void main(String[] args) {
@@ -46,11 +52,5 @@ class ClassB {
     public void print() {
         classA.print();
     }
-}
-
-@Target(ElementType.FIELD)
-@Retention(RetentionPolicy.RUNTIME)
-@interface Autowired {
-
 }
 

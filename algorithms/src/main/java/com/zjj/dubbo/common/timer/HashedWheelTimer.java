@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
-public class HashedWheelTimer implements Timer{
+public class HashedWheelTimer implements Timer {
     public HashedWheelTimer(ThreadFactory threadFactory) {
 
     }

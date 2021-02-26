@@ -1,9 +1,9 @@
 package com.zjj.dubbo.registry.support;
 
-import com.zjj.dubbo.common.timer.HashedWheelTimer;
-import com.zjj.dubbo.common.utils.NameThreadFactory;
 import com.zjj.dubbo.common.URL;
+import com.zjj.dubbo.common.timer.HashedWheelTimer;
 import com.zjj.dubbo.common.utils.CollectionUtils;
+import com.zjj.dubbo.common.utils.NameThreadFactory;
 import com.zjj.dubbo.registry.NotifyListener;
 import com.zjj.dubbo.registry.retry.*;
 import lombok.extern.slf4j.Slf4j;

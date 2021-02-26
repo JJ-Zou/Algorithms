@@ -252,30 +252,8 @@ public class URL implements Serializable {
         }
     }
 
-    public String getAddress() {
-        if (address == null) {
-            address = getAddress(host, port);
-        }
-        return address;
-    }
-
     private static String getAddress(String host, int port) {
         return port <= 0 ? host : host + ":" + port;
-    }
-
-    public String getBackupAddress() {
-        return getBackupAddress(0);
-    }
-
-    public String getBackupAddress(int defaultPort) {
-        StringBuilder address = new StringBuilder(appendDefaultPort(getAddress(), defaultPort));
-        String[] backups = getParameter(BACKUP_KEY, new String[0]);
-        if (ArrayUtils.isNotEmpty(backups)) {
-            for (String backup : backups) {
-                address.append(',').append(appendDefaultPort(backup, defaultPort));
-            }
-        }
-        return address.toString();
     }
 
     static String appendDefaultPort(String address, int defaultPort) {
@@ -328,6 +306,121 @@ public class URL implements Serializable {
         subParameter.put(key, value);
     }
 
+    public static URL parseURL(String address, Map<String, String> defaults) {
+        if (address == null || address.length() == 0) {
+            return null;
+        }
+        String url;
+        if (address.contains("://") || address.contains(URL_PARAM_STARTING_SYMBOL)) {
+            url = address;
+        } else {
+            String[] addresses = COMMA_SPLIT_PATTERN.split(address);
+            url = addresses[0];
+            if (addresses.length > 1) {
+                StringBuilder backup = new StringBuilder();
+                for (int i = 1; i < addresses.length; i++) {
+                    if (i > 1) {
+                        backup.append(',');
+                    }
+                    backup.append(addresses[i]);
+                }
+                url += URL_PARAM_STARTING_SYMBOL + RemotingConstants.BACKUP_KEY + "=" + backup.toString();
+            }
+        }
+        String defaultProtocol = defaults == null ? null : defaults.get(PROTOCOL_KEY);
+        if (defaultProtocol == null || defaultProtocol.length() == 0) {
+            defaultProtocol = RPC_PROTOCOL;
+        }
+        String defaultUsername = defaults == null ? null : defaults.get(USERNAME_KEY);
+        String defaultPassword = defaults == null ? null : defaults.get(PASSWORD_KEY);
+        int defaultPort = StringUtils.parseInteger(defaults == null ? null : defaults.get(PORT_KEY));
+        String defaultPath = defaults == null ? null : defaults.get(PATH_KEY);
+        Map<String, String> defaultParameters = defaults == null ? null : new HashMap<>(defaults);
+        if (defaultParameters != null) {
+            defaultParameters.remove(PROTOCOL_KEY);
+            defaultParameters.remove(USERNAME_KEY);
+            defaultParameters.remove(PASSWORD_KEY);
+            defaultParameters.remove(HOST_KEY);
+            defaultParameters.remove(PORT_KEY);
+            defaultParameters.remove(PATH_KEY);
+        }
+        URL u = URL.valueOf(url);
+        boolean changed = false;
+        String protocol = u.getProtocol();
+        String username = u.getUsername();
+        String password = u.getPassword();
+        String host = u.getHost();
+        int port = u.getPort();
+        String path = u.getPath();
+        Map<String, String> parameters = new HashMap<>(u.getParameters());
+        if (protocol == null || protocol.length() == 0) {
+            changed = true;
+            protocol = defaultProtocol;
+        }
+        if ((username == null || username.length() == 0) && defaultUsername != null && defaultUsername.length() > 0) {
+            changed = true;
+            username = defaultUsername;
+        }
+        if ((password == null || password.length() == 0) && defaultPassword != null && defaultPassword.length() > 0) {
+            changed = true;
+            password = defaultPassword;
+        }
+        if (port <= 0) {
+            if (defaultPort > 0) {
+                changed = true;
+                port = defaultPort;
+            } else {
+                changed = true;
+                port = 9090;
+            }
+        }
+        if (path == null || path.length() == 0) {
+            if (defaultPath != null && defaultPath.length() > 0) {
+                changed = true;
+                path = defaultPath;
+            }
+        }
+        if (defaultParameters != null && defaultParameters.size() > 0) {
+            for (Map.Entry<String, String> entry : defaultParameters.entrySet()) {
+                String key = entry.getKey();
+                String defaultValue = entry.getValue();
+                if (defaultValue != null && defaultValue.length() > 0) {
+                    String value = parameters.get(key);
+                    if (StringUtils.isEmpty(value)) {
+                        changed = true;
+                        parameters.put(key, defaultValue);
+                    }
+                }
+            }
+        }
+        if (changed) {
+            u = new URL(protocol, username, password, host, port, path, parameters);
+        }
+        return u;
+    }
+
+    public String getAddress() {
+        if (address == null) {
+            address = getAddress(host, port);
+        }
+        return address;
+    }
+
+    public String getBackupAddress() {
+        return getBackupAddress(0);
+    }
+
+    public String getBackupAddress(int defaultPort) {
+        StringBuilder address = new StringBuilder(appendDefaultPort(getAddress(), defaultPort));
+        String[] backups = getParameter(BACKUP_KEY, new String[0]);
+        if (ArrayUtils.isNotEmpty(backups)) {
+            for (String backup : backups) {
+                address.append(',').append(appendDefaultPort(backup, defaultPort));
+            }
+        }
+        return address.toString();
+    }
+
     public String getProtocol() {
         return protocol;
     }
@@ -355,7 +448,6 @@ public class URL implements Serializable {
     public Map<String, String> getParameters() {
         return parameters;
     }
-
 
     @Override
     public String toString() {
@@ -485,7 +577,6 @@ public class URL implements Serializable {
         return StringUtils.isEmpty(value) ? defaultValue : value;
     }
 
-
     public String getParameter(String key) {
         return parameters.get(key);
     }
@@ -515,104 +606,10 @@ public class URL implements Serializable {
         return CommonConstants.ANYHOST_VALUE.equals(host) || getParameter(CommonConstants.ANYHOST_KEY, false);
     }
 
-
     public String getAuthority() {
         if (StringUtils.isEmpty(username) && StringUtils.isEmpty(password)) {
             return null;
         }
         return (username == null ? "" : username) + ":" + (password == null ? "" : password);
-    }
-
-    public static URL parseURL(String address, Map<String, String> defaults) {
-        if (address == null || address.length() == 0) {
-            return null;
-        }
-        String url;
-        if (address.contains("://") || address.contains(URL_PARAM_STARTING_SYMBOL)) {
-            url = address;
-        } else {
-            String[] addresses = COMMA_SPLIT_PATTERN.split(address);
-            url = addresses[0];
-            if (addresses.length > 1) {
-                StringBuilder backup = new StringBuilder();
-                for (int i = 1; i < addresses.length; i++) {
-                    if (i > 1) {
-                        backup.append(',');
-                    }
-                    backup.append(addresses[i]);
-                }
-                url += URL_PARAM_STARTING_SYMBOL + RemotingConstants.BACKUP_KEY + "=" + backup.toString();
-            }
-        }
-        String defaultProtocol = defaults == null ? null : defaults.get(PROTOCOL_KEY);
-        if (defaultProtocol == null || defaultProtocol.length() == 0) {
-            defaultProtocol = RPC_PROTOCOL;
-        }
-        String defaultUsername = defaults == null ? null : defaults.get(USERNAME_KEY);
-        String defaultPassword = defaults == null ? null : defaults.get(PASSWORD_KEY);
-        int defaultPort = StringUtils.parseInteger(defaults == null ? null : defaults.get(PORT_KEY));
-        String defaultPath = defaults == null ? null : defaults.get(PATH_KEY);
-        Map<String, String> defaultParameters = defaults == null ? null : new HashMap<>(defaults);
-        if (defaultParameters != null) {
-            defaultParameters.remove(PROTOCOL_KEY);
-            defaultParameters.remove(USERNAME_KEY);
-            defaultParameters.remove(PASSWORD_KEY);
-            defaultParameters.remove(HOST_KEY);
-            defaultParameters.remove(PORT_KEY);
-            defaultParameters.remove(PATH_KEY);
-        }
-        URL u = URL.valueOf(url);
-        boolean changed = false;
-        String protocol = u.getProtocol();
-        String username = u.getUsername();
-        String password = u.getPassword();
-        String host = u.getHost();
-        int port = u.getPort();
-        String path = u.getPath();
-        Map<String, String> parameters = new HashMap<>(u.getParameters());
-        if (protocol == null || protocol.length() == 0) {
-            changed = true;
-            protocol = defaultProtocol;
-        }
-        if ((username == null || username.length() == 0) && defaultUsername != null && defaultUsername.length() > 0) {
-            changed = true;
-            username = defaultUsername;
-        }
-        if ((password == null || password.length() == 0) && defaultPassword != null && defaultPassword.length() > 0) {
-            changed = true;
-            password = defaultPassword;
-        }
-        if (port <= 0) {
-            if (defaultPort > 0) {
-                changed = true;
-                port = defaultPort;
-            } else {
-                changed = true;
-                port = 9090;
-            }
-        }
-        if (path == null || path.length() == 0) {
-            if (defaultPath != null && defaultPath.length() > 0) {
-                changed = true;
-                path = defaultPath;
-            }
-        }
-        if (defaultParameters != null && defaultParameters.size() > 0) {
-            for (Map.Entry<String, String> entry : defaultParameters.entrySet()) {
-                String key = entry.getKey();
-                String defaultValue = entry.getValue();
-                if (defaultValue != null && defaultValue.length() > 0) {
-                    String value = parameters.get(key);
-                    if (StringUtils.isEmpty(value)) {
-                        changed = true;
-                        parameters.put(key, defaultValue);
-                    }
-                }
-            }
-        }
-        if (changed) {
-            u = new URL(protocol, username, password, host, port, path, parameters);
-        }
-        return u;
     }
 }

@@ -17,24 +17,6 @@ public class Solution {
         System.out.println(Arrays.toString(new Solution().calcEquation(equations, values, queries)));
     }
 
-    static class Pair {
-        private int vertex;
-        private double value;
-
-        public Pair(int vertex, double value) {
-            this.vertex = vertex;
-            this.value = value;
-        }
-
-        public int getVertex() {
-            return vertex;
-        }
-
-        public double getValue() {
-            return value;
-        }
-    }
-
     public double[] calcEquationBFS(List<List<String>> equations, double[] values, List<List<String>> queries) {
         Map<String, Integer> map = new HashMap<>();
         int vertex = 0;
@@ -91,7 +73,6 @@ public class Solution {
         return res;
     }
 
-
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         Map<String, Integer> map = new HashMap<>();
         int vertex = 0;
@@ -147,5 +128,23 @@ public class Solution {
             father[x] = f;
         }
         return father[x];
+    }
+
+    static class Pair {
+        private int vertex;
+        private double value;
+
+        public Pair(int vertex, double value) {
+            this.vertex = vertex;
+            this.value = value;
+        }
+
+        public int getVertex() {
+            return vertex;
+        }
+
+        public double getValue() {
+            return value;
+        }
     }
 }

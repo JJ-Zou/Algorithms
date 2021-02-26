@@ -27,6 +27,11 @@ public class RpcBootstrap extends GenericEventListener {
     private AtomicBoolean ready = new AtomicBoolean(true);
     private AtomicBoolean destroyed = new AtomicBoolean(false);
 
+    private RpcBootstrap() {
+        super();
+
+    }
+
     public static RpcBootstrap getInstance() {
         if (instance == null) {
             synchronized (RpcBootstrap.class) {
@@ -36,11 +41,6 @@ public class RpcBootstrap extends GenericEventListener {
             }
         }
         return instance;
-    }
-
-    private RpcBootstrap() {
-        super();
-
     }
 
     public RpcBootstrap start() {

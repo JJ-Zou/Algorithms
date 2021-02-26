@@ -10,7 +10,7 @@ public class DiningPhilosophers {
     private Lock[] locks;
 
     public DiningPhilosophers() {
-            semaphore = new Semaphore(4);
+        semaphore = new Semaphore(4);
         locks = new Lock[5];
         Arrays.fill(locks, new ReentrantLock());
     }

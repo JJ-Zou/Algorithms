@@ -1,7 +1,6 @@
 package com.zjj.dubbo.demo.consumer;
 
 import com.zjj.dubbo.demo.DemoService;
-import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;

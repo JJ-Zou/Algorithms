@@ -25,7 +25,7 @@ public class ex0928 {
 
         AtomicInteger lock = new AtomicInteger(0);
         lock.incrementAndGet();
-        Semaphore  semaphore = new Semaphore(0);
+        Semaphore semaphore = new Semaphore(0);
         try {
             semaphore.acquire();
         } catch (InterruptedException e) {

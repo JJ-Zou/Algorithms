@@ -24,15 +24,15 @@ public interface Result extends Serializable {
 
     Map<String, String> getAttachments();
 
+    void setAttachments(Map<String, String> map);
+
     Map<String, Object> getObjectAttachments();
+
+    void setObjectAttachments(Map<String, Object> map);
 
     void addAttachments(Map<String, String> map);
 
     void addObjectAttachments(Map<String, Object> map);
-
-    void setAttachments(Map<String, String> map);
-
-    void setObjectAttachments(Map<String, Object> map);
 
     String getAttachment(String key);
 

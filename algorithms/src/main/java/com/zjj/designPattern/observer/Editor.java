@@ -6,12 +6,12 @@ public class Editor {
     private final EventManager eventManager;
     private File file;
 
-    public EventManager getEventManager() {
-        return eventManager;
-    }
-
     public Editor() {
         this.eventManager = new EventManager("open", "save");
+    }
+
+    public EventManager getEventManager() {
+        return eventManager;
     }
 
     public void openFile(String filePath) {

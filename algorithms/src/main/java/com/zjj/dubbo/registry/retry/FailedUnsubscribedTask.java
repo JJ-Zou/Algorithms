@@ -1,10 +1,10 @@
 package com.zjj.dubbo.registry.retry;
 
 import com.zjj.dubbo.common.URL;
+import com.zjj.dubbo.common.timer.Timeout;
 import com.zjj.dubbo.registry.Constants;
 import com.zjj.dubbo.registry.NotifyListener;
 import com.zjj.dubbo.registry.support.FailbackRegistry;
-import com.zjj.dubbo.common.timer.Timeout;
 
 public class FailedUnsubscribedTask extends AbstractRetryTask {
     private final NotifyListener listener;

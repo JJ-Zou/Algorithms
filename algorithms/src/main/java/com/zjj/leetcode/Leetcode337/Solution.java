@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+    private Map<TreeNode, Integer> selected;
+    private Map<TreeNode, Integer> unselected;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
     }
-
-    private Map<TreeNode, Integer> selected;
-    private Map<TreeNode, Integer> unselected;
 
     public int rob(TreeNode root) {
         if (root == null) {

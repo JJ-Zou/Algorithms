@@ -29,11 +29,6 @@ public class MethodConfig extends AbstractMethodConfig {
     private String service;
     private String serviceId;
 
-    @Parameter(excluded = true)
-    public String getName() {
-        return name;
-    }
-
     public MethodConfig() {
     }
 
@@ -72,6 +67,11 @@ public class MethodConfig extends AbstractMethodConfig {
             return methodConfigs;
         }
         return Collections.emptyList();
+    }
+
+    @Parameter(excluded = true)
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {

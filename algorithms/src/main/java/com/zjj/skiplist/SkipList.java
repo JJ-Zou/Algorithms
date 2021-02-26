@@ -8,6 +8,15 @@ import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SkipList<K, V> {
+    private static final Object BASE_HEADER = new Object();
+    final Comparator<? super K> comparator;
+    private HeadIndex<K, V> head;
+
+    public SkipList() {
+        this.comparator = null;
+        initialize();
+    }
+
     @SneakyThrows
     public static void main(String[] args) {
 
@@ -84,68 +93,6 @@ public class SkipList<K, V> {
         System.out.println(skipList.head.level);
         System.out.println(t2 - t1);
         System.out.println(t3 - t2);
-    }
-
-    static final class Node<K, V> {
-        final K key;
-        Object value;
-        Node<K, V> next;
-
-        public Node(K key, Object value, Node<K, V> next) {
-            this.key = key;
-            this.value = value;
-            this.next = next;
-        }
-
-        public Node(Node<K, V> next) {
-            this.key = null;
-            this.value = this;
-            this.next = next;
-        }
-
-        void helpDelete(Node<K, V> b, Node<K, V> f) {
-            if (f == next && this == b.next) {
-                if (f == null || f.value != f) {
-                    this.next = new Node<>(f);
-                } else {
-                    b.next = f.next;
-                }
-            }
-        }
-    }
-
-    static class Index<K, V> {
-        final Node<K, V> node;
-        final Index<K, V> down;
-        Index<K, V> right;
-
-        public Index(Node<K, V> node, Index<K, V> down, Index<K, V> right) {
-            this.node = node;
-            this.down = down;
-            this.right = right;
-        }
-
-        final void unlink(Index<K, V> succ) {
-            this.right = succ.right;
-        }
-    }
-
-    static final class HeadIndex<K, V> extends Index<K, V> {
-        final int level;
-
-        public HeadIndex(Node<K, V> node, Index<K, V> down, Index<K, V> right, int level) {
-            super(node, down, right);
-            this.level = level;
-        }
-    }
-
-    final Comparator<? super K> comparator;
-    private HeadIndex<K, V> head;
-    private static final Object BASE_HEADER = new Object();
-
-    public SkipList() {
-        this.comparator = null;
-        initialize();
     }
 
     private void initialize() {
@@ -392,5 +339,58 @@ public class SkipList<K, V> {
 
     private int cpr(Comparator<? super K> c, K key1, K key2) {
         return (c != null) ? c.compare(key1, key2) : ((Comparable) key1).compareTo(key2);
+    }
+
+    static final class Node<K, V> {
+        final K key;
+        Object value;
+        Node<K, V> next;
+
+        public Node(K key, Object value, Node<K, V> next) {
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+
+        public Node(Node<K, V> next) {
+            this.key = null;
+            this.value = this;
+            this.next = next;
+        }
+
+        void helpDelete(Node<K, V> b, Node<K, V> f) {
+            if (f == next && this == b.next) {
+                if (f == null || f.value != f) {
+                    this.next = new Node<>(f);
+                } else {
+                    b.next = f.next;
+                }
+            }
+        }
+    }
+
+    static class Index<K, V> {
+        final Node<K, V> node;
+        final Index<K, V> down;
+        Index<K, V> right;
+
+        public Index(Node<K, V> node, Index<K, V> down, Index<K, V> right) {
+            this.node = node;
+            this.down = down;
+            this.right = right;
+        }
+
+        final void unlink(Index<K, V> succ) {
+            this.right = succ.right;
+        }
+    }
+
+    static final class HeadIndex<K, V> extends Index<K, V> {
+        final int level;
+
+        public HeadIndex(Node<K, V> node, Index<K, V> down, Index<K, V> right, int level) {
+            super(node, down, right);
+            this.level = level;
+        }
     }
 }

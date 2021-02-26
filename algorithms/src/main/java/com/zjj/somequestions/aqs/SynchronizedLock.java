@@ -12,6 +12,10 @@ package com.zjj.somequestions.aqs;
 public class SynchronizedLock {
     private Object object = new Object();
 
+    public static void main(String[] args) {
+        new SynchronizedLock().run();
+    }
+
     public void run() {
         new Thread(() -> {
             synchronized (object) {
@@ -27,9 +31,5 @@ public class SynchronizedLock {
             }
             System.out.println("exit reference: " + 0);
         }, "t1").start();
-    }
-
-    public static void main(String[] args) {
-        new SynchronizedLock().run();
     }
 }

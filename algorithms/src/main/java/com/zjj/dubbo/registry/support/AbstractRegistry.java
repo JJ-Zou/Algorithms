@@ -1,13 +1,13 @@
 package com.zjj.dubbo.registry.support;
 
-import com.zjj.dubbo.registry.Constants;
-import com.zjj.dubbo.registry.Registry;
 import com.zjj.dubbo.common.URL;
 import com.zjj.dubbo.common.utils.CollectionUtils;
 import com.zjj.dubbo.common.utils.ConcurrentHashSet;
 import com.zjj.dubbo.common.utils.StringUtils;
 import com.zjj.dubbo.common.utils.UrlUtils;
+import com.zjj.dubbo.registry.Constants;
 import com.zjj.dubbo.registry.NotifyListener;
+import com.zjj.dubbo.registry.Registry;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;

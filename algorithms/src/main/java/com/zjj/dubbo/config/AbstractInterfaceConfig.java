@@ -9,6 +9,7 @@ import java.util.List;
 public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
 
     private static final long serialVersionUID = -4762429810926138224L;
+    protected final List<URL> urls = new ArrayList<>();
     protected String local;
     protected String stub;
     protected MonitorConfig monitor;
@@ -22,7 +23,6 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     protected ApplicationConfig application;
     protected ModuleConfig module;
     protected List<RegistryConfig> registries;
-    private List<MethodConfig> methods;
     protected String registryIds;
     protected String onconnect;
     protected String ondisconnect;
@@ -30,11 +30,11 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     protected MetadataReportConfig metadataReportConfig;
 
     protected ConfigCenterConfig configCenter;
+    protected String tag;
+    private List<MethodConfig> methods;
     private Integer callbacks;
     private String scope;
-    protected String tag;
     private Boolean auth;
-    protected final List<URL> urls = new ArrayList<>();
 
     public List<URL> getExportedUrls() {
         return urls;

@@ -12,13 +12,13 @@ import java.util.Objects;
 abstract class OneTimeExecutionApplicationContextEventListener implements ApplicationListener, ApplicationContextAware {
     private ApplicationContext applicationContext;
 
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
+
     @Override
     public final void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
-    }
-
-    public ApplicationContext getApplicationContext() {
-        return applicationContext;
     }
 
     @Override

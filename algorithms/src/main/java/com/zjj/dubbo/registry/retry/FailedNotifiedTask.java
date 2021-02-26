@@ -1,11 +1,11 @@
 package com.zjj.dubbo.registry.retry;
 
 import com.zjj.dubbo.common.URL;
+import com.zjj.dubbo.common.timer.Timeout;
 import com.zjj.dubbo.common.utils.CollectionUtils;
 import com.zjj.dubbo.registry.Constants;
 import com.zjj.dubbo.registry.NotifyListener;
 import com.zjj.dubbo.registry.support.FailbackRegistry;
-import com.zjj.dubbo.common.timer.Timeout;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

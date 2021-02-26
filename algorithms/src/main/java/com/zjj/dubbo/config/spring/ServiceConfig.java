@@ -27,10 +27,10 @@ public class ServiceConfig<T> extends ServiceConfigBase<T> {
             Executors.newSingleThreadScheduledExecutor(new NameThreadFactory("RpcServiceDelayExporter", true));
     private static final Protocol PROTOCOL = ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension();
     private static final ProxyFactory PROXY_FACTORY = ExtensionLoader.getExtensionLoader(ProxyFactory.class).getAdaptiveExtension();
+    private final List<Exporter<?>> exporters = new ArrayList<>();
     private transient volatile boolean exported;
     private transient volatile boolean unexported;
     private RpcBootstrap bootstrap;
-    private final List<Exporter<?>> exporters = new ArrayList<>();
 
     public ServiceConfig() {
 

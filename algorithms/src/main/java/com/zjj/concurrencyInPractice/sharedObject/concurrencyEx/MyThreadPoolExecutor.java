@@ -13,87 +13,30 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MyThreadPoolExecutor extends AbstractExecutorService {
-    private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
-
-    public static void main(String[] args) {
-        MyThreadPoolExecutor poolExecutor = new MyThreadPoolExecutor(4,
-                4,
-                1,
-                TimeUnit.MILLISECONDS,
-                new ArrayBlockingQueue<>(100));
-        poolExecutor.execute(() -> {
-            System.out.println("hello world!");
-            System.out.println("hello world!");
-            System.out.println("hello world!");
-        });
-        poolExecutor.shutdown();
-    }
-
     private static final int COUNT_BITS = Integer.SIZE - 3;
     private static final int CAPACITY = (1 << COUNT_BITS) - 1;
-
     private static final int RUNNING = -1 << COUNT_BITS;
     private static final int SHUTDOWN = 0 << COUNT_BITS;
     private static final int STOP = 1 << COUNT_BITS;
     private static final int TIDYING = 2 << COUNT_BITS;
     private static final int TERMINATED = 3 << COUNT_BITS;
-
-    private static int ctlOf(int rs, int wc) {
-        return rs | wc;
-    }
-
-    private static int workerCountOf(int c) {
-        return c & CAPACITY;
-    }
-
-    private static int runStateOf(int c) {
-        return c & ~CAPACITY;
-    }
-
-    private static boolean isRunning(int c) {
-        return c < SHUTDOWN;
-    }
-
-    private static boolean runStateLessThan(int c, int s) {
-        return c < s;
-    }
-
-    private static boolean runStateAtLeast(int c, int s) {
-        return c >= s;
-    }
-
-
-    private boolean compareAndIncrementWorkerCount(int expect) {
-        return ctl.compareAndSet(expect, expect + 1);
-    }
-
-    private boolean compareAndDecrementWorkerCount(int expect) {
-        return ctl.compareAndSet(expect, expect - 1);
-    }
-
-    private void decrementWorkerCount() {
-        do {
-        } while (!compareAndDecrementWorkerCount(ctl.get()));
-    }
-
+    private static final RejectedExecutionHandler defaultHandler = new AbortPolicy();
+    private static final RuntimePermission shutdownPerm = new RuntimePermission("modifyThread");
+    private static final boolean ONLY_ONE = true;
+    private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
     private final ReentrantLock mainLock = new ReentrantLock();
     private final Condition termination = mainLock.newCondition();
     private final HashSet<Worker> workers = new HashSet<>();
-
+    private final BlockingQueue<Runnable> workQueue;
+    private final AccessControlContext acc;
     private int largestPoolSize;
     private long completedTaskCount;
-    private final BlockingQueue<Runnable> workQueue;
-
     private volatile ThreadFactory threadFactory;
     private volatile RejectedExecutionHandler handler;
     private volatile long keepAliveTime;
     private volatile boolean allowCoreThreadTimeOut;
     private volatile int corePoolSize;
     private volatile int maximumPoolSize;
-    private static final RejectedExecutionHandler defaultHandler = new AbortPolicy();
-
-    private static final RuntimePermission shutdownPerm = new RuntimePermission("modifyThread");
-    private final AccessControlContext acc;
 
     public MyThreadPoolExecutor(int corePoolSize,
                                 int maximumPoolSize,
@@ -102,7 +45,6 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
                                 BlockingQueue<Runnable> workQueue) {
         this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, Executors.defaultThreadFactory(), defaultHandler);
     }
-
     public MyThreadPoolExecutor(int corePoolSize,
                                 int maximumPoolSize,
                                 long keepAliveTime,
@@ -111,7 +53,6 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
                                 ThreadFactory threadFactory) {
         this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, defaultHandler);
     }
-
     public MyThreadPoolExecutor(int corePoolSize,
                                 int maximumPoolSize,
                                 long keepAliveTime,
@@ -120,7 +61,6 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
                                 RejectedExecutionHandler handler) {
         this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, Executors.defaultThreadFactory(), handler);
     }
-
     public MyThreadPoolExecutor(int corePoolSize,
                                 int maximumPoolSize,
                                 long keepAliveTime,
@@ -146,8 +86,66 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
         this.handler = handler;
     }
 
+    public static void main(String[] args) {
+        MyThreadPoolExecutor poolExecutor = new MyThreadPoolExecutor(4,
+                4,
+                1,
+                TimeUnit.MILLISECONDS,
+                new ArrayBlockingQueue<>(100));
+        poolExecutor.execute(() -> {
+            System.out.println("hello world!");
+            System.out.println("hello world!");
+            System.out.println("hello world!");
+        });
+        poolExecutor.shutdown();
+    }
+
+    private static int ctlOf(int rs, int wc) {
+        return rs | wc;
+    }
+
+    private static int workerCountOf(int c) {
+        return c & CAPACITY;
+    }
+
+    private static int runStateOf(int c) {
+        return c & ~CAPACITY;
+    }
+
+    private static boolean isRunning(int c) {
+        return c < SHUTDOWN;
+    }
+
+    private static boolean runStateLessThan(int c, int s) {
+        return c < s;
+    }
+
+    private static boolean runStateAtLeast(int c, int s) {
+        return c >= s;
+    }
+
+    private boolean compareAndIncrementWorkerCount(int expect) {
+        return ctl.compareAndSet(expect, expect + 1);
+    }
+
+    private boolean compareAndDecrementWorkerCount(int expect) {
+        return ctl.compareAndSet(expect, expect - 1);
+    }
+
+    private void decrementWorkerCount() {
+        do {
+        } while (!compareAndDecrementWorkerCount(ctl.get()));
+    }
+
     public ThreadFactory getThreadFactory() {
         return threadFactory;
+    }
+
+    public void setThreadFactory(ThreadFactory threadFactory) {
+        if (threadFactory == null) {
+            throw new NullPointerException();
+        }
+        this.threadFactory = threadFactory;
     }
 
     final void runWorker(Worker w) {
@@ -251,86 +249,6 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
                 timeOut = true;
             } catch (InterruptedException retry) {
                 timeOut = false;
-            }
-        }
-    }
-
-    public static class AbortPolicy implements RejectedExecutionHandler {
-        public AbortPolicy() {
-        }
-
-        @Override
-        public void rejectedExecution(Runnable r, MyThreadPoolExecutor e) {
-            throw new RejectedExecutionException("Task " + r.toString() +
-                    " rejected from " +
-                    e.toString());
-        }
-    }
-
-    private final class Worker extends AbstractQueuedSynchronizer implements Runnable {
-        final Thread thread;
-
-        Runnable firstTask;
-
-        volatile long completedTasks;
-
-        public Worker(Runnable firstTask) {
-            setState(-1);
-            this.firstTask = firstTask;
-            this.thread = getThreadFactory().newThread(this);
-        }
-
-
-        @Override
-        public void run() {
-            runWorker(this);
-        }
-
-        @Override
-        protected boolean isHeldExclusively() {
-            return getState() != 0;
-        }
-
-        @Override
-        protected boolean tryAcquire(int arg) {
-            if (compareAndSetState(0, 1)) {
-                setExclusiveOwnerThread(Thread.currentThread());
-                return true;
-            }
-            return false;
-        }
-
-        @Override
-        protected boolean tryRelease(int arg) {
-            setExclusiveOwnerThread(null);
-            setState(0);
-            return true;
-        }
-
-        public void lock() {
-            acquire(1);
-        }
-
-        public void unlock() {
-            release(1);
-        }
-
-        public boolean tryLock() {
-            return tryAcquire(1);
-        }
-
-        public boolean isLocked() {
-            return isHeldExclusively();
-        }
-
-        void interruptIfStarted() {
-            Thread t;
-            if (getState() >= 0 && (t = thread) != null && !t.isInterrupted()) {
-                try {
-                    t.interrupt();
-                } catch (SecurityException ignore) {
-
-                }
             }
         }
     }
@@ -546,9 +464,6 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
         }
     }
 
-
-    private static final boolean ONLY_ONE = true;
-
     private boolean addWorker(Runnable firstTask, boolean core) {
         retry:
         for (; ; ) {
@@ -626,23 +541,15 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
         }
     }
 
-    public void setThreadFactory(ThreadFactory threadFactory) {
-        if (threadFactory == null) {
-            throw new NullPointerException();
-        }
-        this.threadFactory = threadFactory;
+    public RejectedExecutionHandler getRejectedExecutionHandler() {
+        return handler;
     }
-
 
     public void setRejectedExecutionHandler(RejectedExecutionHandler handler) {
         if (handler == null) {
             throw new NullPointerException();
         }
         this.handler = handler;
-    }
-
-    public RejectedExecutionHandler getRejectedExecutionHandler() {
-        return handler;
     }
 
     public void setCorePoolSize(int corePoolSize) {
@@ -681,5 +588,85 @@ public class MyThreadPoolExecutor extends AbstractExecutorService {
                 ", maximumPoolSize=" + maximumPoolSize +
                 ", acc=" + acc +
                 '}';
+    }
+
+    public static class AbortPolicy implements RejectedExecutionHandler {
+        public AbortPolicy() {
+        }
+
+        @Override
+        public void rejectedExecution(Runnable r, MyThreadPoolExecutor e) {
+            throw new RejectedExecutionException("Task " + r.toString() +
+                    " rejected from " +
+                    e.toString());
+        }
+    }
+
+    private final class Worker extends AbstractQueuedSynchronizer implements Runnable {
+        final Thread thread;
+
+        Runnable firstTask;
+
+        volatile long completedTasks;
+
+        public Worker(Runnable firstTask) {
+            setState(-1);
+            this.firstTask = firstTask;
+            this.thread = getThreadFactory().newThread(this);
+        }
+
+
+        @Override
+        public void run() {
+            runWorker(this);
+        }
+
+        @Override
+        protected boolean isHeldExclusively() {
+            return getState() != 0;
+        }
+
+        @Override
+        protected boolean tryAcquire(int arg) {
+            if (compareAndSetState(0, 1)) {
+                setExclusiveOwnerThread(Thread.currentThread());
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        protected boolean tryRelease(int arg) {
+            setExclusiveOwnerThread(null);
+            setState(0);
+            return true;
+        }
+
+        public void lock() {
+            acquire(1);
+        }
+
+        public void unlock() {
+            release(1);
+        }
+
+        public boolean tryLock() {
+            return tryAcquire(1);
+        }
+
+        public boolean isLocked() {
+            return isHeldExclusively();
+        }
+
+        void interruptIfStarted() {
+            Thread t;
+            if (getState() >= 0 && (t = thread) != null && !t.isInterrupted()) {
+                try {
+                    t.interrupt();
+                } catch (SecurityException ignore) {
+
+                }
+            }
+        }
     }
 }

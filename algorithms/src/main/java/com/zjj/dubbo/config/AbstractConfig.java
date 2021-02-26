@@ -22,41 +22,9 @@ public abstract class AbstractConfig implements Serializable {
     private static final long serialVersionUID = -7055165458905230077L;
     private static final Map<String, String> LEGACY_PROPERTIES = new HashMap<>();
     private static final String[] SUFFIXES = new String[]{"Config", "Bean", "ConfigBase"};
-
+    protected final AtomicBoolean refreshed = new AtomicBoolean(false);
     protected String id;
     protected String prefix;
-    protected final AtomicBoolean refreshed = new AtomicBoolean(false);
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPrefix() {
-        return StringUtils.isNotEmpty(prefix) ? prefix : "";
-    }
-
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
-    }
-
-    public void refresh() {
-
-    }
-
-    public boolean isValid() {
-        return true;
-    }
-
-    public void updateIdIfAbsent(String value) {
-        if (StringUtils.isNotEmpty(value) && StringUtils.isEmpty(id)) {
-            this.id = value;
-        }
-    }
 
     public static void appendParameters(Map<String, String> parameters, Object config) {
         appendParameters(parameters, config, null);
@@ -148,6 +116,36 @@ public abstract class AbstractConfig implements Serializable {
     private static String calculatePropertyFromGetter(String name) {
         int i = name.startsWith("get") ? 3 : 2;
         return StringUtils.camelToSplitName(name.substring(i, i + 1).toLowerCase() + name.substring(i + 1), ".");
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPrefix() {
+        return StringUtils.isNotEmpty(prefix) ? prefix : "";
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+    public void refresh() {
+
+    }
+
+    public boolean isValid() {
+        return true;
+    }
+
+    public void updateIdIfAbsent(String value) {
+        if (StringUtils.isNotEmpty(value) && StringUtils.isEmpty(id)) {
+            this.id = value;
+        }
     }
 
     protected void appendAnnotation(Class<?> annotationClass, Object annotation) {

@@ -17,74 +17,11 @@ public class MyHashMap<K, V> implements Serializable {
     static final int MIN_TREEIFY_CAPACITY = 64;
 
     static final int UNTREEIFY_THRESHOLD = 6;
-
-    static class Node<K, V> {
-        final int hash;
-        final K key;
-        V value;
-        Node<K, V> next;
-
-        public Node(int hash, K key, V value, Node<K, V> next) {
-            this.hash = hash;
-            this.key = key;
-            this.value = value;
-            this.next = next;
-        }
-
-        public final K getKey() {
-            return key;
-        }
-
-        public final V getValue() {
-            return value;
-        }
-
-        public final V setValue(V value) {
-            V oldValue = this.value;
-            this.value = value;
-            return oldValue;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Node<?, ?> node = (Node<?, ?>) o;
-            return Objects.equals(key, node.key) &&
-                    Objects.equals(value, node.value);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hashCode(key) ^ Objects.hashCode(value);
-        }
-
-        @Override
-        public String toString() {
-            Node<K, V> e = this;
-            StringBuilder sb = new StringBuilder();
-            while (e != null) {
-                sb.append(e.key).append("=").append(e.value);
-                if (e.next != null) {
-                    sb.append("->");
-                }
-                e = e.next;
-            }
-            return sb.toString();
-        }
-    }
-
-    static final int hash(Object key) {
-        int h;
-        return key == null ? 0 : (h = key.hashCode()) ^ (h >>> 16);
-    }
-
+    final float loadFactor;
     transient Node<K, V>[] table;
-
     transient int size;
     int threshold;
-    final float loadFactor;
-
+    transient Set<K> keySet;
     public MyHashMap() {
         loadFactor = DEFAULT_LOAD_FACTOR;
     }
@@ -107,6 +44,11 @@ public class MyHashMap<K, V> implements Serializable {
         threshold = tableSizeFor(initialCapacity);
     }
 
+    static final int hash(Object key) {
+        int h;
+        return key == null ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+
     static final int tableSizeFor(int cap) {
         int n = cap - 1;
         n |= n >>> 1;
@@ -115,6 +57,36 @@ public class MyHashMap<K, V> implements Serializable {
         n |= n >>> 8;
         n |= n >>> 16;
         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+    }
+
+    static Class<?> comparableClassFor(Object x) {
+        if (x instanceof Comparable) {
+            Class<?> c;
+            Type[] ts, as;
+            Type t;
+            ParameterizedType p;
+            if ((c = x.getClass()) == String.class) {
+                return c;
+            }
+            if ((ts = c.getGenericInterfaces()) != null) {
+                for (Type type : ts) {
+                    if ((t = type) instanceof ParameterizedType &&
+                            ((p = (ParameterizedType) t)
+                                    .getRawType() == Comparable.class) &&
+                            (as = p.getActualTypeArguments()) != null &&
+                            as.length == 1 && as[0] == c) {
+                        return c;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    static int compareComparables(Class<?> kc, Object k, Object x) {
+        return (x == null || x.getClass() != kc)
+                ? 0 : ((Comparable) k).compareTo(x);
     }
 
     public int size() {
@@ -279,8 +251,6 @@ public class MyHashMap<K, V> implements Serializable {
         return null;
     }
 
-    transient Set<K> keySet;
-
     public Set<K> keySet() {
         Set<K> ks = keySet;
         if (ks == null) {
@@ -288,60 +258,6 @@ public class MyHashMap<K, V> implements Serializable {
             keySet = ks;
         }
         return ks;
-    }
-
-    final class KeySet extends AbstractSet<K> {
-
-        @Override
-        public final Iterator<K> iterator() {
-            return new KeyIterator();
-        }
-
-        @Override
-        public final int size() {
-            return size;
-        }
-    }
-
-    final class KeyIterator extends HashIterator implements Iterator<K> {
-
-        @Override
-        public K next() {
-            return nextNode().key;
-        }
-    }
-
-    abstract class HashIterator {
-        Node<K, V> next;
-        Node<K, V> current;
-        int index;
-
-        public HashIterator() {
-            Node<K, V>[] t = table;
-            current = next = null;
-            index = 0;
-            if (t != null && size > 0) {
-                do {
-                } while (index < t.length && (next = t[index++]) == null);
-            }
-        }
-
-        public final boolean hasNext() {
-            return next != null;
-        }
-
-        final Node<K, V> nextNode() {
-            Node<K, V>[] t = table;
-            Node<K, V> e = next;
-            if (e == null) {
-                throw new NoSuchElementException();
-            }
-            if ((next = (current = e).next) == null && (t = table) != null) {
-                do {
-                } while (index < t.length && (next = t[index++]) == null);
-            }
-            return e;
-        }
     }
 
     final void treeifyBin(Node<K, V>[] tab, int hash) {
@@ -460,6 +376,62 @@ public class MyHashMap<K, V> implements Serializable {
         return new TreeNode<>(hash, key, value, next);
     }
 
+    static class Node<K, V> {
+        final int hash;
+        final K key;
+        V value;
+        Node<K, V> next;
+
+        public Node(int hash, K key, V value, Node<K, V> next) {
+            this.hash = hash;
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+
+        public final K getKey() {
+            return key;
+        }
+
+        public final V getValue() {
+            return value;
+        }
+
+        public final V setValue(V value) {
+            V oldValue = this.value;
+            this.value = value;
+            return oldValue;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node<?, ?> node = (Node<?, ?>) o;
+            return Objects.equals(key, node.key) &&
+                    Objects.equals(value, node.value);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hashCode(key) ^ Objects.hashCode(value);
+        }
+
+        @Override
+        public String toString() {
+            Node<K, V> e = this;
+            StringBuilder sb = new StringBuilder();
+            while (e != null) {
+                sb.append(e.key).append("=").append(e.value);
+                if (e.next != null) {
+                    sb.append("->");
+                }
+                e = e.next;
+            }
+            return sb.toString();
+        }
+    }
+
     static final class TreeNode<K, V> extends Node<K, V> {
         TreeNode<K, V> parent;
         TreeNode<K, V> left;
@@ -479,6 +451,205 @@ public class MyHashMap<K, V> implements Serializable {
                         -1 : 1;
             }
             return d;
+        }
+
+        static <K, V> TreeNode<K, V> balanceDeletion(TreeNode<K, V> root, TreeNode<K, V> x) {
+            for (TreeNode<K, V> xp, xpl, xpr; ; ) {
+                if (x == null || x == root) {
+                    return root;
+                } else if ((xp = x.parent) == null) {
+                    x.red = false;
+                    return x;
+                } else if (x.red) {
+                    x.red = false;
+                    return root;
+                } else if ((xpl = xp.left) == x) {
+                    if ((xpr = xp.right) != null && xpr.red) {
+                        xpr.red = false;
+                        xp.red = true;
+                        root = rotateLeft(root, xp);
+                        xpr = (xp = x.parent) == null ? null : xp.right;
+                    }
+                    if (xpr == null) {
+                        x = xp;
+                    } else {
+                        TreeNode<K, V> sl = xpr.left, sr = xpr.right;
+                        if ((sr == null || !sr.red) && (sl == null || !sl.red)) {
+                            xpr.red = true;
+                            x = xp;
+                        } else {
+                            if (sr == null || !sr.red) {
+                                if (sl != null) {
+                                    sl.red = false;
+                                }
+                                xpr.red = true;
+                                root = rotateRight(root, xpr);
+                                xpr = (xp = x.parent) == null ? null : xp.right;
+                            }
+                            if (xpr != null) {
+                                xpr.red = (xp = x.parent) == null ? false : xp.red;
+                                if ((sr = xpr.right) != null) {
+                                    sr.red = false;
+                                }
+                            }
+                            if (xp != null) {
+                                xp.red = false;
+                                root = rotateLeft(root, xp);
+                            }
+                            x = root;
+                        }
+                    }
+                } else {
+                    if (xpl != null && xpl.red) {
+                        xpl.red = false;
+                        xp.red = true;
+                        root = rotateRight(root, xp);
+                        xpl = (xp = x.parent) == null ? null : xp.left;
+                    }
+                    if (xpl == null) {
+                        x = xp;
+                    } else {
+                        TreeNode<K, V> sl = xpl.left, sr = xpl.right;
+                        if ((sl == null || !sl.red) && (sr == null || !sr.red)) {
+                            xpl.red = true;
+                            x = xp;
+                        } else {
+                            if (sl == null || !sl.red) {
+                                if (sr != null) {
+                                    sr.red = false;
+                                }
+                                xpl.red = true;
+                                root = rotateRight(root, xpl);
+                                xpl = (xp = x.parent) == null ? null : xp.left;
+                            }
+                            if (xpl != null) {
+                                xpl.red = (xp == null) ? false : xp.red;
+                                if ((sl = xpl.left) != null) {
+                                    sl.red = false;
+                                }
+                            }
+                            if (xp != null) {
+                                xp.red = false;
+                                root = rotateRight(root, xp);
+                            }
+                            x = root;
+                        }
+                    }
+                }
+            }
+        }
+
+        static <K, V> TreeNode<K, V> balanceInsertion(TreeNode<K, V> root, TreeNode<K, V> x) {
+            x.red = true;
+            for (TreeNode<K, V> xp, xpp, xppl, xppr; ; ) {
+                if ((xp = x.parent) == null) {
+                    x.red = false;
+                    return x;
+                } else if (!xp.red || (xpp = xp.parent) == null) {
+                    return root;
+                }
+                if (xp == (xppl = xpp.left)) {
+                    if ((xppr = xpp.right) != null && xppr.red) {
+                        xp.red = false;
+                        xppr.red = false;
+                        xpp.red = true;
+                        x = xpp;
+                    } else {
+                        if (x == xp.right) {
+                            root = rotateLeft(root, x = xp);
+                            xpp = (xp = x.parent) == null ? null : xp.parent;
+                        }
+                        if (xp != null) {
+                            xp.red = false;
+                            if (xpp != null) {
+                                xpp.red = true;
+                                root = rotateRight(root, xpp);
+                            }
+                        }
+                    }
+                } else {
+                    if (xppl != null && xppl.red) {
+                        xp.red = false;
+                        xppl.red = false;
+                        xpp.red = true;
+                        x = xpp;
+                    } else {
+                        if (x == xp.left) {
+                            root = rotateRight(root, x = xp);
+                            xpp = (xp = x.parent) == null ? null : xp.parent;
+                        }
+                        if (xp != null) {
+                            xp.red = false;
+                            if (xpp != null) {
+                                xpp.red = true;
+                                root = rotateLeft(root, xpp);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        static <K, V> TreeNode<K, V> rotateLeft(TreeNode<K, V> root, TreeNode<K, V> p) {
+            TreeNode<K, V> r, pp, rl;
+            if (p != null && (r = p.right) != null) {
+                if ((rl = p.right = r.left) != null) {
+                    rl.parent = p;
+                }
+                if ((pp = r.parent = p.parent) == null) {
+                    (root = r).red = false;
+                } else if (p == pp.left) {
+                    pp.left = r;
+                } else {
+                    pp.right = r;
+                }
+                r.left = p;
+                p.parent = r;
+            }
+            return root;
+        }
+
+        static <K, V> TreeNode<K, V> rotateRight(TreeNode<K, V> root, TreeNode<K, V> p) {
+            TreeNode<K, V> l, pp, lr;
+            if (p != null && (l = p.left) != null) {
+                if ((lr = p.left = l.right) != null) {
+                    lr.parent = p;
+                }
+                if ((pp = l.parent = p.parent) == null) {
+                    (root = l).red = false;
+                } else if (p == pp.left) {
+                    pp.left = l;
+                } else {
+                    pp.right = l;
+                }
+                l.right = p;
+                p.parent = l;
+            }
+            return root;
+        }
+
+        static <K, V> void moveRootToFront(Node<K, V>[] tab, TreeNode<K, V> root) {
+            int n;
+            if (root != null && tab != null && (n = tab.length) > 0) {
+                int index = root.hash & (n - 1);
+                TreeNode<K, V> first = (TreeNode<K, V>) tab[index];
+                if (root != first) {
+                    Node<K, V> rn;
+                    tab[index] = root;
+                    TreeNode<K, V> rp = root.prev;
+                    if ((rn = root.next) != null) {
+                        ((TreeNode<K, V>) rn).prev = rp;
+                    }
+                    if (rp != null) {
+                        rp.next = rn;
+                    }
+                    if (first != null) {
+                        first.prev = root;
+                    }
+                    root.next = first;
+                    root.prev = null;
+                }
+            }
         }
 
         final TreeNode<K, V> root() {
@@ -596,92 +767,6 @@ public class MyHashMap<K, V> implements Serializable {
             }
             if (movable) {
                 moveRootToFront(tab, r);
-            }
-        }
-
-        static <K, V> TreeNode<K, V> balanceDeletion(TreeNode<K, V> root, TreeNode<K, V> x) {
-            for (TreeNode<K, V> xp, xpl, xpr; ; ) {
-                if (x == null || x == root) {
-                    return root;
-                } else if ((xp = x.parent) == null) {
-                    x.red = false;
-                    return x;
-                } else if (x.red) {
-                    x.red = false;
-                    return root;
-                } else if ((xpl = xp.left) == x) {
-                    if ((xpr = xp.right) != null && xpr.red) {
-                        xpr.red = false;
-                        xp.red = true;
-                        root = rotateLeft(root, xp);
-                        xpr = (xp = x.parent) == null ? null : xp.right;
-                    }
-                    if (xpr == null) {
-                        x = xp;
-                    } else {
-                        TreeNode<K, V> sl = xpr.left, sr = xpr.right;
-                        if ((sr == null || !sr.red) && (sl == null || !sl.red)) {
-                            xpr.red = true;
-                            x = xp;
-                        } else {
-                            if (sr == null || !sr.red) {
-                                if (sl != null) {
-                                    sl.red = false;
-                                }
-                                xpr.red = true;
-                                root = rotateRight(root, xpr);
-                                xpr = (xp = x.parent) == null ? null : xp.right;
-                            }
-                            if (xpr != null) {
-                                xpr.red = (xp = x.parent) == null ? false : xp.red;
-                                if ((sr = xpr.right) != null) {
-                                    sr.red = false;
-                                }
-                            }
-                            if (xp != null) {
-                                xp.red = false;
-                                root = rotateLeft(root, xp);
-                            }
-                            x = root;
-                        }
-                    }
-                } else {
-                    if (xpl != null && xpl.red) {
-                        xpl.red = false;
-                        xp.red = true;
-                        root = rotateRight(root, xp);
-                        xpl = (xp = x.parent) == null ? null : xp.left;
-                    }
-                    if (xpl == null) {
-                        x = xp;
-                    } else {
-                        TreeNode<K, V> sl = xpl.left, sr = xpl.right;
-                        if ((sl == null || !sl.red) && (sr == null || !sr.red)) {
-                            xpl.red = true;
-                            x = xp;
-                        } else {
-                            if (sl == null || !sl.red) {
-                                if (sr != null) {
-                                    sr.red = false;
-                                }
-                                xpl.red = true;
-                                root = rotateRight(root, xpl);
-                                xpl = (xp = x.parent) == null ? null : xp.left;
-                            }
-                            if (xpl != null) {
-                                xpl.red = (xp == null) ? false : xp.red;
-                                if ((sl = xpl.left) != null) {
-                                    sl.red = false;
-                                }
-                            }
-                            if (xp != null) {
-                                xp.red = false;
-                                root = rotateRight(root, xp);
-                            }
-                            x = root;
-                        }
-                    }
-                }
             }
         }
 
@@ -805,119 +890,6 @@ public class MyHashMap<K, V> implements Serializable {
             moveRootToFront(tab, root);
         }
 
-        static <K, V> TreeNode<K, V> balanceInsertion(TreeNode<K, V> root, TreeNode<K, V> x) {
-            x.red = true;
-            for (TreeNode<K, V> xp, xpp, xppl, xppr; ; ) {
-                if ((xp = x.parent) == null) {
-                    x.red = false;
-                    return x;
-                } else if (!xp.red || (xpp = xp.parent) == null) {
-                    return root;
-                }
-                if (xp == (xppl = xpp.left)) {
-                    if ((xppr = xpp.right) != null && xppr.red) {
-                        xp.red = false;
-                        xppr.red = false;
-                        xpp.red = true;
-                        x = xpp;
-                    } else {
-                        if (x == xp.right) {
-                            root = rotateLeft(root, x = xp);
-                            xpp = (xp = x.parent) == null ? null : xp.parent;
-                        }
-                        if (xp != null) {
-                            xp.red = false;
-                            if (xpp != null) {
-                                xpp.red = true;
-                                root = rotateRight(root, xpp);
-                            }
-                        }
-                    }
-                } else {
-                    if (xppl != null && xppl.red) {
-                        xp.red = false;
-                        xppl.red = false;
-                        xpp.red = true;
-                        x = xpp;
-                    } else {
-                        if (x == xp.left) {
-                            root = rotateRight(root, x = xp);
-                            xpp = (xp = x.parent) == null ? null : xp.parent;
-                        }
-                        if (xp != null) {
-                            xp.red = false;
-                            if (xpp != null) {
-                                xpp.red = true;
-                                root = rotateLeft(root, xpp);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        static <K, V> TreeNode<K, V> rotateLeft(TreeNode<K, V> root, TreeNode<K, V> p) {
-            TreeNode<K, V> r, pp, rl;
-            if (p != null && (r = p.right) != null) {
-                if ((rl = p.right = r.left) != null) {
-                    rl.parent = p;
-                }
-                if ((pp = r.parent = p.parent) == null) {
-                    (root = r).red = false;
-                } else if (p == pp.left) {
-                    pp.left = r;
-                } else {
-                    pp.right = r;
-                }
-                r.left = p;
-                p.parent = r;
-            }
-            return root;
-        }
-
-        static <K, V> TreeNode<K, V> rotateRight(TreeNode<K, V> root, TreeNode<K, V> p) {
-            TreeNode<K, V> l, pp, lr;
-            if (p != null && (l = p.left) != null) {
-                if ((lr = p.left = l.right) != null) {
-                    lr.parent = p;
-                }
-                if ((pp = l.parent = p.parent) == null) {
-                    (root = l).red = false;
-                } else if (p == pp.left) {
-                    pp.left = l;
-                } else {
-                    pp.right = l;
-                }
-                l.right = p;
-                p.parent = l;
-            }
-            return root;
-        }
-
-        static <K, V> void moveRootToFront(Node<K, V>[] tab, TreeNode<K, V> root) {
-            int n;
-            if (root != null && tab != null && (n = tab.length) > 0) {
-                int index = root.hash & (n - 1);
-                TreeNode<K, V> first = (TreeNode<K, V>) tab[index];
-                if (root != first) {
-                    Node<K, V> rn;
-                    tab[index] = root;
-                    TreeNode<K, V> rp = root.prev;
-                    if ((rn = root.next) != null) {
-                        ((TreeNode<K, V>) rn).prev = rp;
-                    }
-                    if (rp != null) {
-                        rp.next = rn;
-                    }
-                    if (first != null) {
-                        first.prev = root;
-                    }
-                    root.next = first;
-                    root.prev = null;
-                }
-            }
-        }
-
         final Node<K, V> untreeify(MyHashMap<K, V> map) {
             Node<K, V> hd = null, tl = null;
             for (Node<K, V> q = this; q != null; q = q.next) {
@@ -982,33 +954,57 @@ public class MyHashMap<K, V> implements Serializable {
 
     }
 
-    static Class<?> comparableClassFor(Object x) {
-        if (x instanceof Comparable) {
-            Class<?> c;
-            Type[] ts, as;
-            Type t;
-            ParameterizedType p;
-            if ((c = x.getClass()) == String.class) {
-                return c;
-            }
-            if ((ts = c.getGenericInterfaces()) != null) {
-                for (Type type : ts) {
-                    if ((t = type) instanceof ParameterizedType &&
-                            ((p = (ParameterizedType) t)
-                                    .getRawType() == Comparable.class) &&
-                            (as = p.getActualTypeArguments()) != null &&
-                            as.length == 1 && as[0] == c) {
-                        return c;
-                    }
-                }
-            }
+    final class KeySet extends AbstractSet<K> {
+
+        @Override
+        public final Iterator<K> iterator() {
+            return new KeyIterator();
         }
-        return null;
+
+        @Override
+        public final int size() {
+            return size;
+        }
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    static int compareComparables(Class<?> kc, Object k, Object x) {
-        return (x == null || x.getClass() != kc)
-                ? 0 : ((Comparable) k).compareTo(x);
+    final class KeyIterator extends HashIterator implements Iterator<K> {
+
+        @Override
+        public K next() {
+            return nextNode().key;
+        }
+    }
+
+    abstract class HashIterator {
+        Node<K, V> next;
+        Node<K, V> current;
+        int index;
+
+        public HashIterator() {
+            Node<K, V>[] t = table;
+            current = next = null;
+            index = 0;
+            if (t != null && size > 0) {
+                do {
+                } while (index < t.length && (next = t[index++]) == null);
+            }
+        }
+
+        public final boolean hasNext() {
+            return next != null;
+        }
+
+        final Node<K, V> nextNode() {
+            Node<K, V>[] t = table;
+            Node<K, V> e = next;
+            if (e == null) {
+                throw new NoSuchElementException();
+            }
+            if ((next = (current = e).next) == null && (t = table) != null) {
+                do {
+                } while (index < t.length && (next = t[index++]) == null);
+            }
+            return e;
+        }
     }
 }

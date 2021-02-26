@@ -9,8 +9,8 @@ import org.springframework.util.StringUtils;
 import java.util.Map;
 
 public class RegistryConfig extends AbstractConfig {
-    private static final long serialVersionUID = 6807366295053407447L;
     public static final String NO_AVAILABLE = "N/A";
+    private static final long serialVersionUID = 6807366295053407447L;
     private String address;
     private String username;
     private String password;

@@ -2,12 +2,12 @@ package com.zjj.dubbo.registry.zookeeper;
 
 import com.zjj.dubbo.common.URL;
 import com.zjj.dubbo.common.constants.CommonConstants;
+import com.zjj.dubbo.common.utils.ConcurrentHashSet;
 import com.zjj.dubbo.registry.NotifyListener;
 import com.zjj.dubbo.registry.support.FailbackRegistry;
-import com.zjj.dubbo.remoting.zookeeper.ZookeeperTransporter;
-import com.zjj.dubbo.common.utils.ConcurrentHashSet;
 import com.zjj.dubbo.remoting.ChildListener;
 import com.zjj.dubbo.remoting.zookeeper.ZookeeperClient;
+import com.zjj.dubbo.remoting.zookeeper.ZookeeperTransporter;
 import com.zjj.dubbo.rpc.RpcException;
 import lombok.extern.slf4j.Slf4j;
 

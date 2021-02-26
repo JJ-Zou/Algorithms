@@ -37,14 +37,10 @@ public class ServiceClassPostProcessor implements BeanDefinitionRegistryPostProc
 
     private final static List<Class<? extends Annotation>> serviceAnnotationTypes =
             Arrays.asList(RpcService.class);
-
-    private Environment environment;
-
-    private ResourceLoader resourceLoader;
-
-    private ClassLoader classLoader;
-
     protected final Set<String> packagesToScan;
+    private Environment environment;
+    private ResourceLoader resourceLoader;
+    private ClassLoader classLoader;
 
     public ServiceClassPostProcessor(String... packagesToScan) {
         this(Arrays.asList(packagesToScan));

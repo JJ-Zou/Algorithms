@@ -2,8 +2,8 @@ package com.zjj.dubbo.registry.support;
 
 import com.zjj.dubbo.common.URL;
 import com.zjj.dubbo.registry.Registry;
-import com.zjj.dubbo.remoting.zookeeper.ZookeeperTransporter;
 import com.zjj.dubbo.registry.zookeeper.ZookeeperRegistry;
+import com.zjj.dubbo.remoting.zookeeper.ZookeeperTransporter;
 
 public class ZookeeperRegistryFactory extends AbstractRegistryFactory {
 

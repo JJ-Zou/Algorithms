@@ -3,6 +3,9 @@ package com.zjj.dubbo.common.lang;
 import java.util.Comparator;
 
 public interface Prioritized extends Comparable<Prioritized> {
+    int MIN_PRIORITY = Integer.MIN_VALUE;
+    int MAX_PRIORITY = Integer.MAX_VALUE;
+    int NORMAL_PRIORITY = 0;
     Comparator<Object> COMPARATOR = (a, b) -> {
         boolean b1 = a instanceof Prioritized;
         boolean b2 = b instanceof Prioritized;
@@ -16,10 +19,6 @@ public interface Prioritized extends Comparable<Prioritized> {
             return 0;
         }
     };
-
-    int MIN_PRIORITY = Integer.MIN_VALUE;
-    int MAX_PRIORITY = Integer.MAX_VALUE;
-    int NORMAL_PRIORITY = 0;
 
     default int getPriority() {
         return NORMAL_PRIORITY;

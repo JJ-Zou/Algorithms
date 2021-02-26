@@ -8,6 +8,7 @@ public class DemoServiceImpl2 implements DemoService {
     {
         System.out.println(this + " 被创建");
     }
+
     @Override
     public String sayHello(String name) {
         return "Hello annotation " + name;

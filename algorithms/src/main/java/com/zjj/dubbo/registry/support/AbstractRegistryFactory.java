@@ -13,73 +13,9 @@ import java.util.concurrent.locks.ReentrantLock;
 @Slf4j
 public abstract class AbstractRegistryFactory implements RegistryFactory {
 
-    private static final ReentrantLock LOCK = new ReentrantLock();
-
     protected static final Map<String, Registry> REGISTRIES = new HashMap<>();
-
+    private static final ReentrantLock LOCK = new ReentrantLock();
     private static final AtomicBoolean destroyed = new AtomicBoolean(false);
-
-    public static Collection<Registry> getRegistries() {
-        return Collections.unmodifiableCollection(new LinkedList<>(REGISTRIES.values()));
-    }
-
-    public static Registry getRegistry(String key) {
-        return REGISTRIES.get(key);
-    }
-
-    public static void destroyAll() {
-        if (!destroyed.compareAndSet(false, true)) {
-            return;
-        }
-        log.debug("Close all registries {}", getRegistries());
-        LOCK.lock();
-        try {
-            for (Registry registry : getRegistries()) {
-                try {
-                    registry.destroy();
-                } catch (Throwable t) {
-                    log.error("{}", t.getMessage(), t);
-                }
-            }
-            REGISTRIES.clear();
-        } finally {
-            LOCK.unlock();
-        }
-    }
-
-    @Override
-    public Registry getRegistry(URL url) {
-        if (destroyed.get()) {
-            log.warn("All registry instances have been destroyed, failed to fetch any instance. " +
-                    "Usually, this means no need to try to do unnecessary redundant resource clearance, all registries has been taken care of.");
-
-            return DEFAULT_NOP_REGISTRY;
-        }
-
-        String key = createRegistryCacheKey(url);
-        LOCK.lock();
-        try {
-            Registry registry = REGISTRIES.get(key);
-            if (registry != null) {
-                return registry;
-            }
-            registry = createRegistry(url);
-            if (registry == null) {
-                throw new IllegalStateException("Can not create registry " + url);
-            }
-            REGISTRIES.put(key, registry);
-            return registry;
-        } finally {
-            LOCK.unlock();
-        }
-    }
-
-    protected String createRegistryCacheKey(URL url) {
-        return url.toServiceStringWithoutResolving();
-    }
-
-    protected abstract Registry createRegistry(URL url);
-
     private static Registry DEFAULT_NOP_REGISTRY = new Registry() {
         @Override
         public URL getUrl() {
@@ -122,6 +58,34 @@ public abstract class AbstractRegistryFactory implements RegistryFactory {
         }
     };
 
+    public static Collection<Registry> getRegistries() {
+        return Collections.unmodifiableCollection(new LinkedList<>(REGISTRIES.values()));
+    }
+
+    public static Registry getRegistry(String key) {
+        return REGISTRIES.get(key);
+    }
+
+    public static void destroyAll() {
+        if (!destroyed.compareAndSet(false, true)) {
+            return;
+        }
+        log.debug("Close all registries {}", getRegistries());
+        LOCK.lock();
+        try {
+            for (Registry registry : getRegistries()) {
+                try {
+                    registry.destroy();
+                } catch (Throwable t) {
+                    log.error("{}", t.getMessage(), t);
+                }
+            }
+            REGISTRIES.clear();
+        } finally {
+            LOCK.unlock();
+        }
+    }
+
     public static void removeDestroyedRegistry(Registry toRm) {
         LOCK.lock();
         try {
@@ -130,4 +94,37 @@ public abstract class AbstractRegistryFactory implements RegistryFactory {
             LOCK.unlock();
         }
     }
+
+    @Override
+    public Registry getRegistry(URL url) {
+        if (destroyed.get()) {
+            log.warn("All registry instances have been destroyed, failed to fetch any instance. " +
+                    "Usually, this means no need to try to do unnecessary redundant resource clearance, all registries has been taken care of.");
+
+            return DEFAULT_NOP_REGISTRY;
+        }
+
+        String key = createRegistryCacheKey(url);
+        LOCK.lock();
+        try {
+            Registry registry = REGISTRIES.get(key);
+            if (registry != null) {
+                return registry;
+            }
+            registry = createRegistry(url);
+            if (registry == null) {
+                throw new IllegalStateException("Can not create registry " + url);
+            }
+            REGISTRIES.put(key, registry);
+            return registry;
+        } finally {
+            LOCK.unlock();
+        }
+    }
+
+    protected String createRegistryCacheKey(URL url) {
+        return url.toServiceStringWithoutResolving();
+    }
+
+    protected abstract Registry createRegistry(URL url);
 }

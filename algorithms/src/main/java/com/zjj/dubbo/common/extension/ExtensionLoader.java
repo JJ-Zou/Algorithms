@@ -18,16 +18,13 @@ public class ExtensionLoader<T> {
 
     private static final ConcurrentMap<Class<?>, ExtensionLoader<?>> EXTENSION_LOADERS = new ConcurrentHashMap<>(64);
     private static final ConcurrentMap<Class<?>, Object> EXTENSION_INSTANCES = new ConcurrentHashMap<>(64);
-
+    private static volatile LoadingStrategy[] strategies = loadLoadingStrategies();
     private final ConcurrentMap<Class<?>, String> cachedNames = new ConcurrentHashMap<>();
     private final Holder<Map<String, Class<?>>> cachedClasses = new Holder<>();
     private final Map<String, Object> cachedActivates = new ConcurrentHashMap<>();
     private final ConcurrentMap<String, Holder<Object>> cachedInstances = new ConcurrentHashMap<>();
     private final Holder<Object> cachedAdaptiveInstance = new Holder<>();
     private final Map<String, IllegalStateException> exceptions = new ConcurrentHashMap<>();
-
-    private static volatile LoadingStrategy[] strategies = loadLoadingStrategies();
-
     private final Class<?> type;
 
     private final ExtensionFactory objectFactory;
@@ -38,10 +35,49 @@ public class ExtensionLoader<T> {
 
     private Set<Class<?>> cachedWrapperClasses;
 
+    private ExtensionLoader(Class<?> type) {
+        this.type = type;
+        objectFactory = (type == ExtensionFactory.class) ? null : ExtensionLoader.getExtensionLoader(ExtensionFactory.class).getAdaptiveExtension();
+    }
+
+    private static LoadingStrategy[] loadLoadingStrategies() {
+        return StreamSupport
+                .stream(ServiceLoader.load(LoadingStrategy.class).spliterator(), false)
+                .sorted()
+                .toArray(LoadingStrategy[]::new);
+    }
+
+    public static List<LoadingStrategy> getLoadingStrategies() {
+        return Arrays.asList(strategies);
+    }
+
     public static void setLoadingStrategies(LoadingStrategy... strategies) {
         if (ArrayUtils.isNotEmpty(strategies)) {
             ExtensionLoader.strategies = strategies;
         }
+    }
+
+    public static <T> ExtensionLoader<T> getExtensionLoader(Class<T> type) {
+        if (type == null) {
+            throw new IllegalArgumentException("Extension type == null");
+        }
+        if (!type.isInterface()) {
+            throw new IllegalArgumentException("Extension type (" + type + ") is not an interface!");
+        }
+        if (!withExtensionAnnotation(type)) {
+            throw new IllegalArgumentException("Extension type (" + type +
+                    ") is not an extension, because it is NOT annotated with @" + SPI.class.getSimpleName() + "!");
+        }
+        ExtensionLoader<T> loader = (ExtensionLoader<T>) EXTENSION_LOADERS.get(type);
+        if (loader == null) {
+            EXTENSION_LOADERS.putIfAbsent(type, new ExtensionLoader<>(type));
+            loader = (ExtensionLoader<T>) EXTENSION_LOADERS.get(type);
+        }
+        return loader;
+    }
+
+    private static <T> boolean withExtensionAnnotation(Class<T> type) {
+        return type.isAnnotationPresent(SPI.class);
     }
 
     @SuppressWarnings("unchecked")
@@ -160,45 +196,6 @@ public class ExtensionLoader<T> {
             buf.append(entry.getValue().toString());
         }
         return new IllegalStateException(buf.toString());
-    }
-
-    private static LoadingStrategy[] loadLoadingStrategies() {
-        return StreamSupport
-                .stream(ServiceLoader.load(LoadingStrategy.class).spliterator(), false)
-                .sorted()
-                .toArray(LoadingStrategy[]::new);
-    }
-
-    public static List<LoadingStrategy> getLoadingStrategies() {
-        return Arrays.asList(strategies);
-    }
-
-    private ExtensionLoader(Class<?> type) {
-        this.type = type;
-        objectFactory = (type == ExtensionFactory.class) ? null : ExtensionLoader.getExtensionLoader(ExtensionFactory.class).getAdaptiveExtension();
-    }
-
-    public static <T> ExtensionLoader<T> getExtensionLoader(Class<T> type) {
-        if (type == null) {
-            throw new IllegalArgumentException("Extension type == null");
-        }
-        if (!type.isInterface()) {
-            throw new IllegalArgumentException("Extension type (" + type + ") is not an interface!");
-        }
-        if (!withExtensionAnnotation(type)) {
-            throw new IllegalArgumentException("Extension type (" + type +
-                    ") is not an extension, because it is NOT annotated with @" + SPI.class.getSimpleName() + "!");
-        }
-        ExtensionLoader<T> loader = (ExtensionLoader<T>) EXTENSION_LOADERS.get(type);
-        if (loader == null) {
-            EXTENSION_LOADERS.putIfAbsent(type, new ExtensionLoader<>(type));
-            loader = (ExtensionLoader<T>) EXTENSION_LOADERS.get(type);
-        }
-        return loader;
-    }
-
-    private static <T> boolean withExtensionAnnotation(Class<T> type) {
-        return type.isAnnotationPresent(SPI.class);
     }
 
     @SuppressWarnings("unchecked")

@@ -15,6 +15,8 @@ import java.util.stream.Collectors;
  * }
  */
 public class Solution {
+    private Map<TreeNode, TreeNode> parents;
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
         root.left = new TreeNode(5);
@@ -27,8 +29,6 @@ public class Solution {
         root.right.right = new TreeNode(8);
         System.out.println(new Solution().distanceK(root, root.left, 2));
     }
-
-    private Map<TreeNode, TreeNode> parents;
 
     public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
         parents = new HashMap<>();

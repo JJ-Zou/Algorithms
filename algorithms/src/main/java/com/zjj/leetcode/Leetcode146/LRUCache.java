@@ -8,6 +8,15 @@ import java.util.Map;
  * LRU--LinkedHashMap
  */
 public class LRUCache extends LinkedHashMap<Integer, Integer> {
+    private Map<Integer, Node> map;
+    private int k;
+    private Node head;
+    private Node tail;
+    public LRUCache(int capacity) {
+        map = new HashMap<>();
+        this.k = capacity;
+    }
+
     //    final int capacity;
 //
 //    public LRUCache(int capacity) {
@@ -44,22 +53,6 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
         System.out.println(cache.get(4));
         System.out.println(cache.get(5));
     }
-    private Map<Integer, Node> map;
-    private int k;
-    private Node head;
-    private Node tail;
-
-    static class Node {
-        int key;
-        int value;
-        Node prev;
-        Node next;
-
-        public Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
-    }
 
     private void linkLast(Node p) {
         Node last = tail;
@@ -91,11 +84,6 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
         }
     }
 
-    public LRUCache(int capacity) {
-        map = new HashMap<>();
-        this.k = capacity;
-    }
-
     public int get(int key) {
         if (!map.containsKey(key)) {
             return -1;
@@ -104,15 +92,16 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
         moveToLast(p);
         return p.value;
     }
+
     private void moveToLast(Node p) {
-        if(p == tail) {
+        if (p == tail) {
             return;
         }
         Node prev = p.prev;
         Node next = p.next;
         p.prev = null;
         p.next = null;
-        if(prev == null) {
+        if (prev == null) {
             head = next;
             head.prev = null;
         } else {
@@ -123,6 +112,7 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
         p.prev = tail;
         tail = p;
     }
+
     public void put(int key, int value) {
         if (map.containsKey(key)) {
             Node temp = map.get(key);
@@ -145,5 +135,17 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
         Node p = new Node(key, value);
         map.put(key, p);
         linkLast(p);
+    }
+
+    static class Node {
+        int key;
+        int value;
+        Node prev;
+        Node next;
+
+        public Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
     }
 }

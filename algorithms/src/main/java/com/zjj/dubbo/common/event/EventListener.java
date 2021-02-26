@@ -10,13 +10,6 @@ import java.util.Objects;
 @FunctionalInterface
 public interface EventListener<E extends Event> extends java.util.EventListener, Prioritized {
 
-    void onEvent(E event);
-
-    @Override
-    default int getPriority() {
-        return NORMAL_PRIORITY;
-    }
-
     static Class<? extends Event> findEventType(EventListener<?> listener) {
         return findEventType(listener.getClass());
     }
@@ -50,5 +43,12 @@ public interface EventListener<E extends Event> extends java.util.EventListener,
             }
         }
         return eventType;
+    }
+
+    void onEvent(E event);
+
+    @Override
+    default int getPriority() {
+        return NORMAL_PRIORITY;
     }
 }

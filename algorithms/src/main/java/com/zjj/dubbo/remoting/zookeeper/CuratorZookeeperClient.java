@@ -37,10 +37,8 @@ import static com.zjj.dubbo.remoting.EventType.*;
 public class CuratorZookeeperClient extends AbstractZookeeperClient<CuratorZookeeperClient.CuratorWatcherImpl, CuratorZookeeperClient.CuratorWatcherImpl> {
 
 
-    private static final String ZK_SESSION_EXPIRE_KEY = "zk.session.expire";
-
     static final Charset CHARSET = Charset.forName("UTF-8");
-
+    private static final String ZK_SESSION_EXPIRE_KEY = "zk.session.expire";
     private final CuratorFramework client;
 
     private Map<String, TreeCache> treeCacheMap = new ConcurrentHashMap<>();

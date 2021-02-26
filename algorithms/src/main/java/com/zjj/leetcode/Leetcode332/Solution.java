@@ -3,12 +3,12 @@ package com.zjj.leetcode.Leetcode332;
 import java.util.*;
 
 public class Solution {
+    private Map<String, Queue<String>> map;
+    private Deque<String> deque;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
     }
-
-    private Map<String, Queue<String>> map;
-    private Deque<String> deque;
 
     public List<String> findItinerary(List<List<String>> tickets) {
         map = new HashMap<>();

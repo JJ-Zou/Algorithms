@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class StackOverDemo {
     private Set<int[]> set = new HashSet<>();
+
     public static void main(String[] args) {
         StackOverDemo stackOverDemo = new StackOverDemo();
         stackOverDemo.method0();

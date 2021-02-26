@@ -12,17 +12,6 @@ import java.util.concurrent.TimeUnit;
 public class FinalizeEscapeGC {
     public static FinalizeEscapeGC SAVE_HOOK = null;
 
-    public void alive() {
-        System.out.println(this + " is alive");
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-        System.out.println("finalize method");
-        FinalizeEscapeGC.SAVE_HOOK = this;
-    }
-
     @SneakyThrows
     public static void main(String[] args) {
         SAVE_HOOK = new FinalizeEscapeGC();
@@ -46,5 +35,16 @@ public class FinalizeEscapeGC {
             System.out.println("dead");
         }
 
+    }
+
+    public void alive() {
+        System.out.println(this + " is alive");
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("finalize method");
+        FinalizeEscapeGC.SAVE_HOOK = this;
     }
 }

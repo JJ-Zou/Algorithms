@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ConfigCenterConfig extends AbstractConfig{
+public class ConfigCenterConfig extends AbstractConfig {
     private static final long serialVersionUID = -9059537516213770179L;
     private AtomicBoolean inited = new AtomicBoolean(false);
     private String protocol;
@@ -31,6 +31,7 @@ public class ConfigCenterConfig extends AbstractConfig{
     private Map<String, String> externalConfiguration;
 
     private Map<String, String> appExternalConfiguration;
+
     public ConfigCenterConfig() {
     }
 

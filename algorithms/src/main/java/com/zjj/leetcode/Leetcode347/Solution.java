@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.Random;
 
 public class Solution {
+    private Map<Integer, Integer> map;
+    private Random random;
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(Arrays.toString(solution.topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2)));
     }
-
-    private Map<Integer, Integer> map;
-    private Random random;
 
     public int[] topKFrequent(int[] nums, int k) {
         map = new HashMap<>();

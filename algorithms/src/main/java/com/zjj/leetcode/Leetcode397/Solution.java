@@ -4,12 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+    private Map<Integer, Integer> map = new HashMap<>();
+
     public static void main(String[] args) {
         System.out.println(new Solution().integerReplacement(2147483647));
     }
-
-
-    private Map<Integer, Integer> map = new HashMap<>();
 
     public int integerReplacement(int n) {
         if (n == 1) {

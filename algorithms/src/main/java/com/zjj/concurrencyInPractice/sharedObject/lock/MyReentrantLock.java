@@ -16,26 +16,6 @@ public class MyReentrantLock implements Lock, Serializable {
         this.sync = new NonfairSync();
     }
 
-    abstract static class Sync extends AbstractQueuedSynchronizer {
-
-        private static final long serialVersionUID = -2320182954703980737L;
-
-        abstract void lock();
-    }
-
-    static class NonfairSync extends Sync {
-
-        private static final long serialVersionUID = -2342988691751908361L;
-
-        @Override
-        final void lock() {
-            if ((compareAndSetState(0, 1))) {
-                setExclusiveOwnerThread(Thread.currentThread());
-            } else {
-                acquire(1);
-            }
-        }
-    }
     @Override
     public void lock() {
         sync.lock();
@@ -64,5 +44,26 @@ public class MyReentrantLock implements Lock, Serializable {
     @Override
     public Condition newCondition() {
         return null;
+    }
+
+    abstract static class Sync extends AbstractQueuedSynchronizer {
+
+        private static final long serialVersionUID = -2320182954703980737L;
+
+        abstract void lock();
+    }
+
+    static class NonfairSync extends Sync {
+
+        private static final long serialVersionUID = -2342988691751908361L;
+
+        @Override
+        final void lock() {
+            if ((compareAndSetState(0, 1))) {
+                setExclusiveOwnerThread(Thread.currentThread());
+            } else {
+                acquire(1);
+            }
+        }
     }
 }

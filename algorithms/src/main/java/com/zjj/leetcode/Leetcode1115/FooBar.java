@@ -4,6 +4,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.LockSupport;
 
 public class FooBar {
+    private int n;
+    private AtomicBoolean flag;
+    private Thread t1;
+    private Thread t2;
+    public FooBar(int n) {
+        this.n = n;
+        this.flag = new AtomicBoolean(false);
+    }
+
     public static void main(String[] args) {
         FooBar fooBar = new FooBar(5);
         new Thread(() -> {
@@ -21,16 +30,6 @@ public class FooBar {
                 e.printStackTrace();
             }
         }).start();
-    }
-
-    private int n;
-    private AtomicBoolean flag;
-    private Thread t1;
-    private Thread t2;
-
-    public FooBar(int n) {
-        this.n = n;
-        this.flag = new AtomicBoolean(false);
     }
 
     public void foo(Runnable printFoo) throws InterruptedException {

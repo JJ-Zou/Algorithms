@@ -1,7 +1,5 @@
 package com.zjj.designPattern.observer;
 
-import java.io.File;
-
 public class Test {
     public static void main(String[] args) {
         Editor editor = new Editor();

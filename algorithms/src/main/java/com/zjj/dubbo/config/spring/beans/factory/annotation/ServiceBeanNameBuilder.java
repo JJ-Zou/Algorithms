@@ -29,16 +29,6 @@ public class ServiceBeanNameBuilder {
         this.version(attributes.getString("version"));
     }
 
-    public ServiceBeanNameBuilder group(String group) {
-        this.group = group;
-        return this;
-    }
-
-    public ServiceBeanNameBuilder version(String version) {
-        this.version = version;
-        return this;
-    }
-
     public static ServiceBeanNameBuilder create(Class<?> defaultInterfaceClass,
                                                 Environment environment) {
         return new ServiceBeanNameBuilder(defaultInterfaceClass, environment);
@@ -50,6 +40,21 @@ public class ServiceBeanNameBuilder {
         return new ServiceBeanNameBuilder(attributes, defaultInterfaceClass, environment);
     }
 
+    private static void append(StringBuilder builder, String value) {
+        if (StringUtils.hasText(value)) {
+            builder.append(SEPARATOR).append(value);
+        }
+    }
+
+    public ServiceBeanNameBuilder group(String group) {
+        this.group = group;
+        return this;
+    }
+
+    public ServiceBeanNameBuilder version(String version) {
+        this.version = version;
+        return this;
+    }
 
     public String build() {
         StringBuilder builder = new StringBuilder("ServiceBean");
@@ -57,11 +62,5 @@ public class ServiceBeanNameBuilder {
         append(builder, version);
         append(builder, group);
         return environment.resolvePlaceholders(builder.toString());
-    }
-
-    private static void append(StringBuilder builder, String value) {
-        if (StringUtils.hasText(value)) {
-            builder.append(SEPARATOR).append(value);
-        }
     }
 }
