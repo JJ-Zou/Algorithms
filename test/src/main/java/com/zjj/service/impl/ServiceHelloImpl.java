@@ -1,9 +1,7 @@
 package com.zjj.service.impl;
 
-import com.zjj.rpc.config.annotation.JRpcService;
 import com.zjj.service.ServiceHello;
 
-@JRpcService
 public class ServiceHelloImpl implements ServiceHello {
     {
         System.out.println("ServiceHelloImpl被创建");
