@@ -6,13 +6,13 @@ import com.zjj.rpc.extension.ServiceExtensionLoader;
 public interface DynamicConfiguration extends AutoCloseable {
     static DynamicConfiguration getDynamicConfiguration(JRpcURL connectionURL) {
         String protocol = connectionURL.getProtocol();
-        DynamicConfigurationFactory factory = getDynamicConfigurationFactory(protocol);
+        com.zjj.rpc.config.configcenter.DynamicConfigurationFactory factory = getDynamicConfigurationFactory(protocol);
         return factory.getDynamicConfiguration(connectionURL);
     }
 
-    static DynamicConfigurationFactory getDynamicConfigurationFactory(String protocol) {
-        DynamicConfigurationFactory instance = ServiceExtensionLoader
-                .getExtensionLoader(DynamicConfigurationFactory.class)
+    static com.zjj.rpc.config.configcenter.DynamicConfigurationFactory getDynamicConfigurationFactory(String protocol) {
+        com.zjj.rpc.config.configcenter.DynamicConfigurationFactory instance = ServiceExtensionLoader
+                .getExtensionLoader(com.zjj.rpc.config.configcenter.DynamicConfigurationFactory.class)
                 .getOrDefaultExtension(protocol);
         if (instance == null) {
             throw new IllegalStateException("Cannot find impl of DynamicConfigurationFactory.");
