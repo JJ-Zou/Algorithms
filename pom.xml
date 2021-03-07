@@ -29,6 +29,7 @@
         <springboot.version>2.2.5.RELEASE</springboot.version>
         <hutool.version>5.4.6</hutool.version>
         <commonslang.version>3.11</commonslang.version>
+        <hessian2.version>4.0.65</hessian2.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -136,6 +137,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commonslang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>${hessian2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
