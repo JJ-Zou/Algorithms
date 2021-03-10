@@ -30,6 +30,7 @@
         <hutool.version>5.4.6</hutool.version>
         <commonslang.version>3.11</commonslang.version>
         <hessian2.version>4.0.65</hessian2.version>
+        <jmeter.version>5.4.1</jmeter.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -142,6 +143,18 @@
                 <groupId>com.caucho</groupId>
                 <artifactId>hessian</artifactId>
                 <version>${hessian2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jmeter</groupId>
+                <artifactId>ApacheJMeter_java</artifactId>
+                <version>${jmeter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.jmeter</groupId>
+                <artifactId>ApacheJMeter_core</artifactId>
+                <version>${jmeter.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
