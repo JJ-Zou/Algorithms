@@ -1,4 +1,4 @@
-package com.zjj.demo;
+package com.zjj.service;
 
 public interface HelloService {
     String compute(String input);

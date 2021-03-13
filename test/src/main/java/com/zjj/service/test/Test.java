@@ -1,18 +1,19 @@
-package com.zjj.demo;
+package com.zjj.service.test;
 
 import com.zjj.config.MethodConfig;
 import com.zjj.config.ProtocolConfig;
 import com.zjj.config.ReferenceConfig;
 import com.zjj.config.RegistryConfig;
+import com.zjj.service.HelloService;
 
 import java.lang.reflect.Field;
 import java.util.Collections;
 
 public class Test {
-    private HelloService2 helloService2;
+    private HelloService helloService;
 
-    public void setHelloService2(HelloService2 helloService2) {
-        this.helloService2 = helloService2;
+    public void setHelloService(HelloService helloService) {
+        this.helloService = helloService;
     }
 
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
@@ -27,22 +28,22 @@ public class Test {
 
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setDefault(true);
-        protocolConfig.setName("jrpc");
+        protocolConfig.setProtocolName("jrpc");
 
-        ReferenceConfig<HelloService2> referenceConfig = new ReferenceConfig<>();
+        ReferenceConfig<HelloService> referenceConfig = new ReferenceConfig<>();
 
         referenceConfig.setRegistryConfigs(Collections.singletonList(registryConfig));
-        referenceConfig.setInterfaceClass(HelloService2.class);
+        referenceConfig.setInterfaceClass(HelloService.class);
         referenceConfig.setMethodConfigs(Collections.singletonList(methodConfig));
         referenceConfig.setProtocolConfigs(Collections.singletonList(protocolConfig));
         Object ref = referenceConfig.getRef();
 
         Test testReference = new Test();
-        Field field = testReference.getClass().getDeclaredField("helloService2");
+        Field field = testReference.getClass().getDeclaredField("helloService");
         field.setAccessible(true);
         field.set(testReference, ref);
         long start = System.currentTimeMillis();
-        System.out.println(testReference.helloService2.compute("world"));
+        System.out.println(testReference.helloService.compute("world"));
         long stop = System.currentTimeMillis();
         System.out.println((stop - start) + "ms");
     }
