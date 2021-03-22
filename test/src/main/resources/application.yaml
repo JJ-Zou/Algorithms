@@ -1,5 +1,0 @@
-logging:
-  level:
-    com.zjj.*: debug
-    org.springframework.beans.factory.support.DefaultListableBeanFactory: debug
-    org.apache.curator.*: debug
