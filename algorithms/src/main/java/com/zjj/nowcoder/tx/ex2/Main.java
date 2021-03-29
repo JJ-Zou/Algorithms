@@ -1,4 +1,4 @@
-package com.zjj.nowcoder.tx.ex1.ex2;
+package com.zjj.nowcoder.tx.ex2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
