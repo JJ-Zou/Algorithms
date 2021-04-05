@@ -1,5 +1,7 @@
 package com.zjj.leetcode.Leetcode5;
 
+import java.util.Collections;
+
 /**
  * 最长回文子串 马拉车算法
  * 首先解决回文子串长度可能为奇偶的问题： 在每个字符中间及字符串两边加上任意字符（比如'#'） 此时字符串长度必定是奇数
