@@ -29,6 +29,7 @@
         <commonslang.version>3.11</commonslang.version>
         <hessian2.version>4.0.65</hessian2.version>
         <jmeter.version>5.4.1</jmeter.version>
+        <kafka.version>2.7.0</kafka.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -153,6 +154,12 @@
                 <artifactId>ApacheJMeter_core</artifactId>
                 <version>${jmeter.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
