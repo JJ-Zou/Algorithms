@@ -1,4 +1,4 @@
-package com.zjj.kafka.connetc;
+package com.zjj.kafka.connect;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
